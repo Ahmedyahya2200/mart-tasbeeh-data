@@ -150,7 +150,6 @@
             border-radius: 50%;
             background: #ddd;
             margin: 0 auto 20px;
-            /* background-image: url('your-photo.jpg'); */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -180,7 +179,7 @@
                 <a href="#" class="btn btn-primary">
                     <i class="fab fa-google-play"></i> تحميل للاندرويد
                 </a>
-                <a href="mailto:support.smarttasbeeh@gmail.com" class="btn btn-outline">
+                <a href="#contact" class="btn btn-outline">
                     <i class="fas fa-envelope"></i> تواصل معنا
                 </a>
             </div>
@@ -225,6 +224,31 @@
         </div>
     </section>
 
+    <section id="contact" style="padding: 80px 20px; background: #f9f9f9; text-align: center;">
+        <div class="dev-card" style="max-width: 600px; margin: 0 auto; border: 1px solid #eee; background: #fff; border-radius: 20px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <div style="width: 60px; height: 60px; background: rgba(212, 175, 55, 0.1); color: #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 20px;">
+                <i class="fas fa-paper-plane"></i>
+            </div>
+            <h2 style="color: #1a1a1a; margin-bottom: 10px;">تواصل مع المطور</h2>
+            <p style="margin-bottom: 30px; color: #666;">أرسل اقتراحك أو ملاحظتك، وستصلني فوراً على هاتفي الشخصي عبر تلجرام.</p>
+            
+            <form id="telegramForm" onsubmit="sendToTelegram(event)">
+                <div style="margin-bottom: 15px;">
+                    <input type="text" id="name" placeholder="اسمك الكريم (اختياري)" 
+                           style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 50px; font-family: 'Tajawal', sans-serif; outline: none;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <textarea id="message" placeholder="اكتب رسالتك هنا..." required
+                              style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 20px; height: 120px; font-family: 'Tajawal', sans-serif; outline: none; resize: none;"></textarea>
+                </div>
+                <button type="submit" id="submitBtn" class="btn btn-primary" style="border: none; cursor: pointer; width: 100%; justify-content: center;">
+                    إرسال الآن
+                </button>
+                <p id="statusMessage" style="margin-top: 15px; display: none; font-weight: bold;"></p>
+            </form>
+        </div>
+    </section>
+
     <footer>
         <p>© 2025 جميع الحقوق محفوظة | السبحة الذكية</p>
         <br>
@@ -233,6 +257,56 @@
             <a href="mailto:support.smarttasbeeh@gmail.com">الدعم الفني</a>
         </p>
     </footer>
+
+    <script>
+        function sendToTelegram(e) {
+            e.preventDefault();
+
+            // بيانات البوت الخاصة بك
+            const botToken = "8330133673:AAGY1q4u-l4lKDStkxf4lrxYHPAAqnnPhMo";
+            const chatId = "1490007964";
+
+            const name = document.getElementById('name').value || "فاعل خير";
+            const message = document.getElementById('message').value;
+            const btn = document.getElementById('submitBtn');
+            const status = document.getElementById('statusMessage');
+
+            // تغيير شكل الزر أثناء الإرسال
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
+            btn.style.opacity = "0.7";
+            btn.disabled = true;
+
+            // تنسيق الرسالة
+            const text = `📩 *رسالة جديدة من موقع السبحة:*\n\n👤 *الاسم:* ${name}\n📝 *الرسالة:* ${message}`;
+
+            // رابط API تلجرام
+            const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}&parse_mode=Markdown`;
+
+            fetch(url)
+                .then(response => {
+                    if (response.ok) {
+                        status.style.display = 'block';
+                        status.style.color = '#28a745'; // لون أخضر
+                        status.innerText = "✅ تم الإرسال بنجاح! شكراً لتواصلك.";
+                        document.getElementById('telegramForm').reset();
+                        setTimeout(() => { status.style.display = 'none'; }, 5000);
+                    } else {
+                        throw new Error('Network response was not ok.');
+                    }
+                })
+                .catch(error => {
+                    status.style.display = 'block';
+                    status.style.color = '#dc3545'; // لون أحمر
+                    status.innerText = "❌ حدث خطأ، تأكد من اتصال الإنترنت.";
+                    console.error('Error:', error);
+                })
+                .finally(() => {
+                    btn.innerHTML = 'إرسال الآن';
+                    btn.style.opacity = "1";
+                    btn.disabled = false;
+                });
+        }
+    </script>
 
 </body>
 </html>
