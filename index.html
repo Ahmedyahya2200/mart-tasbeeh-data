@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السبحة الذكية - Smart Tasbeeh</title>
+    <meta name="description" content="تطبيق السبحة الذكية، رفيقك الروحي للذكر والتسبيح. مجاني وبدون إعلانات.">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #d4af37; /* لون ذهبي/عنبري */
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --bg: #f9f9f9;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 { font-size: 3.5rem; margin-bottom: 15px; font-weight: 900; }
+        .subtitle { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
+
+        .badge {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border: 1px solid var(--primary);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            margin: 10px;
+        }
+        .btn-primary { background-color: var(--primary); color: white; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); }
+        .btn-outline { border: 2px solid white; color: white; }
+        .btn:hover { transform: translateY(-3px); }
+        .btn i { margin-left: 10px; }
+
+        /* Phone Mockup (Placeholder) */
+        .phone-mockup {
+            width: 280px;
+            height: 580px;
+            background: #000;
+            border-radius: 40px;
+            border: 8px solid #333;
+            margin: 40px auto -150px; /* Negative margin to overlap */
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            overflow: hidden;
+            z-index: 3;
+        }
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: url('assets/screenshot.jpg') center/cover no-repeat; /* ضع صورة التطبيق هنا */
+            background-color: #222; /* لون احتياطي */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+        }
+
+        /* Features Section */
+        .features { padding: 180px 20px 80px; text-align: center; }
+        .section-title { font-size: 2rem; margin-bottom: 50px; color: var(--primary); font-weight: bold; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-10px); }
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 20px;
+        }
+
+        /* Developer Section */
+        .developer {
+            background: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .dev-card {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #eee;
+            padding: 40px;
+            border-radius: 20px;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #ddd;
+            margin: 0 auto 20px;
+            /* background-image: url('your-photo.jpg'); */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #777;
+        }
+
+        /* Footer */
+        footer { background: #1a1a1a; color: white; padding: 40px 20px; text-align: center; font-size: 0.9rem; opacity: 0.9; }
+        footer a { color: var(--primary); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .phone-mockup { width: 240px; height: 500px; margin-bottom: -100px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hero-content">
+            <div class="badge">وقف خيري | مجاني 100%</div>
+            <h1>السبحة الذكية</h1>
+            <p class="subtitle">رفيقك الروحي للذكر والتسبيح.. تصميم هادئ، بدون إعلانات، وخصوصية تامة.</p>
+            
+            <div>
+                <a href="#" class="btn btn-primary">
+                    <i class="fab fa-google-play"></i> تحميل للاندرويد
+                </a>
+                <a href="mailto:support.smarttasbeeh@gmail.com" class="btn btn-outline">
+                    <i class="fas fa-envelope"></i> تواصل معنا
+                </a>
+            </div>
+
+            <div class="phone-mockup">
+                <div class="screen">
+                    <i class="fas fa-mobile-alt fa-3x"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="features">
+        <h2 class="section-title">لماذا تختار السبحة الذكية؟</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="icon-box"><i class="fas fa-ban"></i></div>
+                <h3>بدون إعلانات</h3>
+                <p>تجربة نقية وخالية تماماً من المشتتات للتركيز في الذكر.</p>
+            </div>
+            <div class="card">
+                <div class="icon-box"><i class="fas fa-moon"></i></div>
+                <h3>الوضع الليلي</h3>
+                <p>ألوان مريحة للعين وتصميم يدعم الوضع الداكن تلقائياً.</p>
+            </div>
+            <div class="card">
+                <div class="icon-box"><i class="fas fa-hand-holding-heart"></i></div>
+                <h3>وقف خيري</h3>
+                <p>تطبيق مجاني بالكامل، نسألكم الدعاء فقط.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="developer">
+        <div class="dev-card">
+            <div class="avatar"><i class="fas fa-user"></i></div>
+            <h3>تطوير: أحمد يحيى</h3>
+            <p style="margin: 15px 0; color: #666;">
+                تم تطوير هذا التطبيق بجهد فردي ومستقل، بهدف تقديم أداة إسلامية راقية تليق بالمستخدم المسلم.
+            </p>
+            <small style="color: #999;">مطور تطبيقات مستقل - الإمارات العربية المتحدة</small>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 جميع الحقوق محفوظة | السبحة الذكية</p>
+        <br>
+        <p>
+            <a href="privacy.html">سياسة الخصوصية</a> | 
+            <a href="mailto:support.smarttasbeeh@gmail.com">الدعم الفني</a>
+        </p>
+    </footer>
+
+</body>
+</html>
