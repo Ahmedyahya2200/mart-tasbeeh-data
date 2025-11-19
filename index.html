@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>السبحة الذكية | Smart Tasbeeh</title>
-    <meta name="description" content="تطبيق السبحة الذكية، رفيقك الروحي للذكر والتسبيح. تصميم عصري وتجربة فريدة.">
     
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&family=Inter:wght@400;600;800&family=Amiri:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -19,7 +18,6 @@
             --text-body: #475569;
             --bg-light: #f8fafc;
             --white: #ffffff;
-            --accent: #fbbf24;
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,27 +29,17 @@
             line-height: 1.8;
             overflow-x: hidden;
             scroll-behavior: smooth;
-            transition: all 0.3s ease;
         }
 
-        /* فئة للغة الإنجليزية */
         body.en-mode { font-family: 'Inter', sans-serif; }
 
         /* زر اللغة */
         .lang-btn {
-            position: absolute;
-            top: 30px; left: 30px;
-            z-index: 1000;
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.3);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-            display: flex; align-items: center; gap: 8px;
+            position: absolute; top: 30px; left: 30px; z-index: 1000;
+            background: rgba(255,255,255,0.2); backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3); color: white;
+            padding: 8px 20px; border-radius: 30px; cursor: pointer;
+            font-weight: bold; transition: 0.3s; display: flex; align-items: center; gap: 8px;
         }
         .lang-btn:hover { background: white; color: var(--primary-dark); }
         html[dir="ltr"] .lang-btn { left: auto; right: 30px; }
@@ -60,93 +48,98 @@
         header {
             background: linear-gradient(135deg, #115e59 0%, #0d9488 100%);
             color: white;
-            padding: 100px 20px 120px;
+            padding: 120px 20px 180px; /* مساحة سفلية كافية للهاتف */
             text-align: center;
             position: relative;
-            overflow: hidden;
+            /* تصحيح: السماح للعناصر بالخروج عن الحدود */
+            overflow: visible; 
         }
 
-        h1 { 
-            font-size: 3.5rem; margin-bottom: 15px; font-weight: 900; 
-            color: #ffffff; text-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        /* خلفية زخرفية خفيفة */
+        header::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: 0;
         }
 
-        .subtitle { 
-            font-size: 1.3rem; color: #e0f2fe; margin-bottom: 40px; 
-            max-width: 700px; margin-left: auto; margin-right: auto; 
-        }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+
+        h1 { font-size: 3.5rem; margin-bottom: 15px; font-weight: 900; color: #ffffff; text-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .subtitle { font-size: 1.3rem; color: #e0f2fe; margin-bottom: 40px; }
 
         .badge {
-            background: rgba(255, 255, 255, 0.15);
-            color: #ffffff;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            display: inline-block;
-            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.15); color: #ffffff; padding: 8px 20px;
+            border-radius: 50px; font-size: 0.9rem; font-weight: bold;
+            border: 1px solid rgba(255, 255, 255, 0.3); display: inline-block; margin-bottom: 25px;
         }
 
-        /* Buttons */
         .btn {
             display: inline-flex; align-items: center; justify-content: center;
             padding: 15px 35px; border-radius: 50px; text-decoration: none;
             font-weight: bold; transition: all 0.3s ease; margin: 10px; font-size: 1.1rem;
         }
-        .btn-primary {
-            background: var(--white); color: var(--primary-dark);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
-        
-        .btn-outline {
-            background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5);
-        }
+        .btn-primary { background: var(--white); color: var(--primary-dark); box-shadow: 0 5px 20px rgba(0,0,0,0.15); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+        .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); }
         .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
 
-        /* Phone Mockup */
+        /* Phone Mockup - تصحيح الظهور */
         .phone-mockup {
-            width: 280px; height: 580px;
-            background: #000; border-radius: 45px; border: 8px solid #2d2d2d;
-            margin: 50px auto -200px; 
+            width: 290px; height: 590px;
+            background: #000; border-radius: 50px; border: 8px solid #2d2d2d;
+            /* تعديل الهوامش لضمان عدم القطع */
+            margin: 60px auto -250px; 
             position: relative;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.4);
             overflow: hidden; z-index: 10;
             animation: float 6s ease-in-out infinite;
         }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
         
-        .screen { width: 100%; height: 100%; background: #000; display: flex; }
-        .screen img { width: 100%; height: 100%; object-fit: cover; }
+        .screen { width: 100%; height: 100%; background-color: #000; border-radius: 42px; overflow: hidden; }
 
-        /* Quote Section */
-        .quote-section { background: white; padding: 250px 20px 60px; text-align: center; }
-        .quran-text { font-family: 'Amiri', serif; font-size: 2rem; color: var(--primary-dark); }
+        /* Quote Section - تحسين الخلفية الروحانية */
+        .quote-section { 
+            /* رابط صورة مباشر ومستقر (مسجد في الليل) */
+            background: url('https://images.unsplash.com/photo-1537180277974-75555729e193?q=80&w=1920&auto=format&fit=crop') center center / cover no-repeat;
+            position: relative;
+            /* زيادة الحشو العلوي لتعويض تداخل الهاتف */
+            padding: 300px 20px 100px; 
+            text-align: center; color: white;
+            display: flex; align-items: center; justify-content: center; flex-direction: column;
+        }
+        .quote-overlay {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            /* تدرج لوني داكن لإبراز النص */
+            background: linear-gradient(to bottom, rgba(15, 118, 110, 0.9), rgba(30, 41, 59, 0.95));
+            z-index: 0;
+        }
+        .quote-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .quran-text { 
+            font-family: 'Amiri', serif; font-size: 2.8rem; color: #fff; 
+            margin-bottom: 20px; line-height: 1.8; font-weight: 700;
+            text-shadow: 0 0 20px rgba(255,255,255,0.3);
+        }
+        .quote-subtitle { font-size: 1.1rem; opacity: 0.8; letter-spacing: 1px; }
 
         /* Features */
-        .features { padding: 80px 20px; text-align: center; }
-        .section-title { 
-            font-size: 2.2rem; color: var(--secondary); font-weight: 800; margin-bottom: 15px;
-        }
+        .features { padding: 100px 20px; text-align: center; }
+        .section-title { font-size: 2.2rem; color: var(--secondary); font-weight: 800; margin-bottom: 15px; }
         .section-desc { color: var(--text-body); max-width: 600px; margin: 0 auto 60px; }
 
-        .grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px; max-width: 1100px; margin: 0 auto;
-        }
-
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; max-width: 1100px; margin: 0 auto; }
         .card {
-            background: var(--white); padding: 40px 30px; border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; transition: 0.3s;
+            background: var(--white); padding: 40px 30px; border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #f1f5f9; transition: 0.4s;
         }
-        .card:hover { transform: translateY(-5px); border-color: var(--primary); }
-
+        .card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 20px 50px rgba(13, 148, 136, 0.15); }
+        
         .icon-box {
-            width: 70px; height: 70px; background: #f0fdfa; color: var(--primary);
+            width: 75px; height: 75px; background: #f0fdfa; color: var(--primary);
             border-radius: 20px; display: flex; align-items: center; justify-content: center;
-            font-size: 1.8rem; margin: 0 auto 20px;
+            font-size: 1.8rem; margin: 0 auto 25px; transition: 0.4s;
         }
+        .card:hover .icon-box { background: var(--primary); color: white; border-radius: 50%; transform: rotate(360deg); }
         .card h3 { font-size: 1.4rem; margin-bottom: 10px; color: var(--secondary); font-weight: 700; }
 
         /* Developer */
@@ -154,47 +147,43 @@
         .gradient-box {
             max-width: 800px; margin: 0 auto;
             background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
-            border-radius: 30px; padding: 50px 30px; border: 1px solid #e2e8f0; text-align: center;
+            border-radius: 30px; padding: 60px 30px; border: 1px solid #e2e8f0; text-align: center;
         }
         .avatar {
-            width: 90px; height: 90px; background: var(--primary); color: white;
+            width: 100px; height: 100px; background: var(--primary); color: white;
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 2rem; margin: 0 auto 20px;
+            font-size: 2.5rem; margin: 0 auto 25px; box-shadow: 0 10px 30px rgba(13, 148, 136, 0.2);
         }
 
         /* Contact */
         #contact { padding: 80px 20px; background: var(--bg-light); }
         input, textarea {
-            width: 100%; padding: 15px 20px;
-            border: 1px solid #cbd5e1; border-radius: 12px;
+            width: 100%; padding: 18px 25px; border: 1px solid #cbd5e1; border-radius: 15px;
             background: #fff; font-family: inherit; font-size: 1rem; color: var(--secondary);
             transition: 0.3s; margin-bottom: 20px; outline: none;
         }
-        input:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1); }
+        input:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.1); }
         
         .upload-area {
-            border: 2px dashed #cbd5e1; padding: 25px; border-radius: 15px;
+            border: 2px dashed #cbd5e1; padding: 30px; border-radius: 15px;
             background: #fff; cursor: pointer; transition: 0.3s; margin-bottom: 25px; color: var(--text-body);
             text-align: center; display: block;
         }
         .upload-area:hover { border-color: var(--primary); background: #f0fdfa; color: var(--primary-dark); }
 
-        #submitBtn { background: var(--primary-dark); color: white; width: 100%; border: none; }
-        #submitBtn:hover { background: #115e59; }
+        #submitBtn { background: var(--primary-dark); color: white; width: 100%; border: none; padding: 18px; font-size: 1.1rem; cursor: pointer; border-radius: 15px; transition: 0.3s; }
+        #submitBtn:hover { background: #115e59; transform: translateY(-2px); }
 
-        /* Footer */
-        footer {
-            background: var(--secondary); color: #94a3b8; padding: 40px 20px; text-align: center; font-size: 0.9rem;
-        }
+        footer { background: var(--secondary); color: #94a3b8; padding: 50px 20px; text-align: center; font-size: 0.95rem; }
         footer a { color: var(--white); text-decoration: none; margin: 0 10px; transition: 0.3s; }
         footer a:hover { color: var(--primary); }
 
-        /* Utility Class */
         .hidden { display: none !important; }
 
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .phone-mockup { width: 260px; height: 540px; margin-bottom: -150px; }
+            .quote-section { padding-top: 250px; } /* زيادة المساحة للموبايل */
         }
     </style>
 </head>
@@ -205,7 +194,7 @@
     </div>
 
     <header>
-        <div class="hero-content" data-aos="fade-down">
+        <div class="hero-content" data-aos="fade-down" data-aos-duration="1000">
             <div id="hero-ar">
                 <div class="badge">وقف خيري 100%</div>
                 <h1>السبحة الذكية</h1>
@@ -226,23 +215,22 @@
                 </a>
             </div>
 
-            <div class="phone-mockup" data-aos="zoom-in" data-aos-delay="400">
-                <div class="screen">
-                    <img src="https://i.postimg.cc/26N0SnJT/app-screen.jpg" alt="App Screen">
-                </div>
+            <div class="phone-mockup" data-aos="zoom-in-up" data-aos-delay="300" data-aos-duration="1200">
+                <div class="screen" style="background: url('https://i.postimg.cc/26N0SnJT/app-screen.jpg') center/cover no-repeat;"></div>
             </div>
         </div>
     </header>
 
     <section class="quote-section">
-        <div data-aos="fade-up">
+        <div class="quote-overlay"></div>
+        <div class="quote-content" data-aos="fade-up" data-aos-duration="1000">
             <div id="quote-ar">
                 <p class="quran-text">﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾</p>
-                <p style="color: #888;">صدق الله العظيم</p>
+                <p class="quote-subtitle">صدق الله العظيم</p>
             </div>
             <div id="quote-en" class="hidden">
                 <p class="quran-text">"Verily, in the remembrance of Allah do hearts find rest"</p>
-                <p style="color: #888;">Holy Quran</p>
+                <p class="quote-subtitle">Holy Quran</p>
             </div>
         </div>
     </section>
@@ -318,14 +306,18 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, offset: 100, once: true });
+        // تهيئة الأنيميشن بإعدادات أكثر نعومة
+        AOS.init({ 
+            duration: 1000, 
+            offset: 120, 
+            once: true,
+            easing: 'ease-out-cubic'
+        });
 
-        // ============ Language Logic ============
+        // ============ Translations ============
         let currentLang = 'ar';
-        
         const translations = {
             en: {
-                heroBadge: "100% Non-Profit",
                 downloadBtn: "Download App",
                 contactBtn: "Contact Us",
                 featTitle: "Why Smart Tasbeeh?",
@@ -350,7 +342,28 @@
                 footerEmail: "Email Support"
             },
             ar: {
-                // القيم العربية موجودة بالفعل في HTML
+                downloadBtn: "تحميل التطبيق",
+                contactBtn: "تواصل معنا",
+                featTitle: "لماذا هذا التطبيق؟",
+                featDesc: "نسعى لتقديم تجربة ذكر نقية، تجمع بين جمال المظهر وسهولة الاستخدام.",
+                c1Title: "نقاء وبساطة",
+                c1Desc: "واجهة خالية تماماً من التعقيد والإعلانات، ليبقى تركيزك خالصاً في الذكر.",
+                c2Title: "الوضع الليلي",
+                c2Desc: "ألوان مدروسة ومريحة للعين لتقليل الإجهاد البصري ليلاً.",
+                c3Title: "خدمات متكاملة",
+                c3Desc: "مواقيت صلاة دقيقة، إذاعة قرآنية، وأذكار يومية في مكان واحد.",
+                devName: "أحمد يحيى",
+                devDesc: "مطور تطبيقات مستقل. هذا التطبيق هو جهد فردي ووقف لله تعالى. أسعد جداً بملاحظاتكم لتطويره.",
+                devLoc: "الإمارات العربية المتحدة 🇦🇪",
+                contactTitle: "تواصل معنا",
+                contactDesc: "لديك فكرة؟ أو واجهت مشكلة؟ راسلني فوراً.",
+                phName: "الاسم الكريم (اختياري)",
+                phMsg: "اكتب رسالتك هنا...",
+                uploadText: "اضغط هنا لإرفاق صورة (سكرين شوت)",
+                sendText: "إرسال الرسالة",
+                footerRights: "&copy; 2025 السبحة الذكية. جميع الحقوق محفوظة.",
+                footerPrivacy: "سياسة الخصوصية",
+                footerEmail: "البريد الإلكتروني"
             }
         };
 
@@ -358,57 +371,59 @@
             const htmlTag = document.documentElement;
             const body = document.body;
             const langText = document.getElementById('langText');
-
-            // Elements to toggle visibility
             const arHero = document.getElementById('hero-ar');
             const enHero = document.getElementById('hero-en');
             const arQuote = document.getElementById('quote-ar');
             const enQuote = document.getElementById('quote-en');
 
             if (currentLang === 'ar') {
-                // Switch to English
                 currentLang = 'en';
                 htmlTag.setAttribute('dir', 'ltr');
                 htmlTag.setAttribute('lang', 'en');
                 body.classList.add('en-mode');
                 langText.innerText = 'العربية';
-                
-                // Visibility Toggles
                 arHero.classList.add('hidden'); enHero.classList.remove('hidden');
                 arQuote.classList.add('hidden'); enQuote.classList.remove('hidden');
-
-                // Text Updates
-                const t = translations.en;
-                document.getElementById('btn-download').innerText = t.downloadBtn;
-                document.getElementById('btn-contact').innerText = t.contactBtn;
-                document.getElementById('feat-title').innerText = t.featTitle;
-                document.getElementById('feat-desc').innerText = t.featDesc;
-                document.getElementById('c1-title').innerText = t.c1Title;
-                document.getElementById('c1-desc').innerText = t.c1Desc;
-                document.getElementById('c2-title').innerText = t.c2Title;
-                document.getElementById('c2-desc').innerText = t.c2Desc;
-                document.getElementById('c3-title').innerText = t.c3Title;
-                document.getElementById('c3-desc').innerText = t.c3Desc;
-                document.getElementById('dev-name').innerText = t.devName;
-                document.getElementById('dev-desc').innerText = t.devDesc;
-                document.getElementById('dev-loc').innerText = t.devLoc;
-                document.getElementById('contact-title').innerText = t.contactTitle;
-                document.getElementById('contact-desc').innerText = t.contactDesc;
-                document.getElementById('name').placeholder = t.phName;
-                document.getElementById('message').placeholder = t.phMsg;
-                document.getElementById('upload-text').innerText = t.uploadText;
-                document.getElementById('send-text').innerText = t.sendText;
-                document.getElementById('footer-rights').innerHTML = t.footerRights;
-                document.getElementById('footer-privacy').innerText = t.footerPrivacy;
-                document.getElementById('footer-email').innerText = t.footerEmail;
-
+                updateText('en');
             } else {
-                // Switch back to Arabic (Reload helps reset clean, but let's do it manually)
-                location.reload(); 
+                currentLang = 'ar';
+                htmlTag.setAttribute('dir', 'rtl');
+                htmlTag.setAttribute('lang', 'ar');
+                body.classList.remove('en-mode');
+                langText.innerText = 'English';
+                enHero.classList.add('hidden'); arHero.classList.remove('hidden');
+                enQuote.classList.add('hidden'); arQuote.classList.remove('hidden');
+                updateText('ar');
             }
+            updateFileList();
         }
 
-        // ============ Telegram Logic ============
+        function updateText(lang) {
+            const t = translations[lang];
+            document.getElementById('btn-download').innerText = t.downloadBtn;
+            document.getElementById('btn-contact').innerText = t.contactBtn;
+            document.getElementById('feat-title').innerText = t.featTitle;
+            document.getElementById('feat-desc').innerText = t.featDesc;
+            document.getElementById('c1-title').innerText = t.c1Title;
+            document.getElementById('c1-desc').innerText = t.c1Desc;
+            document.getElementById('c2-title').innerText = t.c2Title;
+            document.getElementById('c2-desc').innerText = t.c2Desc;
+            document.getElementById('c3-title').innerText = t.c3Title;
+            document.getElementById('c3-desc').innerText = t.c3Desc;
+            document.getElementById('dev-name').innerText = t.devName;
+            document.getElementById('dev-desc').innerText = t.devDesc;
+            document.getElementById('dev-loc').innerText = t.devLoc;
+            document.getElementById('contact-title').innerText = t.contactTitle;
+            document.getElementById('contact-desc').innerText = t.contactDesc;
+            document.getElementById('name').placeholder = t.phName;
+            document.getElementById('message').placeholder = t.phMsg;
+            document.getElementById('upload-text').innerText = t.uploadText;
+            document.getElementById('send-text').innerText = t.sendText;
+            document.getElementById('footer-rights').innerHTML = t.footerRights;
+            document.getElementById('footer-privacy').innerText = t.footerPrivacy;
+            document.getElementById('footer-email').innerText = t.footerEmail;
+        }
+
         function updateFileList() {
             const input = document.getElementById('imageInput');
             const output = document.getElementById('fileList');
@@ -421,7 +436,7 @@
             e.preventDefault();
             const botToken = "8330133673:AAGY1q4u-l4lKDStkxf4lrxYHPAAqnnPhMo";
             const chatId = "1490007964";
-            const name = document.getElementById('name').value || "User";
+            const name = document.getElementById('name').value || (currentLang === 'ar' ? "فاعل خير" : "User");
             const message = document.getElementById('message').value;
             const imageInput = document.getElementById('imageInput');
             const btn = document.getElementById('submitBtn');
@@ -451,7 +466,7 @@
                 document.getElementById('fileList').innerText = '';
             } catch (error) {
                 status.style.display = 'block'; status.style.color = '#dc2626';
-                status.innerText = currentLang === 'ar' ? "❌ حدث خطأ." : "❌ Error occurred.";
+                status.innerText = currentLang === 'ar' ? "❌ حدث خطأ." : "❌ Error.";
             } finally {
                 setTimeout(() => { 
                     btn.style.opacity = "1"; btn.disabled = false;
