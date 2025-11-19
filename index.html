@@ -76,18 +76,19 @@
         .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
 
         /* =========================================
-           عرض الهواتف الثابت (2-1-2) - التصميم الجديد
+           CINEMATIC SHOWCASE SECTION (2-1-2)
            ========================================= */
         .showcase-section {
             position: relative;
             width: 100%;
-            height: 700px; 
-            background: linear-gradient(180deg, #0d9488 0%, #0d9488 20%, #f8fafc 100%);
+            height: 750px; 
+            background: linear-gradient(180deg, #0d9488 0%, #0d9488 15%, #f8fafc 100%);
             display: flex;
             justify-content: center;
             align-items: flex-start;
             overflow: hidden;
-            padding-top: 20px;
+            padding-top: 40px;
+            perspective: 1000px; /* عمق ثلاثي الأبعاد */
         }
 
         .phones-container {
@@ -97,6 +98,7 @@
             height: 100%;
             display: flex;
             justify-content: center;
+            transform-style: preserve-3d;
         }
 
         .phone-card {
@@ -104,66 +106,90 @@
             width: 300px;
             height: 600px;
             border-radius: 45px;
-            border: 8px solid #1e293b;
+            border: 6px solid #1e293b;
             background: #000;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-            transition: transform 0.5s ease;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            will-change: transform;
         }
 
         .phone-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 36px;
+            border-radius: 38px;
         }
 
-        /* توزيع الهواتف */
+        /* --- توزيع الهواتف والأنميشن --- */
+
+        /* 1. الوسط (Main) */
         .phone-center {
+            z-index: 50;
+            left: 50%;
+            border-color: #334155;
+            animation: float-center 6s ease-in-out infinite;
+        }
+
+        /* 2. اليسار القريب */
+        .phone-left-1 {
+            z-index: 40;
+            left: 50%;
+            opacity: 0.95;
+            animation: float-left-1 7s ease-in-out infinite;
+        }
+
+        /* 3. اليمين القريب */
+        .phone-right-1 {
+            z-index: 40;
+            left: 50%;
+            opacity: 0.95;
+            animation: float-right-1 7s ease-in-out infinite;
+        }
+
+        /* 4. اليسار البعيد */
+        .phone-left-2 {
             z-index: 30;
             left: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 30px 80px rgba(13, 148, 136, 0.5);
-            border-color: #334155;
-        }
-
-        .phone-left-1 {
-            z-index: 20;
-            left: 50%;
-            transform: translateX(-110%) scale(0.9) translateY(20px); 
-            opacity: 0.9;
-        }
-
-        .phone-right-1 {
-            z-index: 20;
-            left: 50%;
-            transform: translateX(10%) scale(0.9) translateY(20px);
-            opacity: 0.9;
-        }
-
-        .phone-left-2 {
-            z-index: 10;
-            left: 50%;
-            transform: translateX(-160%) scale(0.8) translateY(40px);
             opacity: 0.7;
+            filter: blur(1px);
+            animation: float-left-2 8s ease-in-out infinite;
         }
 
+        /* 5. اليمين البعيد */
         .phone-right-2 {
-            z-index: 10;
+            z-index: 30;
             left: 50%;
-            transform: translateX(60%) scale(0.8) translateY(40px);
             opacity: 0.7;
+            filter: blur(1px);
+            animation: float-right-2 8s ease-in-out infinite;
         }
 
-        /* حركة الطفو (Float Animation) */
-        @keyframes float {
-            0% { margin-top: 0px; }
-            50% { margin-top: -15px; }
-            100% { margin-top: 0px; }
+        /* --- Keyframes (الحركات) --- */
+
+        @keyframes float-center {
+            0%, 100% { transform: translateX(-50%) translateY(0); box-shadow: 0 30px 60px rgba(13, 148, 136, 0.4); }
+            50% { transform: translateX(-50%) translateY(-20px); box-shadow: 0 50px 90px rgba(13, 148, 136, 0.7); }
         }
-        .phone-center { animation: float 6s ease-in-out infinite; }
-        .phone-left-1, .phone-right-1 { animation: float 7s ease-in-out infinite reverse; }
-        .phone-left-2, .phone-right-2 { animation: float 8s ease-in-out infinite 1s; }
+
+        @keyframes float-left-1 {
+            0%, 100% { transform: translateX(-110%) scale(0.9) translateY(20px) rotate(2deg); }
+            50% { transform: translateX(-110%) scale(0.9) translateY(0px) rotate(1deg); }
+        }
+
+        @keyframes float-right-1 {
+            0%, 100% { transform: translateX(10%) scale(0.9) translateY(20px) rotate(-2deg); }
+            50% { transform: translateX(10%) scale(0.9) translateY(0px) rotate(-1deg); }
+        }
+
+        @keyframes float-left-2 {
+            0%, 100% { transform: translateX(-160%) scale(0.8) translateY(40px) rotate(4deg); }
+            50% { transform: translateX(-160%) scale(0.8) translateY(10px) rotate(2deg); }
+        }
+
+        @keyframes float-right-2 {
+            0%, 100% { transform: translateX(60%) scale(0.8) translateY(40px) rotate(-4deg); }
+            50% { transform: translateX(60%) scale(0.8) translateY(10px) rotate(-2deg); }
+        }
 
         /* --- باقي الأقسام --- */
         .quote-section { 
@@ -205,13 +231,20 @@
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .showcase-section { height: 550px; }
-            .phone-card { width: 220px; height: 440px; } 
+            .phone-card { width: 210px; height: 420px; } 
 
-            .phone-left-1 { transform: translateX(-85%) scale(0.9) translateY(20px); }
-            .phone-right-1 { transform: translateX(-15%) scale(0.9) translateY(20px); }
+            /* تعديل الحركة للجوال لتقليل المسافات */
+            @keyframes float-left-1 {
+                0%, 100% { transform: translateX(-85%) scale(0.9) translateY(20px) rotate(1deg); }
+                50% { transform: translateX(-85%) scale(0.9) translateY(5px) rotate(0deg); }
+            }
+            @keyframes float-right-1 {
+                0%, 100% { transform: translateX(-15%) scale(0.9) translateY(20px) rotate(-1deg); }
+                50% { transform: translateX(-15%) scale(0.9) translateY(5px) rotate(0deg); }
+            }
             
-            .phone-left-2 { transform: translateX(-100%) scale(0.8) translateY(40px); opacity: 0.5; }
-            .phone-right-2 { transform: translateX(0%) scale(0.8) translateY(40px); opacity: 0.5; }
+            /* إخفاء الأطراف البعيدة في الجوال لتخفيف الزحام */
+            .phone-left-2, .phone-right-2 { display: none; }
         }
     </style>
 </head>
@@ -496,7 +529,7 @@
             } else output.innerText = '';
         }
 
-        // ============ الإرسال الآمن (Backend) ============
+        // ============ الإرسال الآمن (Backend Link) ============
         async function sendToTelegram(e) {
             e.preventDefault();
             
@@ -522,7 +555,8 @@
             }
 
             try {
-                // 3. الإرسال إلى ملف PHP الآمن (بدلاً من تيليجرام مباشرة)
+                // 3. الإرسال إلى ملف PHP الآمن
+                // تأكد من وجود ملف send.php في نفس المجلد
                 const response = await fetch('send.php', {
                     method: 'POST',
                     body: formData
@@ -533,7 +567,7 @@
                 if (result.status === "success") {
                     status.style.display = 'block'; 
                     status.style.color = 'var(--primary-dark)';
-                    status.innerText = currentLang === 'ar' ? "✅ " + result.message : "✅ Sent Successfully!";
+                    status.innerText = currentLang === 'ar' ? "✅ تم الإرسال بنجاح!" : "✅ Sent Successfully!";
                     document.getElementById('telegramForm').reset();
                     document.getElementById('fileList').innerText = "";
                 } else {
@@ -558,6 +592,22 @@
                 }, 3000);
             }
         }
+        
+        // تأثير البارالاكس التفاعلي بالماوس للهواتف
+        document.addEventListener('mousemove', (e) => {
+            // يعمل فقط إذا كانت الشاشة كبيرة
+            if(window.innerWidth > 768) {
+                const phones = document.querySelectorAll('.phone-card');
+                const x = (window.innerWidth - e.pageX * 2) / 100;
+                const y = (window.innerHeight - e.pageY * 2) / 100;
+
+                phones.forEach((phone, index) => {
+                    const speed = (index + 1) * 0.5;
+                    phone.style.marginLeft = `${x * speed}px`;
+                    phone.style.marginTop = `${y * speed}px`;
+                });
+            }
+        });
     </script>
 </body>
 </html>
