@@ -30,7 +30,6 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
-
         body.en-mode { font-family: 'Inter', sans-serif; }
 
         /* زر اللغة */
@@ -48,22 +47,15 @@
         header {
             background: linear-gradient(135deg, #115e59 0%, #0d9488 100%);
             color: white;
-            padding: 120px 20px 180px; /* مساحة سفلية كافية للهاتف */
+            padding: 120px 20px 0;
             text-align: center;
             position: relative;
-            /* تصحيح: السماح للعناصر بالخروج عن الحدود */
-            overflow: visible; 
+            overflow: visible;
+            height: auto;
+            padding-bottom: 50px; 
         }
 
-        /* خلفية زخرفية خفيفة */
-        header::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            z-index: 0;
-        }
-
-        .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
-
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; margin-bottom: 40px; }
         h1 { font-size: 3.5rem; margin-bottom: 15px; font-weight: 900; color: #ffffff; text-shadow: 0 5px 15px rgba(0,0,0,0.2); }
         .subtitle { font-size: 1.3rem; color: #e0f2fe; margin-bottom: 40px; }
 
@@ -83,107 +75,143 @@
         .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); }
         .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
 
-        /* Phone Mockup - تصحيح الظهور */
-        .phone-mockup {
-            width: 290px; height: 590px;
-            background: #000; border-radius: 50px; border: 8px solid #2d2d2d;
-            /* تعديل الهوامش لضمان عدم القطع */
-            margin: 60px auto -250px; 
+        /* =========================================
+           عرض الهواتف الثابت (2-1-2) - التصميم الجديد
+           ========================================= */
+        .showcase-section {
             position: relative;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.4);
-            overflow: hidden; z-index: 10;
-            animation: float 6s ease-in-out infinite;
+            width: 100%;
+            height: 700px; 
+            background: linear-gradient(180deg, #0d9488 0%, #0d9488 20%, #f8fafc 100%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            overflow: hidden;
+            padding-top: 20px;
         }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-        
-        .screen { width: 100%; height: 100%; background-color: #000; border-radius: 42px; overflow: hidden; }
 
-        /* Quote Section - تحسين الخلفية الروحانية */
+        .phones-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .phone-card {
+            position: absolute;
+            width: 300px;
+            height: 600px;
+            border-radius: 45px;
+            border: 8px solid #1e293b;
+            background: #000;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            transition: transform 0.5s ease;
+        }
+
+        .phone-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 36px;
+        }
+
+        /* توزيع الهواتف */
+        .phone-center {
+            z-index: 30;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 30px 80px rgba(13, 148, 136, 0.5);
+            border-color: #334155;
+        }
+
+        .phone-left-1 {
+            z-index: 20;
+            left: 50%;
+            transform: translateX(-110%) scale(0.9) translateY(20px); 
+            opacity: 0.9;
+        }
+
+        .phone-right-1 {
+            z-index: 20;
+            left: 50%;
+            transform: translateX(10%) scale(0.9) translateY(20px);
+            opacity: 0.9;
+        }
+
+        .phone-left-2 {
+            z-index: 10;
+            left: 50%;
+            transform: translateX(-160%) scale(0.8) translateY(40px);
+            opacity: 0.7;
+        }
+
+        .phone-right-2 {
+            z-index: 10;
+            left: 50%;
+            transform: translateX(60%) scale(0.8) translateY(40px);
+            opacity: 0.7;
+        }
+
+        /* حركة الطفو (Float Animation) */
+        @keyframes float {
+            0% { margin-top: 0px; }
+            50% { margin-top: -15px; }
+            100% { margin-top: 0px; }
+        }
+        .phone-center { animation: float 6s ease-in-out infinite; }
+        .phone-left-1, .phone-right-1 { animation: float 7s ease-in-out infinite reverse; }
+        .phone-left-2, .phone-right-2 { animation: float 8s ease-in-out infinite 1s; }
+
+        /* --- باقي الأقسام --- */
         .quote-section { 
-            /* رابط صورة مباشر ومستقر (مسجد في الليل) */
-            background: url('https://images.unsplash.com/photo-1537180277974-75555729e193?q=80&w=1920&auto=format&fit=crop') center center / cover no-repeat;
-            position: relative;
-            /* زيادة الحشو العلوي لتعويض تداخل الهاتف */
-            padding: 300px 20px 100px; 
-            text-align: center; color: white;
-            display: flex; align-items: center; justify-content: center; flex-direction: column;
+            background: url('https://images.unsplash.com/photo-1537180277974-75555729e193?q=80&w=1920&auto=format&fit=crop') center center / cover no-repeat fixed;
+            position: relative; padding: 150px 20px 100px; text-align: center; color: white;
         }
-        .quote-overlay {
-            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            /* تدرج لوني داكن لإبراز النص */
-            background: linear-gradient(to bottom, rgba(15, 118, 110, 0.9), rgba(30, 41, 59, 0.95));
-            z-index: 0;
-        }
-        .quote-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
-        .quran-text { 
-            font-family: 'Amiri', serif; font-size: 2.8rem; color: #fff; 
-            margin-bottom: 20px; line-height: 1.8; font-weight: 700;
-            text-shadow: 0 0 20px rgba(255,255,255,0.3);
-        }
-        .quote-subtitle { font-size: 1.1rem; opacity: 0.8; letter-spacing: 1px; }
+        .quote-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(15, 118, 110, 0.95), rgba(30, 41, 59, 0.95)); }
+        .quote-content { position: relative; z-index: 1; }
+        .quran-text { font-family: 'Amiri', serif; font-size: 2.8rem; margin-bottom: 20px; font-weight: 700; text-shadow: 0 0 20px rgba(255,255,255,0.3); }
 
-        /* Features */
+        .stats { padding: 60px 20px; background: #fff; border-bottom: 1px solid #eee; }
+        .stats-grid { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 2.5rem; font-weight: 900; color: var(--primary); display: block; }
+        .stat-label { color: var(--text-body); font-weight: bold; }
+
         .features { padding: 100px 20px; text-align: center; }
         .section-title { font-size: 2.2rem; color: var(--secondary); font-weight: 800; margin-bottom: 15px; }
-        .section-desc { color: var(--text-body); max-width: 600px; margin: 0 auto 60px; }
-
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; max-width: 1100px; margin: 0 auto; }
-        .card {
-            background: var(--white); padding: 40px 30px; border-radius: 25px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #f1f5f9; transition: 0.4s;
-        }
-        .card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 20px 50px rgba(13, 148, 136, 0.15); }
-        
-        .icon-box {
-            width: 75px; height: 75px; background: #f0fdfa; color: var(--primary);
-            border-radius: 20px; display: flex; align-items: center; justify-content: center;
-            font-size: 1.8rem; margin: 0 auto 25px; transition: 0.4s;
-        }
-        .card:hover .icon-box { background: var(--primary); color: white; border-radius: 50%; transform: rotate(360deg); }
-        .card h3 { font-size: 1.4rem; margin-bottom: 10px; color: var(--secondary); font-weight: 700; }
+        .card { background: var(--white); padding: 40px 30px; border-radius: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); transition: 0.4s; }
+        .card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .icon-box { width: 75px; height: 75px; background: #f0fdfa; color: var(--primary); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 25px; }
 
-        /* Developer */
-        .developer { background: #fff; padding: 80px 20px; }
-        .gradient-box {
-            max-width: 800px; margin: 0 auto;
-            background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
-            border-radius: 30px; padding: 60px 30px; border: 1px solid #e2e8f0; text-align: center;
-        }
-        .avatar {
-            width: 100px; height: 100px; background: var(--primary); color: white;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 2.5rem; margin: 0 auto 25px; box-shadow: 0 10px 30px rgba(13, 148, 136, 0.2);
-        }
+        .developer, #contact { padding: 80px 20px; background: var(--bg-light); }
+        .developer { background: #fff; }
+        .gradient-box { max-width: 800px; margin: 0 auto; background: linear-gradient(to bottom right, #f8fafc, #f1f5f9); border-radius: 30px; padding: 60px 30px; border: 1px solid #e2e8f0; text-align: center; }
+        .avatar { width: 100px; height: 100px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 25px; }
 
-        /* Contact */
-        #contact { padding: 80px 20px; background: var(--bg-light); }
-        input, textarea {
-            width: 100%; padding: 18px 25px; border: 1px solid #cbd5e1; border-radius: 15px;
-            background: #fff; font-family: inherit; font-size: 1rem; color: var(--secondary);
-            transition: 0.3s; margin-bottom: 20px; outline: none;
-        }
+        input, textarea { width: 100%; padding: 18px 25px; border: 1px solid #cbd5e1; border-radius: 15px; background: #fff; font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 20px; }
         input:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.1); }
-        
-        .upload-area {
-            border: 2px dashed #cbd5e1; padding: 30px; border-radius: 15px;
-            background: #fff; cursor: pointer; transition: 0.3s; margin-bottom: 25px; color: var(--text-body);
-            text-align: center; display: block;
-        }
-        .upload-area:hover { border-color: var(--primary); background: #f0fdfa; color: var(--primary-dark); }
-
-        #submitBtn { background: var(--primary-dark); color: white; width: 100%; border: none; padding: 18px; font-size: 1.1rem; cursor: pointer; border-radius: 15px; transition: 0.3s; }
-        #submitBtn:hover { background: #115e59; transform: translateY(-2px); }
+        .upload-area { border: 2px dashed #cbd5e1; padding: 30px; border-radius: 15px; background: #fff; cursor: pointer; text-align: center; display: block; margin-bottom: 20px; }
+        #submitBtn { background: var(--primary-dark); color: white; width: 100%; border: none; padding: 18px; font-size: 1.1rem; cursor: pointer; border-radius: 15px; }
 
         footer { background: var(--secondary); color: #94a3b8; padding: 50px 20px; text-align: center; font-size: 0.95rem; }
-        footer a { color: var(--white); text-decoration: none; margin: 0 10px; transition: 0.3s; }
-        footer a:hover { color: var(--primary); }
-
+        footer a { color: var(--white); text-decoration: none; margin: 0 10px; }
         .hidden { display: none !important; }
-
+        
+        /* --- تجاوب مع الجوال --- */
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
-            .phone-mockup { width: 260px; height: 540px; margin-bottom: -150px; }
-            .quote-section { padding-top: 250px; } /* زيادة المساحة للموبايل */
+            .showcase-section { height: 550px; }
+            .phone-card { width: 220px; height: 440px; } 
+
+            .phone-left-1 { transform: translateX(-85%) scale(0.9) translateY(20px); }
+            .phone-right-1 { transform: translateX(-15%) scale(0.9) translateY(20px); }
+            
+            .phone-left-2 { transform: translateX(-100%) scale(0.8) translateY(40px); opacity: 0.5; }
+            .phone-right-2 { transform: translateX(0%) scale(0.8) translateY(40px); opacity: 0.5; }
         }
     </style>
 </head>
@@ -214,16 +242,36 @@
                     <span id="btn-contact">تواصل معنا</span>
                 </a>
             </div>
-
-            <div class="phone-mockup" data-aos="zoom-in-up" data-aos-delay="300" data-aos-duration="1200">
-                <div class="screen" style="background: url('https://i.postimg.cc/26N0SnJT/app-screen.jpg') center/cover no-repeat;"></div>
-            </div>
         </div>
     </header>
 
+    <section class="showcase-section" data-aos="fade-up" data-aos-delay="300">
+        <div class="phones-container">
+            <div class="phone-card phone-left-2">
+                <img src="https://i.postimg.cc/hv1Rc3QB/Screenshot_20251119_203958.png" alt="Dark Mode">
+            </div>
+            
+            <div class="phone-card phone-left-1">
+                <img src="https://i.postimg.cc/C14c1y7q/Screenshot_20251119_204322.png" alt="Settings">
+            </div>
+
+            <div class="phone-card phone-center">
+                <img src="https://i.postimg.cc/26N0SnJT/app-screen.jpg" alt="Main App">
+            </div>
+
+            <div class="phone-card phone-right-1">
+                <img src="https://i.postimg.cc/ryCBd3sn/Screenshot_20251119_204224.png" alt="Counter">
+            </div>
+
+            <div class="phone-card phone-right-2">
+                <img src="https://i.postimg.cc/1XnVdw8S/Screenshot_20251119_204415.png" alt="Prayer">
+            </div>
+        </div>
+    </section>
+
     <section class="quote-section">
         <div class="quote-overlay"></div>
-        <div class="quote-content" data-aos="fade-up" data-aos-duration="1000">
+        <div class="quote-content" data-aos="fade-up">
             <div id="quote-ar">
                 <p class="quran-text">﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾</p>
                 <p class="quote-subtitle">صدق الله العظيم</p>
@@ -235,12 +283,28 @@
         </div>
     </section>
 
+    <section class="stats">
+        <div class="stats-grid" data-aos="fade-up">
+            <div class="stat-item">
+                <span class="stat-number">+100</span>
+                <span class="stat-label" id="stat-users">مستخدم سعيد</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">0%</span>
+                <span class="stat-label" id="stat-ads">إعلانات</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label" id="stat-free">مجاني بالكامل</span>
+            </div>
+        </div>
+    </section>
+
     <section class="features">
         <div data-aos="fade-up">
             <h2 class="section-title" id="feat-title">لماذا هذا التطبيق؟</h2>
             <p class="section-desc" id="feat-desc">نسعى لتقديم تجربة ذكر نقية، تجمع بين جمال المظهر وسهولة الاستخدام.</p>
         </div>
-
         <div class="grid">
             <div class="card" data-aos="fade-up" data-aos-delay="100">
                 <div class="icon-box"><i class="fas fa-leaf"></i></div>
@@ -275,18 +339,15 @@
         <div class="gradient-box" style="background: white; border: none; box-shadow: 0 10px 40px rgba(0,0,0,0.05);" data-aos="fade-up">
             <h2 class="dev-name" style="margin-bottom: 10px;" id="contact-title">تواصل معنا</h2>
             <p style="color: var(--text-body); margin-bottom: 30px;" id="contact-desc">لديك فكرة؟ أو واجهت مشكلة؟ راسلني فوراً.</p>
-            
             <form id="telegramForm" onsubmit="sendToTelegram(event)" style="max-width: 500px; margin: 0 auto;">
                 <input type="text" id="name" placeholder="الاسم الكريم (اختياري)">
                 <textarea id="message" placeholder="اكتب رسالتك هنا..." required style="height: 150px; resize: none;"></textarea>
-
                 <label for="imageInput" class="upload-area">
                     <i class="fas fa-cloud-upload-alt"></i>
                     <span id="upload-text">اضغط هنا لإرفاق صورة (سكرين شوت)</span>
                     <div id="fileList" style="font-size: 0.85rem; color: var(--primary); margin-top: 5px;"></div>
                 </label>
                 <input type="file" id="imageInput" accept="image/*" multiple style="display: none;" onchange="updateFileList()">
-
                 <button type="submit" id="submitBtn" class="btn btn-primary">
                     <span id="send-text">إرسال الرسالة</span> <i class="fas fa-paper-plane"></i>
                 </button>
@@ -305,65 +366,66 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // تهيئة الأنيميشن بإعدادات أكثر نعومة
-        AOS.init({ 
-            duration: 1000, 
-            offset: 120, 
-            once: true,
-            easing: 'ease-out-cubic'
-        });
 
-        // ============ Translations ============
+    <script>
+        AOS.init({ duration: 1000, offset: 100, once: true });
+
+        // ============ الترجمة ============
         let currentLang = 'ar';
         const translations = {
             en: {
                 downloadBtn: "Download App",
                 contactBtn: "Contact Us",
                 featTitle: "Why Smart Tasbeeh?",
-                featDesc: "We strive to provide a pure Dhikr experience, combining elegant design with ease of use.",
+                featDesc: "We strive to provide a pure Dhikr experience.",
                 c1Title: "Pure & Simple",
-                c1Desc: "An interface completely free of complexity and ads, keeping your focus purely on Dhikr.",
+                c1Desc: "No ads, just focus.",
                 c2Title: "Night Mode",
-                c2Desc: "Thoughtfully designed colors and OLED-friendly dark mode to reduce eye strain at night.",
+                c2Desc: "Eye-friendly colors.",
                 c3Title: "Integrated Services",
-                c3Desc: "Accurate prayer times, Quran Radio, and daily Azkar all in one place.",
+                c3Desc: "Prayer times, Quran Radio, and Azkar.",
                 devName: "Ahmed Yahya",
-                devDesc: "Independent App Developer. This app is a solo effort and a Waif (endowment) for the sake of Allah. Happy to receive your feedback.",
+                devDesc: "Independent App Developer. Waif for Allah.",
                 devLoc: "United Arab Emirates 🇦🇪",
                 contactTitle: "Get in Touch",
-                contactDesc: "Have an idea? Facing an issue? Message me directly.",
+                contactDesc: "Have an idea? Message me.",
                 phName: "Name (Optional)",
-                phMsg: "Write your message here...",
-                uploadText: "Click to attach image (Screenshot)",
-                sendText: "Send Message",
+                phMsg: "Write your message...",
+                uploadText: "Attach Screenshot",
+                sendText: "Send",
                 footerRights: "&copy; 2025 Smart Tasbeeh. All Rights Reserved.",
                 footerPrivacy: "Privacy Policy",
-                footerEmail: "Email Support"
+                footerEmail: "Email Support",
+                statUsers: "Happy Users",
+                statAds: "Ads",
+                statFree: "Completely Free"
             },
             ar: {
                 downloadBtn: "تحميل التطبيق",
                 contactBtn: "تواصل معنا",
                 featTitle: "لماذا هذا التطبيق؟",
-                featDesc: "نسعى لتقديم تجربة ذكر نقية، تجمع بين جمال المظهر وسهولة الاستخدام.",
+                featDesc: "نسعى لتقديم تجربة ذكر نقية.",
                 c1Title: "نقاء وبساطة",
-                c1Desc: "واجهة خالية تماماً من التعقيد والإعلانات، ليبقى تركيزك خالصاً في الذكر.",
+                c1Desc: "واجهة خالية من الإعلانات.",
                 c2Title: "الوضع الليلي",
-                c2Desc: "ألوان مدروسة ومريحة للعين لتقليل الإجهاد البصري ليلاً.",
+                c2Desc: "ألوان مريحة للعين.",
                 c3Title: "خدمات متكاملة",
-                c3Desc: "مواقيت صلاة دقيقة، إذاعة قرآنية، وأذكار يومية في مكان واحد.",
+                c3Desc: "مواقيت، راديو، وأذكار.",
                 devName: "أحمد يحيى",
-                devDesc: "مطور تطبيقات مستقل. هذا التطبيق هو جهد فردي ووقف لله تعالى. أسعد جداً بملاحظاتكم لتطويره.",
+                devDesc: "مطور تطبيقات مستقل. وقف لله تعالى.",
                 devLoc: "الإمارات العربية المتحدة 🇦🇪",
                 contactTitle: "تواصل معنا",
-                contactDesc: "لديك فكرة؟ أو واجهت مشكلة؟ راسلني فوراً.",
+                contactDesc: "لديك فكرة؟ راسلني فوراً.",
                 phName: "الاسم الكريم (اختياري)",
                 phMsg: "اكتب رسالتك هنا...",
                 uploadText: "اضغط هنا لإرفاق صورة (سكرين شوت)",
                 sendText: "إرسال الرسالة",
                 footerRights: "&copy; 2025 السبحة الذكية. جميع الحقوق محفوظة.",
                 footerPrivacy: "سياسة الخصوصية",
-                footerEmail: "البريد الإلكتروني"
+                footerEmail: "البريد الإلكتروني",
+                statUsers: "مستخدم سعيد",
+                statAds: "إعلانات",
+                statFree: "مجاني بالكامل"
             }
         };
 
@@ -371,10 +433,6 @@
             const htmlTag = document.documentElement;
             const body = document.body;
             const langText = document.getElementById('langText');
-            const arHero = document.getElementById('hero-ar');
-            const enHero = document.getElementById('hero-en');
-            const arQuote = document.getElementById('quote-ar');
-            const enQuote = document.getElementById('quote-en');
 
             if (currentLang === 'ar') {
                 currentLang = 'en';
@@ -382,8 +440,10 @@
                 htmlTag.setAttribute('lang', 'en');
                 body.classList.add('en-mode');
                 langText.innerText = 'العربية';
-                arHero.classList.add('hidden'); enHero.classList.remove('hidden');
-                arQuote.classList.add('hidden'); enQuote.classList.remove('hidden');
+                document.getElementById('hero-ar').classList.add('hidden');
+                document.getElementById('hero-en').classList.remove('hidden');
+                document.getElementById('quote-ar').classList.add('hidden');
+                document.getElementById('quote-en').classList.remove('hidden');
                 updateText('en');
             } else {
                 currentLang = 'ar';
@@ -391,11 +451,12 @@
                 htmlTag.setAttribute('lang', 'ar');
                 body.classList.remove('en-mode');
                 langText.innerText = 'English';
-                enHero.classList.add('hidden'); arHero.classList.remove('hidden');
-                enQuote.classList.add('hidden'); arQuote.classList.remove('hidden');
+                document.getElementById('hero-en').classList.add('hidden');
+                document.getElementById('hero-ar').classList.remove('hidden');
+                document.getElementById('quote-en').classList.add('hidden');
+                document.getElementById('quote-ar').classList.remove('hidden');
                 updateText('ar');
             }
-            updateFileList();
         }
 
         function updateText(lang) {
@@ -422,6 +483,9 @@
             document.getElementById('footer-rights').innerHTML = t.footerRights;
             document.getElementById('footer-privacy').innerText = t.footerPrivacy;
             document.getElementById('footer-email').innerText = t.footerEmail;
+            document.getElementById('stat-users').innerText = t.statUsers;
+            document.getElementById('stat-ads').innerText = t.statAds;
+            document.getElementById('stat-free').innerText = t.statFree;
         }
 
         function updateFileList() {
@@ -432,46 +496,66 @@
             } else output.innerText = '';
         }
 
+        // ============ الإرسال الآمن (Backend) ============
         async function sendToTelegram(e) {
             e.preventDefault();
-            const botToken = "8330133673:AAGY1q4u-l4lKDStkxf4lrxYHPAAqnnPhMo";
-            const chatId = "1490007964";
-            const name = document.getElementById('name').value || (currentLang === 'ar' ? "فاعل خير" : "User");
-            const message = document.getElementById('message').value;
-            const imageInput = document.getElementById('imageInput');
+            
             const btn = document.getElementById('submitBtn');
             const status = document.getElementById('statusMessage');
+            const name = document.getElementById('name').value || "User";
+            const message = document.getElementById('message').value;
+            const imageInput = document.getElementById('imageInput');
 
-            btn.style.opacity = "0.7"; btn.disabled = true; status.style.display = 'none';
+            // 1. قفل الزر
+            btn.style.opacity = "0.7"; 
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري المعالجة...';
+            status.style.display = 'none';
+
+            // 2. تجهيز البيانات
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('message', message);
+            
+            if (imageInput.files.length > 0) {
+                formData.append('photo', imageInput.files[0]);
+            }
 
             try {
-                const text = `📩 *New Message (${currentLang.toUpperCase()}):*\n👤 *Name:* ${name}\n📝 *Msg:* ${message}`;
-                const textUrl = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}&parse_mode=Markdown`;
-                let response = await fetch(textUrl);
-                if (!response.ok) throw new Error('Failed');
+                // 3. الإرسال إلى ملف PHP الآمن (بدلاً من تيليجرام مباشرة)
+                const response = await fetch('send.php', {
+                    method: 'POST',
+                    body: formData
+                });
 
-                if (imageInput.files.length > 0) {
-                    for (let i = 0; i < imageInput.files.length; i++) {
-                        const formData = new FormData();
-                        formData.append('chat_id', chatId);
-                        formData.append('photo', imageInput.files[i]);
-                        if (i === 0) formData.append('caption', `Attached by: ${name}`);
-                        await fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, { method: 'POST', body: formData });
-                    }
+                const result = await response.json();
+
+                if (result.status === "success") {
+                    status.style.display = 'block'; 
+                    status.style.color = 'var(--primary-dark)';
+                    status.innerText = currentLang === 'ar' ? "✅ " + result.message : "✅ Sent Successfully!";
+                    document.getElementById('telegramForm').reset();
+                    document.getElementById('fileList').innerText = "";
+                } else {
+                    throw new Error(result.message || 'Server Error');
                 }
 
-                status.style.display = 'block'; status.style.color = 'var(--primary-dark)';
-                status.innerText = currentLang === 'ar' ? "✅ تم الإرسال بنجاح!" : "✅ Sent successfully!";
-                document.getElementById('telegramForm').reset();
-                document.getElementById('fileList').innerText = '';
             } catch (error) {
-                status.style.display = 'block'; status.style.color = '#dc2626';
-                status.innerText = currentLang === 'ar' ? "❌ حدث خطأ." : "❌ Error.";
+                console.error(error);
+                status.style.display = 'block'; 
+                status.style.color = 'red';
+                status.innerText = error.message;
+                if(currentLang !== 'ar' && error.message === 'Server Error') {
+                     status.innerText = "❌ Error sending message.";
+                }
             } finally {
+                // 4. إعادة تفعيل الزر
                 setTimeout(() => { 
-                    btn.style.opacity = "1"; btn.disabled = false;
-                    if(status.style.color !== '#dc2626') status.style.display = 'none'; 
-                }, 4000);
+                    btn.style.opacity = "1"; 
+                    btn.disabled = false; 
+                    btn.innerHTML = currentLang === 'ar' ? '<span id="send-text">إرسال الرسالة</span> <i class="fas fa-paper-plane"></i>' : '<span id="send-text">Send</span> <i class="fas fa-paper-plane"></i>';
+                    status.style.display = 'none'; 
+                }, 3000);
             }
         }
     </script>
