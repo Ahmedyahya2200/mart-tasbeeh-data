@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>السبحة الذكية | رحلة السكينة</title>
+    <title>السبحة الذكية | Smart Tasbeeh</title>
     <meta name="description" content="تطبيق السبحة الذكية، رفيقك الروحي للذكر والتسبيح. تصميم عصري وتجربة فريدة.">
     
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&family=Inter:wght@400;600;800&family=Amiri:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4358/4358767.png" type="image/png">
 
     <style>
         :root {
-            /* لوحة الألوان المصححة (تباين عالي ومريح) */
-            --primary: #0d9488; /* تيل (Teal) متوسط - مريح جداً للعين */
-            --primary-dark: #0f766e; /* تيل غامق للعناوين */
-            --secondary: #1e293b; /* كحلي غامق جداً للنصوص الأساسية */
-            --text-body: #475569; /* رمادي متوسط للنصوص الطويلة */
-            --bg-light: #f8fafc; /* خلفية سماوية فاتحة جداً */
+            --primary: #0d9488;
+            --primary-dark: #0f766e;
+            --secondary: #1e293b;
+            --text-body: #475569;
+            --bg-light: #f8fafc;
             --white: #ffffff;
-            --accent: #fbbf24; /* أصفر ذهبي للأزرار */
+            --accent: #fbbf24;
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -29,14 +28,36 @@
             font-family: 'Tajawal', sans-serif;
             background-color: var(--bg-light);
             color: var(--text-body);
-            line-height: 1.8; /* زيادة المسافة بين الأسطر للقراءة */
+            line-height: 1.8;
             overflow-x: hidden;
             scroll-behavior: smooth;
+            transition: all 0.3s ease;
         }
 
-        /* --- HEADER SECTION --- */
+        /* فئة للغة الإنجليزية */
+        body.en-mode { font-family: 'Inter', sans-serif; }
+
+        /* زر اللغة */
+        .lang-btn {
+            position: absolute;
+            top: 30px; left: 30px;
+            z-index: 1000;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .lang-btn:hover { background: white; color: var(--primary-dark); }
+        html[dir="ltr"] .lang-btn { left: auto; right: 30px; }
+
+        /* Header */
         header {
-            /* تدرج لوني هادئ ومتناسق */
             background: linear-gradient(135deg, #115e59 0%, #0d9488 100%);
             color: white;
             padding: 100px 20px 120px;
@@ -45,18 +66,14 @@
             overflow: hidden;
         }
 
-        /* تحسين تباين نصوص الهيدر */
         h1 { 
             font-size: 3.5rem; margin-bottom: 15px; font-weight: 900; 
-            color: #ffffff; /* أبيض ناصع */
-            text-shadow: 0 4px 10px rgba(0,0,0,0.1); /* ظل خفيف للنص لزيادة الوضوح */
+            color: #ffffff; text-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .subtitle { 
-            font-size: 1.3rem; 
-            color: #e0f2fe; /* أزرق فاتح جداً بدلاً من الرمادي */
-            margin-bottom: 40px; 
-            max-width: 600px; margin-left: auto; margin-right: auto; 
+            font-size: 1.3rem; color: #e0f2fe; margin-bottom: 40px; 
+            max-width: 700px; margin-left: auto; margin-right: auto; 
         }
 
         .badge {
@@ -71,15 +88,14 @@
             margin-bottom: 25px;
         }
 
-        /* الأزرار */
+        /* Buttons */
         .btn {
             display: inline-flex; align-items: center; justify-content: center;
             padding: 15px 35px; border-radius: 50px; text-decoration: none;
             font-weight: bold; transition: all 0.3s ease; margin: 10px; font-size: 1.1rem;
         }
         .btn-primary {
-            background: var(--white);
-            color: var(--primary-dark); /* نص ملون على خلفية بيضاء */
+            background: var(--white); color: var(--primary-dark);
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
@@ -89,23 +105,29 @@
         }
         .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
 
-        /* الهاتف */
-        .phone-wrapper { margin-top: 50px; }
+        /* Phone Mockup */
         .phone-mockup {
             width: 280px; height: 580px;
             background: #000; border-radius: 45px; border: 8px solid #2d2d2d;
-            margin: 0 auto; position: relative;
+            margin: 50px auto -200px; 
+            position: relative;
             box-shadow: 0 30px 60px rgba(0,0,0,0.3);
             overflow: hidden; z-index: 10;
+            animation: float 6s ease-in-out infinite;
         }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        
         .screen { width: 100%; height: 100%; background: #000; display: flex; }
         .screen img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- FEATURES (تصحيح ألوان البطاقات) --- */
+        /* Quote Section */
+        .quote-section { background: white; padding: 250px 20px 60px; text-align: center; }
+        .quran-text { font-family: 'Amiri', serif; font-size: 2rem; color: var(--primary-dark); }
+
+        /* Features */
         .features { padding: 80px 20px; text-align: center; }
         .section-title { 
-            font-size: 2.2rem; color: var(--secondary); /* كحلي غامق */
-            font-weight: 800; margin-bottom: 15px;
+            font-size: 2.2rem; color: var(--secondary); font-weight: 800; margin-bottom: 15px;
         }
         .section-desc { color: var(--text-body); max-width: 600px; margin: 0 auto 60px; }
 
@@ -115,136 +137,137 @@
         }
 
         .card {
-            background: var(--white); padding: 40px 30px;
-            border-radius: 20px;
-            /* ظل ناعم جداً ليتناسب مع الخلفية الفاتحة */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            border: 1px solid #e2e8f0;
-            transition: 0.3s;
+            background: var(--white); padding: 40px 30px; border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; transition: 0.3s;
         }
-        .card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            border-color: var(--primary); 
-        }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary); }
 
         .icon-box {
-            width: 70px; height: 70px;
-            background: #f0fdfa; color: var(--primary);
-            border-radius: 20px;
-            display: flex; align-items: center; justify-content: center;
+            width: 70px; height: 70px; background: #f0fdfa; color: var(--primary);
+            border-radius: 20px; display: flex; align-items: center; justify-content: center;
             font-size: 1.8rem; margin: 0 auto 20px;
         }
         .card h3 { font-size: 1.4rem; margin-bottom: 10px; color: var(--secondary); font-weight: 700; }
-        .card p { color: var(--text-body); font-size: 0.95rem; }
 
-        /* --- DEVELOPER & CONTACT --- */
-        .developer { background: #fff; padding: 80px 20px; } /* خلفية بيضاء لتمييز القسم */
+        /* Developer */
+        .developer { background: #fff; padding: 80px 20px; }
         .gradient-box {
             max-width: 800px; margin: 0 auto;
-            /* تدرج خفيف جداً */
             background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
-            border-radius: 30px; padding: 50px 30px;
-            border: 1px solid #e2e8f0;
-            text-align: center;
+            border-radius: 30px; padding: 50px 30px; border: 1px solid #e2e8f0; text-align: center;
         }
         .avatar {
             width: 90px; height: 90px; background: var(--primary); color: white;
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             font-size: 2rem; margin: 0 auto 20px;
         }
-        .dev-name { color: var(--secondary); font-weight: 800; margin-bottom: 10px; }
-        .dev-desc { color: var(--text-body); line-height: 1.8; margin-bottom: 20px; }
 
-        /* Form */
+        /* Contact */
         #contact { padding: 80px 20px; background: var(--bg-light); }
         input, textarea {
             width: 100%; padding: 15px 20px;
             border: 1px solid #cbd5e1; border-radius: 12px;
             background: #fff; font-family: inherit; font-size: 1rem; color: var(--secondary);
-            transition: 0.3s; margin-bottom: 20px;
+            transition: 0.3s; margin-bottom: 20px; outline: none;
         }
-        input:focus, textarea:focus {
-            border-color: var(--primary); outline: none;
-            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
-        }
+        input:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1); }
         
         .upload-area {
             border: 2px dashed #cbd5e1; padding: 25px; border-radius: 15px;
             background: #fff; cursor: pointer; transition: 0.3s; margin-bottom: 25px; color: var(--text-body);
-            text-align: center;
+            text-align: center; display: block;
         }
         .upload-area:hover { border-color: var(--primary); background: #f0fdfa; color: var(--primary-dark); }
-        .upload-area i { font-size: 1.8rem; margin-bottom: 8px; display: block; }
 
-        /* زر الإرسال */
-        #submitBtn {
-            background: var(--primary-dark); color: white; width: 100%; border: none;
-        }
+        #submitBtn { background: var(--primary-dark); color: white; width: 100%; border: none; }
         #submitBtn:hover { background: #115e59; }
 
         /* Footer */
         footer {
-            background: var(--secondary); color: #94a3b8; padding: 40px 20px;
-            text-align: center; font-size: 0.9rem;
+            background: var(--secondary); color: #94a3b8; padding: 40px 20px; text-align: center; font-size: 0.9rem;
         }
         footer a { color: var(--white); text-decoration: none; margin: 0 10px; transition: 0.3s; }
         footer a:hover { color: var(--primary); }
 
+        /* Utility Class */
+        .hidden { display: none !important; }
+
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
-            .phone-mockup { width: 260px; height: 540px; margin-bottom: -100px; }
+            .phone-mockup { width: 260px; height: 540px; margin-bottom: -150px; }
         }
     </style>
 </head>
 <body>
 
+    <div class="lang-btn" onclick="toggleLanguage()">
+        <i class="fas fa-globe"></i> <span id="langText">English</span>
+    </div>
+
     <header>
-        <div class="hero-content" data-aos="fade-down" data-aos-duration="1000">
-            <div class="badge">وقف خيري 100%</div>
-            <h1>السبحة الذكية</h1>
-            <p class="subtitle">رفيقك الروحي للذكر والتسبيح.. تصميم هادئ، بدون إعلانات، وخصوصية تامة.</p>
+        <div class="hero-content" data-aos="fade-down">
+            <div id="hero-ar">
+                <div class="badge">وقف خيري 100%</div>
+                <h1>السبحة الذكية</h1>
+                <p class="subtitle">رفيقك الروحي للذكر والتسبيح.. تصميم هادئ، بدون إعلانات، وخصوصية تامة.</p>
+            </div>
+            <div id="hero-en" class="hidden">
+                <div class="badge">100% Non-Profit</div>
+                <h1>Smart Tasbeeh</h1>
+                <p class="subtitle">Your spiritual companion for Dhikr. Serene design, ad-free, and complete privacy.</p>
+            </div>
             
             <div data-aos="fade-up" data-aos-delay="200">
                 <a href="#" class="btn btn-primary">
-                    <i class="fab fa-google-play"></i> تحميل التطبيق
+                    <i class="fab fa-google-play"></i> <span id="btn-download">تحميل التطبيق</span>
                 </a>
                 <a href="#contact" class="btn btn-outline">
-                    تواصل معنا
+                    <span id="btn-contact">تواصل معنا</span>
                 </a>
             </div>
 
-            <div class="phone-wrapper" data-aos="zoom-in" data-aos-delay="400">
-                <div class="phone-mockup">
-                    <div class="screen">
-                        <img src="https://i.postimg.cc/26N0SnJT/app-screen.jpg" alt="شاشة التطبيق">
-                    </div>
+            <div class="phone-mockup" data-aos="zoom-in" data-aos-delay="400">
+                <div class="screen">
+                    <img src="https://i.postimg.cc/26N0SnJT/app-screen.jpg" alt="App Screen">
                 </div>
             </div>
         </div>
     </header>
 
+    <section class="quote-section">
+        <div data-aos="fade-up">
+            <div id="quote-ar">
+                <p class="quran-text">﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾</p>
+                <p style="color: #888;">صدق الله العظيم</p>
+            </div>
+            <div id="quote-en" class="hidden">
+                <p class="quran-text">"Verily, in the remembrance of Allah do hearts find rest"</p>
+                <p style="color: #888;">Holy Quran</p>
+            </div>
+        </div>
+    </section>
+
     <section class="features">
         <div data-aos="fade-up">
-            <h2 class="section-title">لماذا هذا التطبيق؟</h2>
-            <p class="section-desc">نسعى لتقديم تجربة ذكر نقية، تجمع بين جمال المظهر وسهولة الاستخدام.</p>
+            <h2 class="section-title" id="feat-title">لماذا هذا التطبيق؟</h2>
+            <p class="section-desc" id="feat-desc">نسعى لتقديم تجربة ذكر نقية، تجمع بين جمال المظهر وسهولة الاستخدام.</p>
         </div>
 
         <div class="grid">
             <div class="card" data-aos="fade-up" data-aos-delay="100">
                 <div class="icon-box"><i class="fas fa-leaf"></i></div>
-                <h3>نقاء وبساطة</h3>
-                <p>واجهة خالية تماماً من التعقيد والإعلانات، ليبقى تركيزك خالصاً في الذكر.</p>
+                <h3 id="c1-title">نقاء وبساطة</h3>
+                <p id="c1-desc">واجهة خالية تماماً من التعقيد والإعلانات، ليبقى تركيزك خالصاً في الذكر.</p>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="200">
                 <div class="icon-box"><i class="fas fa-moon"></i></div>
-                <h3>الوضع الليلي</h3>
-                <p>ألوان مدروسة ومريحة للعين لتقليل الإجهاد البصري ليلاً.</p>
+                <h3 id="c2-title">الوضع الليلي</h3>
+                <p id="c2-desc">ألوان مدروسة ومريحة للعين لتقليل الإجهاد البصري ليلاً.</p>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="300">
                 <div class="icon-box"><i class="fas fa-mosque"></i></div>
-                <h3>خدمات متكاملة</h3>
-                <p>مواقيت صلاة دقيقة، إذاعة قرآنية، وأذكار يومية في مكان واحد.</p>
+                <h3 id="c3-title">خدمات متكاملة</h3>
+                <p id="c3-desc">مواقيت صلاة دقيقة، إذاعة قرآنية، وأذكار يومية في مكان واحد.</p>
             </div>
         </div>
     </section>
@@ -252,18 +275,18 @@
     <section class="developer">
         <div class="gradient-box" data-aos="zoom-in">
             <div class="avatar"><i class="fas fa-code"></i></div>
-            <h2 class="dev-name">أحمد يحيى</h2>
-            <p class="dev-desc">
+            <h2 class="dev-name" id="dev-name">أحمد يحيى</h2>
+            <p class="dev-desc" id="dev-desc">
                 مطور تطبيقات مستقل. هذا التطبيق هو جهد فردي ووقف لله تعالى. أسعد جداً بملاحظاتكم لتطويره.
             </p>
-            <div style="font-size: 0.9rem; color: var(--primary-dark); font-weight: bold;">الإمارات العربية المتحدة 🇦🇪</div>
+            <div style="font-size: 0.9rem; color: var(--primary-dark); font-weight: bold;" id="dev-loc">الإمارات العربية المتحدة 🇦🇪</div>
         </div>
     </section>
 
     <section id="contact">
         <div class="gradient-box" style="background: white; border: none; box-shadow: 0 10px 40px rgba(0,0,0,0.05);" data-aos="fade-up">
-            <h2 class="dev-name" style="margin-bottom: 10px;">تواصل معنا</h2>
-            <p style="color: var(--text-body); margin-bottom: 30px;">لديك فكرة؟ أو واجهت مشكلة؟ راسلني فوراً.</p>
+            <h2 class="dev-name" style="margin-bottom: 10px;" id="contact-title">تواصل معنا</h2>
+            <p style="color: var(--text-body); margin-bottom: 30px;" id="contact-desc">لديك فكرة؟ أو واجهت مشكلة؟ راسلني فوراً.</p>
             
             <form id="telegramForm" onsubmit="sendToTelegram(event)" style="max-width: 500px; margin: 0 auto;">
                 <input type="text" id="name" placeholder="الاسم الكريم (اختياري)">
@@ -271,13 +294,13 @@
 
                 <label for="imageInput" class="upload-area">
                     <i class="fas fa-cloud-upload-alt"></i>
-                    <span>اضغط هنا لإرفاق صورة (سكرين شوت)</span>
+                    <span id="upload-text">اضغط هنا لإرفاق صورة (سكرين شوت)</span>
                     <div id="fileList" style="font-size: 0.85rem; color: var(--primary); margin-top: 5px;"></div>
                 </label>
                 <input type="file" id="imageInput" accept="image/*" multiple style="display: none;" onchange="updateFileList()">
 
                 <button type="submit" id="submitBtn" class="btn btn-primary">
-                    إرسال الرسالة <i class="fas fa-paper-plane"></i>
+                    <span id="send-text">إرسال الرسالة</span> <i class="fas fa-paper-plane"></i>
                 </button>
                 <p id="statusMessage" style="margin-top: 15px; display: none; font-weight: bold;"></p>
             </form>
@@ -285,11 +308,11 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 السبحة الذكية. جميع الحقوق محفوظة.</p>
+        <p id="footer-rights">&copy; 2025 السبحة الذكية. جميع الحقوق محفوظة.</p>
         <div style="margin-top: 15px;">
-            <a href="privacy.html">سياسة الخصوصية</a>
+            <a href="privacy.html" id="footer-privacy">سياسة الخصوصية</a>
             <span style="color: #475569;">|</span>
-            <a href="mailto:support.smarttasbeeh@gmail.com">البريد الإلكتروني</a>
+            <a href="mailto:support.smarttasbeeh@gmail.com" id="footer-email">البريد الإلكتروني</a>
         </div>
     </footer>
 
@@ -297,53 +320,140 @@
     <script>
         AOS.init({ duration: 800, offset: 100, once: true });
 
+        // ============ Language Logic ============
+        let currentLang = 'ar';
+        
+        const translations = {
+            en: {
+                heroBadge: "100% Non-Profit",
+                downloadBtn: "Download App",
+                contactBtn: "Contact Us",
+                featTitle: "Why Smart Tasbeeh?",
+                featDesc: "We strive to provide a pure Dhikr experience, combining elegant design with ease of use.",
+                c1Title: "Pure & Simple",
+                c1Desc: "An interface completely free of complexity and ads, keeping your focus purely on Dhikr.",
+                c2Title: "Night Mode",
+                c2Desc: "Thoughtfully designed colors and OLED-friendly dark mode to reduce eye strain at night.",
+                c3Title: "Integrated Services",
+                c3Desc: "Accurate prayer times, Quran Radio, and daily Azkar all in one place.",
+                devName: "Ahmed Yahya",
+                devDesc: "Independent App Developer. This app is a solo effort and a Waif (endowment) for the sake of Allah. Happy to receive your feedback.",
+                devLoc: "United Arab Emirates 🇦🇪",
+                contactTitle: "Get in Touch",
+                contactDesc: "Have an idea? Facing an issue? Message me directly.",
+                phName: "Name (Optional)",
+                phMsg: "Write your message here...",
+                uploadText: "Click to attach image (Screenshot)",
+                sendText: "Send Message",
+                footerRights: "&copy; 2025 Smart Tasbeeh. All Rights Reserved.",
+                footerPrivacy: "Privacy Policy",
+                footerEmail: "Email Support"
+            },
+            ar: {
+                // القيم العربية موجودة بالفعل في HTML
+            }
+        };
+
+        function toggleLanguage() {
+            const htmlTag = document.documentElement;
+            const body = document.body;
+            const langText = document.getElementById('langText');
+
+            // Elements to toggle visibility
+            const arHero = document.getElementById('hero-ar');
+            const enHero = document.getElementById('hero-en');
+            const arQuote = document.getElementById('quote-ar');
+            const enQuote = document.getElementById('quote-en');
+
+            if (currentLang === 'ar') {
+                // Switch to English
+                currentLang = 'en';
+                htmlTag.setAttribute('dir', 'ltr');
+                htmlTag.setAttribute('lang', 'en');
+                body.classList.add('en-mode');
+                langText.innerText = 'العربية';
+                
+                // Visibility Toggles
+                arHero.classList.add('hidden'); enHero.classList.remove('hidden');
+                arQuote.classList.add('hidden'); enQuote.classList.remove('hidden');
+
+                // Text Updates
+                const t = translations.en;
+                document.getElementById('btn-download').innerText = t.downloadBtn;
+                document.getElementById('btn-contact').innerText = t.contactBtn;
+                document.getElementById('feat-title').innerText = t.featTitle;
+                document.getElementById('feat-desc').innerText = t.featDesc;
+                document.getElementById('c1-title').innerText = t.c1Title;
+                document.getElementById('c1-desc').innerText = t.c1Desc;
+                document.getElementById('c2-title').innerText = t.c2Title;
+                document.getElementById('c2-desc').innerText = t.c2Desc;
+                document.getElementById('c3-title').innerText = t.c3Title;
+                document.getElementById('c3-desc').innerText = t.c3Desc;
+                document.getElementById('dev-name').innerText = t.devName;
+                document.getElementById('dev-desc').innerText = t.devDesc;
+                document.getElementById('dev-loc').innerText = t.devLoc;
+                document.getElementById('contact-title').innerText = t.contactTitle;
+                document.getElementById('contact-desc').innerText = t.contactDesc;
+                document.getElementById('name').placeholder = t.phName;
+                document.getElementById('message').placeholder = t.phMsg;
+                document.getElementById('upload-text').innerText = t.uploadText;
+                document.getElementById('send-text').innerText = t.sendText;
+                document.getElementById('footer-rights').innerHTML = t.footerRights;
+                document.getElementById('footer-privacy').innerText = t.footerPrivacy;
+                document.getElementById('footer-email').innerText = t.footerEmail;
+
+            } else {
+                // Switch back to Arabic (Reload helps reset clean, but let's do it manually)
+                location.reload(); 
+            }
+        }
+
+        // ============ Telegram Logic ============
         function updateFileList() {
             const input = document.getElementById('imageInput');
             const output = document.getElementById('fileList');
-            if (input.files.length > 0) output.innerText = `تم اختيار ${input.files.length} صورة`;
-            else output.innerText = '';
+            if (input.files.length > 0) {
+                output.innerText = currentLang === 'ar' ? `تم اختيار ${input.files.length} صورة` : `${input.files.length} images selected`;
+            } else output.innerText = '';
         }
 
         async function sendToTelegram(e) {
             e.preventDefault();
             const botToken = "8330133673:AAGY1q4u-l4lKDStkxf4lrxYHPAAqnnPhMo";
             const chatId = "1490007964";
-            const name = document.getElementById('name').value || "فاعل خير";
+            const name = document.getElementById('name').value || "User";
             const message = document.getElementById('message').value;
             const imageInput = document.getElementById('imageInput');
             const btn = document.getElementById('submitBtn');
             const status = document.getElementById('statusMessage');
 
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
             btn.style.opacity = "0.7"; btn.disabled = true; status.style.display = 'none';
 
             try {
-                const text = `📩 *رسالة جديدة:*\n👤 *الاسم:* ${name}\n📝 *الرسالة:* ${message}`;
+                const text = `📩 *New Message (${currentLang.toUpperCase()}):*\n👤 *Name:* ${name}\n📝 *Msg:* ${message}`;
                 const textUrl = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}&parse_mode=Markdown`;
                 let response = await fetch(textUrl);
-                if (!response.ok) throw new Error('فشل');
+                if (!response.ok) throw new Error('Failed');
 
                 if (imageInput.files.length > 0) {
-                    btn.innerHTML = 'جاري رفع الصور...';
                     for (let i = 0; i < imageInput.files.length; i++) {
                         const formData = new FormData();
                         formData.append('chat_id', chatId);
                         formData.append('photo', imageInput.files[i]);
-                        if (i === 0) formData.append('caption', `مرفق من: ${name}`);
+                        if (i === 0) formData.append('caption', `Attached by: ${name}`);
                         await fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, { method: 'POST', body: formData });
                     }
                 }
 
                 status.style.display = 'block'; status.style.color = 'var(--primary-dark)';
-                status.innerText = "✅ تم الإرسال بنجاح، شكراً لك!";
+                status.innerText = currentLang === 'ar' ? "✅ تم الإرسال بنجاح!" : "✅ Sent successfully!";
                 document.getElementById('telegramForm').reset();
                 document.getElementById('fileList').innerText = '';
             } catch (error) {
                 status.style.display = 'block'; status.style.color = '#dc2626';
-                status.innerText = "❌ حدث خطأ، تأكد من الإنترنت.";
+                status.innerText = currentLang === 'ar' ? "❌ حدث خطأ." : "❌ Error occurred.";
             } finally {
                 setTimeout(() => { 
-                    btn.innerHTML = 'إرسال الرسالة <i class="fas fa-paper-plane"></i>';
                     btn.style.opacity = "1"; btn.disabled = false;
                     if(status.style.color !== '#dc2626') status.style.display = 'none'; 
                 }, 4000);
