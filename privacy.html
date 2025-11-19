@@ -3,130 +3,346 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الخصوصية | السبحة الذكية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+    <title>Privacy Policy | سياسة الخصوصية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary: #0d9488; /* نفس لون الصفحة الرئيسية */
-            --secondary: #1e293b;
+            --primary: #0d9488; /* زمردي */
+            --secondary: #1e293b; /* كحلي */
             --text: #475569;
             --bg: #f8fafc;
             --white: #ffffff;
         }
 
+        * { box-sizing: border-box; transition: all 0.3s ease; }
+
         body { 
             font-family: 'Tajawal', sans-serif; 
             line-height: 1.8; 
-            padding: 40px 20px; 
             background-color: var(--bg);
             color: var(--text);
             margin: 0;
+            padding: 20px;
         }
 
+        /* حاوية المحتوى */
         .container { 
             max-width: 900px; 
-            margin: 0 auto; 
+            margin: 40px auto; 
             background: var(--white); 
             padding: 50px; 
             border-radius: 25px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
             border: 1px solid #e2e8f0;
+            position: relative;
         }
 
+        /* زر تبديل اللغة */
+        .lang-switch {
+            position: absolute;
+            top: 30px;
+            left: 30px; /* سيتم عكسه في الإنجليزية */
+            background: #f1f5f9;
+            padding: 8px 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--primary);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .lang-switch:hover { background: var(--primary); color: white; }
+        html[dir="ltr"] .lang-switch { left: auto; right: 30px; }
+
+        /* العناوين */
         h1 { 
             color: var(--primary); 
             border-bottom: 2px solid #f1f5f9; 
             padding-bottom: 20px; 
             margin-bottom: 30px;
             font-weight: 800;
+            margin-top: 0;
         }
 
         h2 { 
             color: var(--secondary); 
             margin-top: 40px; 
-            font-size: 1.4rem; 
+            font-size: 1.3rem; 
             font-weight: 700;
             display: flex;
             align-items: center;
         }
 
+        /* نقطة بجانب العنوان */
         h2::before {
-            content: '';
-            display: inline-block;
+            content: ''; display: inline-block;
             width: 8px; height: 8px;
             background-color: var(--primary);
             border-radius: 50%;
             margin-left: 10px;
         }
+        html[dir="ltr"] h2::before { margin-left: 0; margin-right: 10px; }
 
-        p, li { 
-            font-size: 1.1rem; 
-            margin-bottom: 15px;
-        }
+        p, li { font-size: 1.05rem; margin-bottom: 15px; text-align: justify; }
+        ul { padding-inline-start: 20px; }
 
-        ul { padding-right: 20px; }
-
-        a { 
-            color: var(--primary); 
-            text-decoration: none; 
-            font-weight: bold; 
-            border-bottom: 1px dashed var(--primary);
-        }
-        a:hover { color: var(--secondary); border-bottom-style: solid; }
-
+        /* الصندوق المميز */
         .highlight {
             background-color: #f0fdfa;
-            padding: 15px;
-            border-radius: 10px;
-            border-right: 4px solid var(--primary);
-            margin: 20px 0;
+            padding: 20px;
+            border-radius: 12px;
+            border-inline-start: 4px solid var(--primary);
+            margin: 25px 0;
+            color: var(--secondary);
         }
 
+        /* نموذج التواصل */
+        .contact-box {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            margin-top: 30px;
+        }
+
+        input, textarea {
+            width: 100%; padding: 15px 20px;
+            border: 1px solid #cbd5e1; border-radius: 12px;
+            background: #fff; font-family: inherit; font-size: 1rem;
+            margin-bottom: 15px; outline: none;
+        }
+        input:focus, textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+        }
+
+        .upload-area {
+            border: 2px dashed #94a3b8; padding: 15px; border-radius: 12px;
+            background: #fff; cursor: pointer; margin-bottom: 20px;
+            text-align: center; display: block; color: var(--text);
+        }
+        .upload-area:hover { border-color: var(--primary); background: #f0fdfa; color: var(--primary); }
+
+        .btn-submit {
+            background: var(--primary); color: white; width: 100%; border: none;
+            padding: 15px; border-radius: 50px; font-weight: bold; font-size: 1.1rem; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+        .btn-submit:hover { background: #0f766e; transform: translateY(-2px); }
+        .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+
+        /* إخفاء القسم غير النشط */
+        .hidden { display: none; }
+
+        /* تنسيق الإنجليزية */
+        body.en-mode { font-family: 'Inter', sans-serif; }
+
         @media (max-width: 768px) {
-            .container { padding: 30px 20px; }
-            h1 { font-size: 1.8rem; }
+            .container { padding: 30px 20px; margin: 20px auto; }
+            h1 { font-size: 1.8rem; margin-top: 40px; }
+            .lang-switch { top: 20px; left: 20px; padding: 5px 12px; font-size: 0.8rem; }
+            html[dir="ltr"] .lang-switch { right: 20px; left: auto; }
         }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>سياسة الخصوصية</h1>
-        <p><strong>تاريخ التحديث:</strong> 19 نوفمبر 2025</p>
-
-        <p>مرحباً بك في تطبيق <strong>السبحة الذكية</strong>. نحن نؤمن بأن الخصوصية حق أساسي، خاصة في التطبيقات الإسلامية التي يرجو بها المسلم وجه الله.</p>
-
-        <div class="highlight">
-            <strong>ملخص سريع:</strong> نحن لا نجمع، لا نبيع، ولا نشارك بياناتك الشخصية. التطبيق مصمم ليعمل بشكل محلي تماماً على جهازك.
+        <div class="lang-switch" onclick="toggleLanguage()">
+            <i class="fas fa-globe"></i> <span id="langBtnText">English</span>
         </div>
 
-        <h2>1. البيانات التي نجمعها</h2>
-        <p>نحن <strong>لا نقوم</strong> بجمع أي بيانات شخصية حساسة (مثل الاسم، رقم الهاتف، الموقع الجغرافي الدقيق) ولا نقوم برفع أي بيانات إلى خوادم خارجية لتخزينها.</p>
-        <ul>
-            <li><strong>بيانات الذكر والإعدادات:</strong> أرقام التسبيحات وتفضيلاتك (مثل الوضع الليلي والألوان) يتم حفظها <strong>محلياً فقط</strong> داخل ذاكرة هاتفك لغرض حفظ تقدمك.</li>
-        </ul>
+        <div id="arabicContent">
+            <h1>سياسة الخصوصية</h1>
+            <p><strong>آخر تحديث:</strong> 19 نوفمبر 2025</p>
 
-        <h2>2. التواصل والمقترحات</h2>
-        <p>عندما تستخدم نموذج <strong>"تواصل معنا"</strong> الموجود في موقعنا الإلكتروني:</p>
-        <ul>
-            <li>يتم إرسال البيانات التي تدخلها (الاسم، نص الرسالة، والصور المرفقة إن وجدت) مباشرة إلى المطور عبر نظام آمن (Telegram API).</li>
-            <li>الغرض الوحيد من هذه البيانات هو قراءة مقترحاتكم، حل المشاكل التقنية، والرد على استفساراتكم.</li>
-            <li>لا يتم مشاركة محتوى هذه الرسائل مع أي طرف ثالث.</li>
-        </ul>
+            <p>أهلاً بك في تطبيق <strong>السبحة الذكية</strong>. انطلاقاً من قيمنا والتزامنا بالشفافية، نضع بين يديك سياسة الخصوصية هذه لنوضح لك كيف نحترم بياناتك ونحافظ عليها. تم تطوير هذا التطبيق كعمل وقفي (غير ربحي) لخدمة المسلمين، والخصوصية هي جوهر تصميمنا.</p>
 
-        <h2>3. الأذونات المطلوبة (Permissions)</h2>
-        <p>لضمان عمل التطبيق بكفاءة، قد نطلب الأذونات التالية:</p>
-        <ul>
-            <li><strong>الوصول للإنترنت:</strong> مطلوب فقط لتشغيل "إذاعة القرآن الكريم" وتحديث مواقيت الصلاة.</li>
-            <li><strong>التنبيهات (Notifications):</strong> لتذكيرك بأوقات الصلاة والأذكار (اختياري).</li>
-        </ul>
+            <div class="highlight">
+                <strong>تعهد المطور:</strong> نحن لا نجمع، لا نبيع، ولا نشارك أي بيانات شخصية. التطبيق مصمم ليعمل بشكل "محلي" (Offline-first) للحفاظ على خصوصيتك الكاملة.
+            </div>
 
-        <h2>4. الإعلانات</h2>
-        <p>التطبيق <strong>خالٍ تماماً من الإعلانات</strong> (Ad-free). نحن لا نستخدم أي برمجيات تتبع لأغراض تجارية.</p>
+            <h2>1. البيانات التي لا نجمعها</h2>
+            <p>نود التأكيد بشكل قاطع أننا <strong>لا نقوم</strong> بجمع أو تخزين أي مما يلي:</p>
+            <ul>
+                <li>البيانات الشخصية (الاسم، البريد الإلكتروني، رقم الهاتف).</li>
+                <li>بيانات الموقع الجغرافي الدقيق (GPS).</li>
+                <li>معرفات الجهاز أو عنوان IP.</li>
+            </ul>
 
-        <h2>5. اتصل بنا</h2>
-        <p>إذا كان لديك أي استفسار، نسعد بتواصلك معنا عبر النموذج في الصفحة الرئيسية أو عبر البريد الإلكتروني:</p>
-        <p>📧 <a href="mailto:support.smarttasbeeh@gmail.com">support.smarttasbeeh@gmail.com</a></p>
+            <h2>2. التخزين المحلي (Local Storage)</h2>
+            <p>لتقديم تجربة استخدام مخصصة، يقوم التطبيق بحفظ بعض البيانات <strong>داخل هاتفك فقط</strong>، ولا يمكننا الوصول إليها:</p>
+            <ul>
+                <li><strong>سجلات الذكر:</strong> عدد التسبيحات والأوراد لحفظ تقدمك اليومي.</li>
+                <li><strong>تفضيلات المستخدم:</strong> مثل اختيارك للوضع الليلي، ألوان التطبيق، وحجم الخط.</li>
+            </ul>
+
+            <h2>3. الأذونات المطلوبة (Permissions)</h2>
+            <p>يطلب التطبيق الحد الأدنى من الصلاحيات لضمان عمل الميزات الأساسية فقط:</p>
+            <ul>
+                <li><strong>الوصول للإنترنت (Internet Access):</strong> يُستخدم حصرياً لجلب مواقيت الصلاة الدقيقة وتشغيل محطات "راديو القرآن الكريم".</li>
+                <li><strong>التنبيهات (Notifications):</strong> إذن اختياري لتذكيرك بأوقات الصلاة والأذكار.</li>
+            </ul>
+
+            <h2>4. تواصل معنا (Contact Us)</h2>
+            <p>نحن نؤمن بمبدأ "التحسين المستمر". إذا كان لديك اقتراح، شكوى، أو استفسار، يمكنك استخدام النموذج أدناه للتواصل المباشر مع المطور.</p>
+            <p style="font-size: 0.9rem; color: #64748b;">* ملاحظة: البيانات المرسلة عبر النموذج (الاسم والرسالة) تصلنا عبر نظام آمن لغرض الدعم الفني فقط.</p>
+        </div>
+
+        <div id="englishContent" class="hidden">
+            <h1>Privacy Policy</h1>
+            <p><strong>Last Updated:</strong> November 19, 2025</p>
+
+            <p>Welcome to <strong>Smart Tasbeeh</strong>. Guided by our commitment to transparency and ethical development, we provide this Privacy Policy to explain how we respect and protect your information. This app is developed as a non-profit initiative, and user privacy is at the core of our design.</p>
+
+            <div class="highlight">
+                <strong>Our Pledge:</strong> We do not collect, sell, or share any personal data. The app is designed to function "locally" on your device to ensure complete privacy.
+            </div>
+
+            <h2>1. Data We Do Not Collect</h2>
+            <p>We strictly want to clarify that we <strong>DO NOT</strong> collect or store any of the following:</p>
+            <ul>
+                <li>Personal Information (Name, Email, Phone Number).</li>
+                <li>Precise Location Data (GPS).</li>
+                <li>Device IDs or IP Addresses.</li>
+            </ul>
+
+            <h2>2. Local Storage</h2>
+            <p>To provide a personalized experience, the app saves strictly necessary data <strong>locally on your device only</strong>. We have no access to this data:</p>
+            <ul>
+                <li><strong>Tasbeeh Records:</strong> Counters and progress logs to track your daily Dhikr.</li>
+                <li><strong>User Preferences:</strong> Settings like Dark Mode, themes, and font sizes.</li>
+            </ul>
+
+            <h2>3. Permissions Explained</h2>
+            <p>The app requests minimal permissions solely to enable core features:</p>
+            <ul>
+                <li><strong>Internet Access:</strong> Used exclusively to fetch accurate Prayer Times and stream "Quran Radio".</li>
+                <li><strong>Notifications:</strong> Optional permission to remind you of prayer times and Dhikr.</li>
+            </ul>
+
+            <h2>4. Contact Us</h2>
+            <p>We believe in continuous improvement. If you have any suggestions, issues, or inquiries, please use the form below to contact the developer directly.</p>
+            <p style="font-size: 0.9rem; color: #64748b;">* Note: Data sent via this form (Name & Message) is transmitted securely for support purposes only.</p>
+        </div>
+
+        <div class="contact-box">
+            <h3 id="formTitle" style="margin-top: 0; color: var(--secondary);">تواصل مع المطور / Contact Developer</h3>
+            
+            <form id="telegramForm" onsubmit="sendToTelegram(event)">
+                <input type="text" id="name" placeholder="الاسم (اختياري) / Name (Optional)">
+                <textarea id="message" placeholder="اكتب رسالتك هنا... / Write your message here..." required style="height: 120px; resize: none;"></textarea>
+
+                <label for="imageInput" class="upload-area">
+                    <i class="fas fa-camera"></i> 
+                    <span id="uploadText">إرفاق صورة (اختياري) / Attach Image (Optional)</span>
+                    <div id="fileList" style="font-size: 0.85rem; color: var(--primary); margin-top: 5px;"></div>
+                </label>
+                <input type="file" id="imageInput" accept="image/*" multiple style="display: none;" onchange="updateFileList()">
+
+                <button type="submit" id="submitBtn" class="btn-submit">
+                    <span id="btnText">إرسال الآن</span> <i class="fas fa-paper-plane"></i>
+                </button>
+                <p id="statusMessage" style="margin-top: 15px; display: none; font-weight: bold; text-align: center;"></p>
+            </form>
+        </div>
     </div>
+
+    <script>
+        let currentLang = 'ar';
+
+        function toggleLanguage() {
+            const arabicContent = document.getElementById('arabicContent');
+            const englishContent = document.getElementById('englishContent');
+            const langBtnText = document.getElementById('langBtnText');
+            const htmlTag = document.documentElement;
+            const body = document.body;
+            const btnText = document.getElementById('btnText');
+
+            if (currentLang === 'ar') {
+                // Switch to English
+                arabicContent.classList.add('hidden');
+                englishContent.classList.remove('hidden');
+                htmlTag.setAttribute('dir', 'ltr');
+                htmlTag.setAttribute('lang', 'en');
+                langBtnText.innerText = 'العربية';
+                body.classList.add('en-mode');
+                btnText.innerText = 'Send Now';
+                currentLang = 'en';
+            } else {
+                // Switch to Arabic
+                englishContent.classList.add('hidden');
+                arabicContent.classList.remove('hidden');
+                htmlTag.setAttribute('dir', 'rtl');
+                htmlTag.setAttribute('lang', 'ar');
+                langBtnText.innerText = 'English';
+                body.classList.remove('en-mode');
+                btnText.innerText = 'إرسال الآن';
+                currentLang = 'ar';
+            }
+        }
+
+        // --- نفس كود الإرسال لتلجرام ---
+        function updateFileList() {
+            const input = document.getElementById('imageInput');
+            const output = document.getElementById('fileList');
+            if (input.files.length > 0) {
+                const countText = currentLang === 'ar' ? `تم اختيار ${input.files.length} صورة` : `${input.files.length} images selected`;
+                output.innerText = countText;
+            } else output.innerText = '';
+        }
+
+        async function sendToTelegram(e) {
+            e.preventDefault();
+            const botToken = "8330133673:AAGY1q4u-l4lKDStkxf4lrxYHPAAqnnPhMo";
+            const chatId = "1490007964";
+            const name = document.getElementById('name').value || "Privacy Page Visitor";
+            const message = document.getElementById('message').value;
+            const imageInput = document.getElementById('imageInput');
+            const btn = document.getElementById('submitBtn');
+            const status = document.getElementById('statusMessage');
+
+            btn.disabled = true; 
+            btn.style.opacity = "0.7";
+
+            try {
+                const text = `📩 *From Privacy Page:*\n\n👤 *Name:* ${name}\n📝 *Msg:* ${message}`;
+                const textUrl = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}&parse_mode=Markdown`;
+                
+                let response = await fetch(textUrl);
+                if (!response.ok) throw new Error('Failed');
+
+                if (imageInput.files.length > 0) {
+                    for (let i = 0; i < imageInput.files.length; i++) {
+                        const formData = new FormData();
+                        formData.append('chat_id', chatId);
+                        formData.append('photo', imageInput.files[i]);
+                        if (i === 0) formData.append('caption', `Attached by: ${name}`);
+                        await fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, { method: 'POST', body: formData });
+                    }
+                }
+
+                status.style.display = 'block'; 
+                status.style.color = '#059669';
+                status.innerText = currentLang === 'ar' ? "✅ تم الإرسال بنجاح." : "✅ Sent successfully.";
+                document.getElementById('telegramForm').reset();
+                document.getElementById('fileList').innerText = '';
+            } catch (error) {
+                status.style.display = 'block'; 
+                status.style.color = '#dc2626';
+                status.innerText = currentLang === 'ar' ? "❌ خطأ في الاتصال." : "❌ Connection Error.";
+            } finally {
+                setTimeout(() => { 
+                    btn.disabled = false; 
+                    btn.style.opacity = "1";
+                    status.style.display = 'none'; 
+                }, 4000);
+            }
+        }
+    </script>
 </body>
 </html>
