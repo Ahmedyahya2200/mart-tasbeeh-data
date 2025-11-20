@@ -43,7 +43,7 @@
         .lang-switch {
             position: absolute;
             top: 30px;
-            left: 30px; /* سيتم عكسه في الإنجليزية */
+            left: 30px;
             background: #f1f5f9;
             padding: 8px 16px;
             border-radius: 50px;
@@ -77,7 +77,6 @@
             align-items: center;
         }
 
-        /* نقطة بجانب العنوان */
         h2::before {
             content: ''; display: inline-block;
             width: 8px; height: 8px;
@@ -135,10 +134,7 @@
         .btn-submit:hover { background: #0f766e; transform: translateY(-2px); }
         .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
 
-        /* إخفاء القسم غير النشط */
         .hidden { display: none; }
-
-        /* تنسيق الإنجليزية */
         body.en-mode { font-family: 'Inter', sans-serif; }
 
         @media (max-width: 768px) {
@@ -190,14 +186,14 @@
 
             <h2>4. تواصل معنا (Contact Us)</h2>
             <p>نحن نؤمن بمبدأ "التحسين المستمر". إذا كان لديك اقتراح، شكوى، أو استفسار، يمكنك استخدام النموذج أدناه للتواصل المباشر مع المطور.</p>
-            <p style="font-size: 0.9rem; color: #64748b;">* ملاحظة: البيانات المرسلة عبر النموذج (الاسم والرسالة) تصلنا عبر نظام آمن لغرض الدعم الفني فقط.</p>
+            <p style="font-size: 0.9rem; color: #64748b;">* ملاحظة: البيانات المرسلة عبر النموذج (الاسم والرسالة) تصلنا عبر نظام آمن ومشفر لغرض الدعم الفني فقط.</p>
         </div>
 
         <div id="englishContent" class="hidden">
             <h1>Privacy Policy</h1>
             <p><strong>Last Updated:</strong> November 19, 2025</p>
 
-            <p>Welcome to <strong>Smart Tasbeeh</strong>. Guided by our commitment to transparency and ethical development, we provide this Privacy Policy to explain how we respect and protect your information. This app is developed as a non-profit initiative, and user privacy is at the core of our design.</p>
+            <p>Welcome to <strong>Smart Tasbeeh</strong>. Guided by our commitment to transparency, we provide this Privacy Policy to explain how we respect and protect your information. This app is developed as a non-profit initiative, and user privacy is at the core of our design.</p>
 
             <div class="highlight">
                 <strong>Our Pledge:</strong> We do not collect, sell, or share any personal data. The app is designed to function "locally" on your device to ensure complete privacy.
@@ -212,22 +208,22 @@
             </ul>
 
             <h2>2. Local Storage</h2>
-            <p>To provide a personalized experience, the app saves strictly necessary data <strong>locally on your device only</strong>. We have no access to this data:</p>
+            <p>To provide a personalized experience, the app saves strictly necessary data <strong>locally on your device only</strong>:</p>
             <ul>
-                <li><strong>Tasbeeh Records:</strong> Counters and progress logs to track your daily Dhikr.</li>
-                <li><strong>User Preferences:</strong> Settings like Dark Mode, themes, and font sizes.</li>
+                <li><strong>Tasbeeh Records:</strong> Counters and progress logs.</li>
+                <li><strong>User Preferences:</strong> Settings like Dark Mode and themes.</li>
             </ul>
 
             <h2>3. Permissions Explained</h2>
             <p>The app requests minimal permissions solely to enable core features:</p>
             <ul>
-                <li><strong>Internet Access:</strong> Used exclusively to fetch accurate Prayer Times and stream "Quran Radio".</li>
-                <li><strong>Notifications:</strong> Optional permission to remind you of prayer times and Dhikr.</li>
+                <li><strong>Internet Access:</strong> Used exclusively to fetch Prayer Times and stream "Quran Radio".</li>
+                <li><strong>Notifications:</strong> Optional permission for reminders.</li>
             </ul>
 
             <h2>4. Contact Us</h2>
-            <p>We believe in continuous improvement. If you have any suggestions, issues, or inquiries, please use the form below to contact the developer directly.</p>
-            <p style="font-size: 0.9rem; color: #64748b;">* Note: Data sent via this form (Name & Message) is transmitted securely for support purposes only.</p>
+            <p>We believe in continuous improvement. If you have any suggestions or issues, please use the form below to contact the developer directly.</p>
+            <p style="font-size: 0.9rem; color: #64748b;">* Note: Data sent via this form is transmitted securely for support purposes only.</p>
         </div>
 
         <div class="contact-box">
@@ -286,21 +282,27 @@
             }
         }
 
-        // --- نفس كود الإرسال لتلجرام ---
         function updateFileList() {
             const input = document.getElementById('imageInput');
             const output = document.getElementById('fileList');
             if (input.files.length > 0) {
-                const countText = currentLang === 'ar' ? `تم اختيار ${input.files.length} صورة` : `${input.files.length} images selected`;
+                const countText = currentLang === 'ar' ? `تم اختيار صورة واحدة` : `Image selected`;
                 output.innerText = countText;
             } else output.innerText = '';
         }
 
+        // دالة تحويل الصورة لنص مشفر للإرسال الآمن
+        const toBase64 = file => new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = error => reject(error);
+        });
+
         async function sendToTelegram(e) {
             e.preventDefault();
-            const botToken = "8330133673:AAGY1q4u-l4lKDStkxf4lrxYHPAAqnnPhMo";
-            const chatId = "1490007964";
-            const name = document.getElementById('name').value || "Privacy Page Visitor";
+            
+            const name = document.getElementById('name').value || (currentLang === 'ar' ? "زائر السياسة" : "Privacy Visitor");
             const message = document.getElementById('message').value;
             const imageInput = document.getElementById('imageInput');
             const btn = document.getElementById('submitBtn');
@@ -308,23 +310,27 @@
 
             btn.disabled = true; 
             btn.style.opacity = "0.7";
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ...';
+            status.style.display = 'none';
 
             try {
-                const text = `📩 *From Privacy Page:*\n\n👤 *Name:* ${name}\n📝 *Msg:* ${message}`;
-                const textUrl = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}&parse_mode=Markdown`;
-                
-                let response = await fetch(textUrl);
-                if (!response.ok) throw new Error('Failed');
-
+                let photoBase64 = null;
                 if (imageInput.files.length > 0) {
-                    for (let i = 0; i < imageInput.files.length; i++) {
-                        const formData = new FormData();
-                        formData.append('chat_id', chatId);
-                        formData.append('photo', imageInput.files[i]);
-                        if (i === 0) formData.append('caption', `Attached by: ${name}`);
-                        await fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, { method: 'POST', body: formData });
-                    }
+                    photoBase64 = await toBase64(imageInput.files[0]);
                 }
+
+                // الإرسال للسيرفر الآمن (Vercel API)
+                const response = await fetch('/api/send', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: name,
+                        message: message,
+                        photo: photoBase64
+                    })
+                });
+
+                if (!response.ok) throw new Error('Failed');
 
                 status.style.display = 'block'; 
                 status.style.color = '#059669';
@@ -332,6 +338,7 @@
                 document.getElementById('telegramForm').reset();
                 document.getElementById('fileList').innerText = '';
             } catch (error) {
+                console.error(error);
                 status.style.display = 'block'; 
                 status.style.color = '#dc2626';
                 status.innerText = currentLang === 'ar' ? "❌ خطأ في الاتصال." : "❌ Connection Error.";
@@ -339,7 +346,10 @@
                 setTimeout(() => { 
                     btn.disabled = false; 
                     btn.style.opacity = "1";
-                    status.style.display = 'none'; 
+                    btn.innerHTML = currentLang === 'ar' ? 'إرسال الآن <i class="fas fa-paper-plane"></i>' : 'Send Now <i class="fas fa-paper-plane"></i>';
+                    if(status.style.color === 'rgb(5, 150, 105)' || status.style.color === '#059669') {
+                        status.style.display = 'none'; 
+                    }
                 }, 4000);
             }
         }
