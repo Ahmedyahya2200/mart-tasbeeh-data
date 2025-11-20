@@ -33,7 +33,6 @@
         }
         body.en-mode { font-family: 'Inter', sans-serif; }
 
-        /* زر اللغة */
         .lang-btn {
             position: absolute; top: 30px; left: 30px; z-index: 1000;
             background: rgba(255,255,255,0.2); backdrop-filter: blur(10px);
@@ -53,7 +52,7 @@
             position: relative;
             overflow: visible;
             height: auto;
-            padding-bottom: 50px; 
+            padding-bottom: 60px; 
         }
 
         .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; margin-bottom: 40px; }
@@ -77,38 +76,37 @@
         .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); }
         .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
 
-        /* --- Slider Section (التصميم المسطح والمتقارب) --- */
+        /* --- Slider Section (2-1-2 Configuration) --- */
         .slider-section {
             position: relative;
             width: 100%;
-            /* تدرج لوني يربط الهيدر بباقي الصفحة */
-            background: linear-gradient(180deg, #0d9488 0%, #0d9488 20%, #f8fafc 100%);
-            padding-bottom: 80px;
+            background: linear-gradient(180deg, #0d9488 0%, #0d9488 15%, #f8fafc 100%);
+            padding-bottom: 100px;
             margin-top: -2px;
             overflow: hidden;
-            padding-top: 0;
         }
 
         .swiper {
             width: 100%;
             padding-top: 40px;
             padding-bottom: 60px;
-            overflow: visible;
+            overflow: visible; /* يسمح بظهور الـ 5 هواتف */
         }
 
         .swiper-slide {
             background-position: center;
             background-size: cover;
-            width: 280px;
-            height: 580px;
+            /* عرض أصغر قليلاً للسماح بظهور 5 هواتف في الصف */
+            width: 240px; 
+            height: 500px;
             background-color: #000;
-            border-radius: 45px;
-            border: 8px solid #1f2937;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border-radius: 40px;
+            border: 6px solid #1f2937;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
             overflow: hidden;
             transition: transform 0.5s ease; 
-            /* تقليل شفافية الجوانب قليلاً للتركيز على المنتصف */
-            opacity: 0.8; 
+            /* شفافية بسيطة للهواتف الجانبية */
+            opacity: 0.6;
         }
 
         .swiper-slide img {
@@ -116,16 +114,22 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 35px;
+            border-radius: 34px;
         }
         
         /* الهاتف النشط (الوسط) */
         .swiper-slide-active {
-            opacity: 1;
-            border-color: #444;
-            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.7);
+            opacity: 1; /* وضوح تام */
+            border-color: #4b5563;
+            box-shadow: 0 40px 80px -10px rgba(0, 0, 0, 0.7); /* ظل قوي */
             z-index: 50;
-            transform: scale(1.05); /* تكبير بسيط جداً للمنتصف */
+            transform: scale(1.1) !important; /* تكبير إضافي للمنتصف */
+        }
+        
+        /* الشريحة المجاورة (اليمين واليسار رقم 1) */
+        .swiper-slide-prev, .swiper-slide-next {
+            opacity: 0.85;
+            z-index: 40;
         }
 
         /* Quote Section */
@@ -178,11 +182,12 @@
 
         footer { background: var(--secondary); color: #94a3b8; padding: 50px 20px; text-align: center; font-size: 0.95rem; }
         footer a { color: var(--white); text-decoration: none; margin: 0 10px; }
+
         .hidden { display: none !important; }
         
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
-            .swiper-slide { width: 220px; height: 450px; }
+            .swiper-slide { width: 200px; height: 420px; }
             .quote-section { padding-top: 100px; }
         }
     </style>
@@ -220,31 +225,24 @@
     <section class="slider-section" data-aos="fade-up" data-aos-delay="300">
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                
-                <div class="swiper-slide">
-                    <img src="https://i.postimg.cc/C14c1y7q/Screenshot_20251119_204322.png" alt="Settings">
-                </div>
                 <div class="swiper-slide">
                     <img src="https://i.postimg.cc/1XnVdw8S/Screenshot_20251119_204415.png" alt="Prayer">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://i.postimg.cc/26N0SnJT/app-screen.jpg" alt="Main">
                 </div>
                 <div class="swiper-slide">
                     <img src="https://i.postimg.cc/ryCBd3sn/Screenshot_20251119_204224.png" alt="Counter">
                 </div>
                 <div class="swiper-slide">
+                    <img src="https://i.postimg.cc/26N0SnJT/app-screen.jpg" alt="Main">
+                </div>
+                <div class="swiper-slide">
                     <img src="https://i.postimg.cc/hv1Rc3QB/Screenshot_20251119_203958.png" alt="Dark Mode">
                 </div>
-
                 <div class="swiper-slide">
                     <img src="https://i.postimg.cc/C14c1y7q/Screenshot_20251119_204322.png" alt="Settings">
                 </div>
+
                 <div class="swiper-slide">
                     <img src="https://i.postimg.cc/1XnVdw8S/Screenshot_20251119_204415.png" alt="Prayer">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://i.postimg.cc/26N0SnJT/app-screen.jpg" alt="Main">
                 </div>
             </div>
         </div>
@@ -352,7 +350,7 @@
     <script>
         AOS.init({ duration: 1000, offset: 100, once: true });
 
-        // === إعدادات السلايدر (المطابقة للتصميم المسطح المتقارب) ===
+        // === إعدادات السلايدر (2-1-2 المحكم) ===
         var swiper = new Swiper(".mySwiper", {
             effect: "coverflow",
             grabCursor: true,
@@ -360,11 +358,11 @@
             slidesPerView: "auto",
             speed: 800,
             coverflowEffect: {
-                rotate: 0,      // لا دوران نهائياً (مسطح)
-                stretch: 0,     // إلغاء التباعد (متلاصق)
-                depth: 100,     // عمق متوسط (100 بدلاً من 500 لتقريب الخلفية)
-                modifier: 2.5,  // تعزيز التأثير
-                scale: 0.8,     // تكبير الجوانب لتصبح واضحة (0.8 بدلاً من 0.6)
+                rotate: 0,       // مسطح تماماً (مثل الصورة)
+                stretch: 0,      // صفر لضمان التراص
+                depth: 100,      // عمق متوسط لكي لا تظهر الجوانب بعيدة جداً
+                modifier: 2.5,   // تعزيز التأثير
+                scale: 0.7,      // تصغير الجوانب بنسبة 30% لتركيز النظر على المنتصف
                 slideShadows: true,
             },
             autoplay: {
@@ -373,7 +371,7 @@
                 pauseOnMouseEnter: true,
             },
             loop: true,
-            initialSlide: 2
+            initialSlide: 2 // البدء من الصورة الوسطى (رقم 3)
         });
 
         // ============ Translations ============
@@ -494,12 +492,12 @@
             document.getElementById('stat-free').innerText = t.statFree;
         }
 
-        // === كود الإرسال الآمن (Backend Vercel) ===
+        // === كود الإرسال الآمن (Vercel) ===
         function updateFileList() {
             const input = document.getElementById('imageInput');
             const output = document.getElementById('fileList');
             if (input.files.length > 0) {
-                output.innerText = currentLang === 'ar' ? `تم اختيار صورة واحدة` : `Image selected`;
+                output.innerText = currentLang === 'ar' ? `تم اختيار ${input.files.length} صورة` : `${input.files.length} images selected`;
             } else output.innerText = '';
         }
 
@@ -529,7 +527,6 @@
                     photoBase64 = await toBase64(imageInput.files[0]);
                 }
 
-                // الإرسال للسيرفر الآمن
                 const response = await fetch('/api/send', {
                     method: 'POST',
                     headers: {
@@ -545,7 +542,7 @@
                 if (!response.ok) throw new Error('Server Error');
 
                 status.style.display = 'block'; 
-                status.style.color = '#0d9488'; // لون النجاح
+                status.style.color = '#0d9488'; 
                 status.innerText = currentLang === 'ar' ? "✅ تم الإرسال بنجاح! شكراً لتواصلك." : "✅ Sent successfully!";
                 document.getElementById('telegramForm').reset();
                 document.getElementById('fileList').innerText = '';
@@ -553,7 +550,7 @@
             } catch (error) {
                 console.error(error);
                 status.style.display = 'block'; 
-                status.style.color = '#dc2626'; // لون الخطأ
+                status.style.color = '#dc2626';
                 status.innerText = currentLang === 'ar' ? "❌ حدث خطأ، يرجى المحاولة لاحقاً." : "❌ Error sending message.";
             } finally {
                 setTimeout(() => { 
