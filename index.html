@@ -94,13 +94,11 @@
             overflow: visible;
             max-width: 1500px;
             margin: 0 auto;
-            perspective: 1000px;
         }
 
         .swiper-wrapper {
             display: flex;
             align-items: center;
-            justify-content: center;
         }
 
         .swiper-slide {
@@ -111,12 +109,12 @@
             border: 6px solid #1f2937;
             box-shadow: 0 15px 35px rgba(0,0,0,0.3);
             overflow: hidden;
-            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-            opacity: 0.4;
+            transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+            opacity: 0.5;
             display: flex;
             align-items: center;
             justify-content: center;
-            transform: scale(0.75) translateZ(0);
+            transform: scale(0.8);
         }
 
         .swiper-slide img {
@@ -133,33 +131,33 @@
             border-color: #0d9488;
             box-shadow: 0 30px 80px -10px rgba(13, 148, 136, 0.5);
             z-index: 50;
-            transform: scale(1.1) translateZ(0);
+            transform: scale(1.1);
             position: relative;
         }
         
         /* الهواتف المجاورة - اليسار */
         .swiper-slide-next {
             opacity: 0.6;
-            transform: scale(0.85) translateZ(0) translateX(-30px);
+            transform: scale(0.9);
             z-index: 40;
         }
 
         .swiper-slide-next-next {
             opacity: 0.4;
-            transform: scale(0.75) translateZ(0) translateX(-60px);
+            transform: scale(0.75);
             z-index: 30;
         }
 
         /* الهواتف المجاورة - اليمين */
         .swiper-slide-prev {
             opacity: 0.6;
-            transform: scale(0.85) translateZ(0) translateX(30px);
+            transform: scale(0.9);
             z-index: 40;
         }
 
         .swiper-slide-prev-prev {
             opacity: 0.4;
-            transform: scale(0.75) translateZ(0) translateX(60px);
+            transform: scale(0.75);
             z-index: 30;
         }
         
@@ -437,23 +435,15 @@
     <script>
         AOS.init({ duration: 1000, offset: 100, once: true });
 
-        // === إعدادات السلايدر المحسّن (نمط 2-1-2 مع حركة انسيابية) ===
+        // === إعدادات السلايدر المحسّن (نمط 2-1-2 مع ترتيب متسلسل) ===
         var swiper = new Swiper(".mySwiper", {
-            effect: "coverflow",
+            effect: "slide",  // ✅ تم التغيير من coverflow إلى slide للحصول على ترتيب ثابت
             grabCursor: true,
             centeredSlides: true,
             slidesPerView: 5,  // 5 شرائح في الشاشات الكبيرة
             initialSlide: 2,   // البداية من المنتصف
-            speed: 900,        // سرعة الانتقال (900ms) للحركة الانسيابية
-            spaceBetween: 25,  // المسافة بين الهواتف (25px)
-            coverflowEffect: {
-                rotate: 0,
-                stretch: 40,
-                depth: 200,
-                modifier: 1.2,
-                scale: 0.75,
-                slideShadows: true,
-            },
+            speed: 900,        // سرعة الانتقال الانسيابية
+            spaceBetween: 25,  // المسافة بين الهواتف
             autoplay: {
                 delay: 5000,  // ✅ التبديل كل 5 ثواني
                 disableOnInteraction: false,
