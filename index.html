@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&family=Inter:wght@400;600;800&family=Amiri:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4358/4358767.png" type="image/png">
 
     <style>
@@ -77,138 +76,88 @@
         .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); }
         .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
 
-        /* --- Slider Section (تنسيق 2-1-2) --- */
-        .slider-section {
+        /* --- New Fixed Phones Section (بديل السلايدر) --- */
+        .phones-showcase {
             position: relative;
             width: 100%;
-            background: linear-gradient(180deg, #0d9488 0%, #0d9488 15%, #f8fafc 100%);
-            padding: 100px 20px;
+            background: linear-gradient(180deg, #0d9488 0%, #0d9488 10%, #f8fafc 100%);
+            padding: 60px 20px 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px; /* المسافة بين الهواتف */
+            flex-wrap: wrap; /* يسمح بنزول الهواتف للأسفل في الشاشات الصغيرة */
             margin-top: -2px;
-            overflow: hidden;
         }
 
-        .swiper {
-            width: 100%;
-            padding: 60px 0;
-            overflow: visible;
-            max-width: 100%;
-            margin: 0 auto;
-        }
-
-        .swiper-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .swiper-slide {
-            width: 240px !important;
-            height: 500px;
+        .phone-card {
+            width: 230px;
+            height: 480px;
             background-color: #000;
-            border-radius: 38px;
-            border: 6px solid #1f2937;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+            border-radius: 35px;
+            border: 5px solid #1f2937;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
             overflow: hidden;
-            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-            opacity: 0.45;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transform: scale(0.78);
-            flex-shrink: 0;
-            margin: 0 8px;
+            position: relative;
+            transition: transform 0.3s ease;
+            /* الحركة العائمة */
+            animation: floating 4s ease-in-out infinite;
         }
 
-        .swiper-slide img {
-            display: block;
+        .phone-card img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            border-radius: 32px;
+            object-fit: fill; /* ملء الإطار بالكامل */
+            border-radius: 30px;
         }
 
-        /* الهاتف الوسطي - الأمام والأكبر */
-        .swiper-slide-active {
-            opacity: 1;
-            border-color: #0d9488;
-            box-shadow: 0 35px 80px rgba(13, 148, 136, 0.55);
-            z-index: 100;
-            transform: scale(1);
-        }
-        
-        .swiper-slide-active::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 60%);
-            pointer-events: none;
-            z-index: 100;
-            border-radius: 32px;
+        /* تخصيص الهاتف الأوسط */
+        .phone-card.center {
+            width: 250px; /* أكبر قليلاً */
+            height: 520px;
+            border-color: var(--text-body);
+            box-shadow: 0 30px 70px rgba(0,0,0,0.5);
+            z-index: 10;
+            animation-duration: 5s; /* سرعة مختلفة قليلاً */
         }
 
-        /* الهاتف 1 بعد الوسطي (يسار في RTL) */
-        .swiper-slide-next {
-            opacity: 0.65;
-            border-color: #475569;
-            z-index: 90;
-            transform: scale(0.88);
-        }
+        /* تأخير الحركة لكل هاتف ليبدو المشهد طبيعياً */
+        .phone-card:nth-child(1) { animation-delay: 0s; margin-top: 30px; }
+        .phone-card:nth-child(2) { animation-delay: 1.5s; margin-top: 15px; }
+        .phone-card:nth-child(3) { animation-delay: 0.5s; margin-top: 0px; } /* الأوسط */
+        .phone-card:nth-child(4) { animation-delay: 2s; margin-top: 15px; }
+        .phone-card:nth-child(5) { animation-delay: 1s; margin-top: 30px; }
 
-        /* الهاتفين الأخيرين (خلف) */
-        .swiper-slide-next-next {
-            opacity: 0.45;
-            border-color: #64748b;
-            z-index: 80;
-            transform: scale(0.78);
-        }
-
-        /* الهاتف 1 قبل الوسطي (يمين في RTL) */
-        .swiper-slide-prev {
-            opacity: 0.65;
-            border-color: #475569;
-            z-index: 90;
-            transform: scale(0.88);
-        }
-
-        /* الهاتفين الأخيرين (خلف) */
-        .swiper-slide-prev-prev {
-            opacity: 0.45;
-            border-color: #64748b;
-            z-index: 80;
-            transform: scale(0.78);
+        /* تعريف حركة الطفو */
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); } /* يتحرك للأعلى */
+            100% { transform: translateY(0px); }
         }
 
         /* Responsive */
-        @media (max-width: 1200px) {
-            .swiper-slide {
-                width: 210px !important;
-                height: 440px;
-                margin: 0 6px;
-            }
+        @media (max-width: 1250px) {
+            .phone-card { width: 180px; height: 380px; }
+            .phone-card.center { width: 200px; height: 420px; }
+        }
+
+        @media (max-width: 992px) {
+            .phones-showcase { gap: 15px; }
+            .phone-card { width: 140px; height: 300px; border-width: 3px; }
+            .phone-card.center { width: 150px; height: 320px; }
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .slider-section { padding: 70px 15px; }
-            .swiper { padding: 40px 0; }
-            
-            .swiper-slide {
-                width: 170px !important;
-                height: 360px;
-                margin: 0 4px;
+            /* في الموبايل نجعلها تمرير أفقي بسيط بدل تكديسها */
+            .phones-showcase {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-left: 20px;
+                padding-right: 20px;
+                -webkit-overflow-scrolling: touch;
             }
-        }
-
-        @media (max-width: 480px) {
-            .swiper-slide {
-                width: 140px !important;
-                height: 300px;
-                margin: 0 3px;
-            }
+            .phone-card { flex-shrink: 0; margin-top: 0 !important; }
         }
 
         /* Quote Section */
@@ -318,26 +267,28 @@
         </div>
     </header>
 
-    <section class="slider-section" data-aos="fade-up" data-aos-delay="300">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="https://i.postimg.cc/C14c1y7q/Screenshot_20251119_204322.png" alt="Settings">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://i.postimg.cc/1XnVdw8S/Screenshot_20251119_204415.png" alt="Prayer">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://i.postimg.cc/26N0SnJT/app-screen.jpg" alt="Main">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://i.postimg.cc/ryCBd3sn/Screenshot_20251119_204224.png" alt="Counter">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://i.postimg.cc/hv1Rc3QB/Screenshot_20251119_203958.png" alt="Dark Mode">
-                </div>
-            </div>
+    <section class="phones-showcase" data-aos="fade-up" data-aos-delay="300">
+        
+        <div class="phone-card">
+            <img src="https://i.postimg.cc/C14c1y7q/Screenshot_20251119_204322.png" alt="Settings">
         </div>
+
+        <div class="phone-card">
+            <img src="https://i.postimg.cc/1XnVdw8S/Screenshot_20251119_204415.png" alt="Prayer">
+        </div>
+
+        <div class="phone-card center">
+            <img src="https://i.postimg.cc/26N0SnJT/app-screen.jpg" alt="Main">
+        </div>
+
+        <div class="phone-card">
+            <img src="https://i.postimg.cc/ryCBd3sn/Screenshot_20251119_204224.png" alt="Counter">
+        </div>
+
+        <div class="phone-card">
+            <img src="https://i.postimg.cc/hv1Rc3QB/Screenshot_20251119_203958.png" alt="Dark Mode">
+        </div>
+
     </section>
 
     <section class="quote-section">
@@ -440,41 +391,8 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <script>
         AOS.init({ duration: 1000, offset: 100, once: true });
-
-        // === إعدادات السلايدر (تنسيق 2-1-2 صحيح) ===
-        var swiper = new Swiper(".mySwiper", {
-            effect: "slide",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: 5,
-            initialSlide: 2,
-            speed: 900,
-            spaceBetween: 16,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-            },
-            loop: true,
-            breakpoints: {
-                1200: {
-                    slidesPerView: 5,
-                    spaceBetween: 16,
-                },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 12,
-                },
-                480: {
-                    slidesPerView: 2,
-                    spaceBetween: 8,
-                }
-            }
-        });
 
         // ============ Translations ============
         let currentLang = 'ar';
