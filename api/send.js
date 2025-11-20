@@ -80,11 +80,9 @@ export default async function handler(req, res) {
     // 1️⃣ CORS - السماح لمواقع محددة فقط
     // ============================================
     const allowedOrigins = [
-        'https://yourdomain.com',              // 🔴 غيّر هذا إلى نطاق موقعك
-        'https://www.yourdomain.com',          // 🔴 غيّر هذا إلى نطاق موقعك
-        'https://mart-tasbeeh-data.vercel.app', // إذا كان موقعك على Vercel
-        'http://localhost:3000',               // للتطوير المحلي
-        'http://127.0.0.1:3000',               // للتطوير المحلي
+        
+        'https://smart-tasbeeh-data.vercel.app', // إذا كان موقعك على Vercel
+        
     ];
     
     const origin = req.headers.origin;
