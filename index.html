@@ -33,6 +33,7 @@
         }
         body.en-mode { font-family: 'Inter', sans-serif; }
 
+        /* زر اللغة */
         .lang-btn {
             position: absolute; top: 30px; left: 30px; z-index: 1000;
             background: rgba(255,255,255,0.2); backdrop-filter: blur(10px);
@@ -52,7 +53,7 @@
             position: relative;
             overflow: visible;
             height: auto;
-            padding-bottom: 60px; 
+            padding-bottom: 50px; 
         }
 
         .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; margin-bottom: 40px; }
@@ -76,12 +77,12 @@
         .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); }
         .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
 
-        /* --- Slider Section (2-1-2 Configuration) --- */
+        /* --- Slider Section (Fixed 2-1-2 Layout) --- */
         .slider-section {
             position: relative;
             width: 100%;
             background: linear-gradient(180deg, #0d9488 0%, #0d9488 15%, #f8fafc 100%);
-            padding-bottom: 100px;
+            padding-bottom: 80px;
             margin-top: -2px;
             overflow: hidden;
         }
@@ -90,23 +91,22 @@
             width: 100%;
             padding-top: 40px;
             padding-bottom: 60px;
-            overflow: visible; /* يسمح بظهور الـ 5 هواتف */
+            overflow: visible;
         }
 
         .swiper-slide {
             background-position: center;
             background-size: cover;
-            /* عرض أصغر قليلاً للسماح بظهور 5 هواتف في الصف */
-            width: 240px; 
-            height: 500px;
+            width: 260px; /* عرض مثالي لـ 5 هواتف */
+            height: 540px;
             background-color: #000;
             border-radius: 40px;
             border: 6px solid #1f2937;
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
             overflow: hidden;
-            transition: transform 0.5s ease; 
-            /* شفافية بسيطة للهواتف الجانبية */
-            opacity: 0.6;
+            /* الحركة */
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            opacity: 0.5; /* الهواتف الجانبية باهتة قليلاً */
         }
 
         .swiper-slide img {
@@ -114,22 +114,26 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 34px;
+            border-radius: 32px;
         }
         
-        /* الهاتف النشط (الوسط) */
+        /* --- الهاتف النشط (الوسط) مع حركة طفو خفيفة --- */
         .swiper-slide-active {
-            opacity: 1; /* وضوح تام */
-            border-color: #4b5563;
-            box-shadow: 0 40px 80px -10px rgba(0, 0, 0, 0.7); /* ظل قوي */
+            opacity: 1;
+            border-color: #475569;
+            box-shadow: 0 40px 90px -10px rgba(0, 0, 0, 0.7);
             z-index: 50;
-            transform: scale(1.1) !important; /* تكبير إضافي للمنتصف */
+            transform: scale(1.1); /* تكبير */
+            /* إضافة لمعة */
+            position: relative;
         }
         
-        /* الشريحة المجاورة (اليمين واليسار رقم 1) */
-        .swiper-slide-prev, .swiper-slide-next {
-            opacity: 0.85;
-            z-index: 40;
+        /* لمعة زجاجية للهاتف النشط */
+        .swiper-slide-active::before {
+            content: '';
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+            pointer-events: none; z-index: 100;
         }
 
         /* Quote Section */
@@ -161,9 +165,8 @@
         .card:hover { transform: translateY(-10px); border-color: var(--primary); }
         .icon-box { width: 75px; height: 75px; background: #f0fdfa; color: var(--primary); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 25px; }
 
-        /* Developer & Contact */
-        .developer, #contact { padding: 80px 20px; background: var(--bg-light); }
-        .developer { background: #fff; }
+        /* Developer Section */
+        .developer { padding: 80px 20px; background: var(--bg-light); }
         .gradient-box {
             max-width: 800px; margin: 0 auto;
             background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
@@ -171,24 +174,49 @@
         }
         .avatar { width: 100px; height: 100px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 25px; }
 
-        /* Inputs */
-        input, textarea {
-            width: 100%; padding: 18px 25px; border: 1px solid #cbd5e1; border-radius: 15px;
-            background: #fff; font-family: inherit; font-size: 1rem; outline: none; margin-bottom: 20px;
+        /* --- Contact Form (Improved Style Like Privacy Page) --- */
+        #contact { padding: 80px 20px; background: #fff; } /* خلفية بيضاء نظيفة */
+        
+        .contact-card {
+            max-width: 700px; margin: 0 auto;
+            background: #f8fafc; /* صندوق رمادي فاتح */
+            border-radius: 25px; padding: 50px 40px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
-        input:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.1); }
-        .upload-area { border: 2px dashed #cbd5e1; padding: 30px; border-radius: 15px; background: #fff; cursor: pointer; text-align: center; display: block; margin-bottom: 20px; }
-        #submitBtn { background: var(--primary-dark); color: white; width: 100%; border: none; padding: 18px; font-size: 1.1rem; cursor: pointer; border-radius: 15px; }
+
+        input, textarea {
+            width: 100%; padding: 16px 20px;
+            border: 1px solid #cbd5e1; border-radius: 12px;
+            background: #fff; font-family: inherit; font-size: 1rem; color: var(--secondary);
+            transition: 0.3s; margin-bottom: 20px; outline: none;
+        }
+        input:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1); }
+        
+        .upload-area {
+            border: 2px dashed #94a3b8; padding: 20px; border-radius: 12px;
+            background: #fff; cursor: pointer; transition: 0.3s; margin-bottom: 25px; color: var(--text-body);
+            text-align: center; display: block;
+        }
+        .upload-area:hover { border-color: var(--primary); background: #f0fdfa; color: var(--primary-dark); }
+        .upload-area i { font-size: 1.5rem; margin-bottom: 8px; display: block; color: #94a3b8; }
+
+        #submitBtn {
+            background: var(--primary); color: white; width: 100%; border: none;
+            padding: 16px; border-radius: 50px; font-weight: bold; font-size: 1.1rem; cursor: pointer;
+            transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+        #submitBtn:hover { background: var(--primary-dark); transform: translateY(-2px); }
 
         footer { background: var(--secondary); color: #94a3b8; padding: 50px 20px; text-align: center; font-size: 0.95rem; }
         footer a { color: var(--white); text-decoration: none; margin: 0 10px; }
-
         .hidden { display: none !important; }
         
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .swiper-slide { width: 200px; height: 420px; }
             .quote-section { padding-top: 100px; }
+            .contact-card { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -225,14 +253,18 @@
     <section class="slider-section" data-aos="fade-up" data-aos-delay="300">
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
+                
+                <div class="swiper-slide">
+                    <img src="https://i.postimg.cc/C14c1y7q/Screenshot_20251119_204322.png" alt="Settings">
+                </div>
                 <div class="swiper-slide">
                     <img src="https://i.postimg.cc/1XnVdw8S/Screenshot_20251119_204415.png" alt="Prayer">
                 </div>
                 <div class="swiper-slide">
-                    <img src="https://i.postimg.cc/ryCBd3sn/Screenshot_20251119_204224.png" alt="Counter">
+                    <img src="https://i.postimg.cc/26N0SnJT/app-screen.jpg" alt="Main">
                 </div>
                 <div class="swiper-slide">
-                    <img src="https://i.postimg.cc/26N0SnJT/app-screen.jpg" alt="Main">
+                    <img src="https://i.postimg.cc/ryCBd3sn/Screenshot_20251119_204224.png" alt="Counter">
                 </div>
                 <div class="swiper-slide">
                     <img src="https://i.postimg.cc/hv1Rc3QB/Screenshot_20251119_203958.png" alt="Dark Mode">
@@ -240,10 +272,13 @@
                 <div class="swiper-slide">
                     <img src="https://i.postimg.cc/C14c1y7q/Screenshot_20251119_204322.png" alt="Settings">
                 </div>
-
                 <div class="swiper-slide">
                     <img src="https://i.postimg.cc/1XnVdw8S/Screenshot_20251119_204415.png" alt="Prayer">
                 </div>
+                 <div class="swiper-slide">
+                    <img src="https://i.postimg.cc/26N0SnJT/app-screen.jpg" alt="Main">
+                </div>
+
             </div>
         </div>
     </section>
@@ -315,22 +350,25 @@
     </section>
 
     <section id="contact">
-        <div class="gradient-box" style="background: white; border: none; box-shadow: 0 10px 40px rgba(0,0,0,0.05);" data-aos="fade-up">
-            <h2 class="dev-name" style="margin-bottom: 10px;" id="contact-title">تواصل معنا</h2>
-            <p style="color: var(--text-body); margin-bottom: 30px;" id="contact-desc">لديك فكرة؟ أو واجهت مشكلة؟ راسلني فوراً.</p>
-            <form id="telegramForm" onsubmit="sendToTelegram(event)" style="max-width: 500px; margin: 0 auto;">
+        <div class="contact-card" data-aos="fade-up">
+            <h2 class="section-title" style="margin-bottom: 10px;" id="contact-title">تواصل معنا</h2>
+            <p style="color: var(--text-body); margin-bottom: 30px; text-align: center;" id="contact-desc">لديك فكرة؟ أو واجهت مشكلة؟ راسلني فوراً.</p>
+            
+            <form id="telegramForm" onsubmit="sendToTelegram(event)">
                 <input type="text" id="name" placeholder="الاسم الكريم (اختياري)">
                 <textarea id="message" placeholder="اكتب رسالتك هنا..." required style="height: 150px; resize: none;"></textarea>
+
                 <label for="imageInput" class="upload-area">
-                    <i class="fas fa-cloud-upload-alt"></i>
+                    <i class="fas fa-camera"></i>
                     <span id="upload-text">اضغط هنا لإرفاق صورة (سكرين شوت)</span>
                     <div id="fileList" style="font-size: 0.85rem; color: var(--primary); margin-top: 5px;"></div>
                 </label>
                 <input type="file" id="imageInput" accept="image/*" multiple style="display: none;" onchange="updateFileList()">
-                <button type="submit" id="submitBtn" class="btn btn-primary">
+
+                <button type="submit" id="submitBtn">
                     <span id="send-text">إرسال الرسالة</span> <i class="fas fa-paper-plane"></i>
                 </button>
-                <p id="statusMessage" style="margin-top: 15px; display: none; font-weight: bold;"></p>
+                <p id="statusMessage" style="margin-top: 15px; display: none; font-weight: bold; text-align: center;"></p>
             </form>
         </div>
     </section>
@@ -350,7 +388,7 @@
     <script>
         AOS.init({ duration: 1000, offset: 100, once: true });
 
-        // === إعدادات السلايدر (2-1-2 المحكم) ===
+        // === إعدادات السلايدر (2-1-2 هرمي ومتناسق) ===
         var swiper = new Swiper(".mySwiper", {
             effect: "coverflow",
             grabCursor: true,
@@ -358,12 +396,12 @@
             slidesPerView: "auto",
             speed: 800,
             coverflowEffect: {
-                rotate: 0,       // مسطح تماماً (مثل الصورة)
-                stretch: 0,      // صفر لضمان التراص
-                depth: 100,      // عمق متوسط لكي لا تظهر الجوانب بعيدة جداً
-                modifier: 2.5,   // تعزيز التأثير
-                scale: 0.7,      // تصغير الجوانب بنسبة 30% لتركيز النظر على المنتصف
-                slideShadows: true,
+                rotate: 0,      // مسطح تماماً
+                stretch: 0,     // مسافة صفرية للتلاصق
+                depth: 120,     // عمق كافٍ لإظهار الترتيب (120 مثالي)
+                modifier: 2.5,  // تعزيز التأثير
+                scale: 0.75,    // تصغير الجوانب (وسط بين 0.6 و 0.9)
+                slideShadows: false, // إلغاء الظلال الجانبية لنظافة أكثر
             },
             autoplay: {
                 delay: 2500,
@@ -371,7 +409,7 @@
                 pauseOnMouseEnter: true,
             },
             loop: true,
-            initialSlide: 2 // البدء من الصورة الوسطى (رقم 3)
+            initialSlide: 2
         });
 
         // ============ Translations ============
@@ -492,7 +530,6 @@
             document.getElementById('stat-free').innerText = t.statFree;
         }
 
-        // === كود الإرسال الآمن (Vercel) ===
         function updateFileList() {
             const input = document.getElementById('imageInput');
             const output = document.getElementById('fileList');
@@ -500,13 +537,6 @@
                 output.innerText = currentLang === 'ar' ? `تم اختيار ${input.files.length} صورة` : `${input.files.length} images selected`;
             } else output.innerText = '';
         }
-
-        const toBase64 = file => new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = () => resolve(reader.result);
-            reader.onerror = error => reject(error);
-        });
 
         async function sendToTelegram(e) {
             e.preventDefault();
@@ -529,9 +559,7 @@
 
                 const response = await fetch('/api/send', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         name: name,
                         message: message,
@@ -563,6 +591,13 @@
                 }, 3000);
             }
         }
+
+        const toBase64 = file => new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = error => reject(error);
+        });
     </script>
 </body>
 </html>
