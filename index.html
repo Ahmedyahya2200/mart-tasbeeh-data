@@ -77,44 +77,47 @@
         .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); }
         .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
 
-        /* --- Slider Section (محسّن: تنسيق 2-1-2 مع حركة انسيابية) --- */
+        /* --- Slider Section (تأثير الهواتف المكدسة) --- */
         .slider-section {
             position: relative;
             width: 100%;
             background: linear-gradient(180deg, #0d9488 0%, #0d9488 15%, #f8fafc 100%);
-            padding: 80px 20px;
+            padding: 120px 20px;
             margin-top: -2px;
             overflow: hidden;
         }
 
         .swiper {
             width: 100%;
-            padding-top: 40px;
-            padding-bottom: 80px;
+            padding-top: 80px;
+            padding-bottom: 100px;
             overflow: visible;
             max-width: 1500px;
             margin: 0 auto;
+            perspective: 1200px;
         }
 
         .swiper-wrapper {
             display: flex;
             align-items: center;
+            justify-content: center;
         }
 
         .swiper-slide {
-            width: 260px;
-            height: 560px;
+            width: 280px;
+            height: 580px;
             background-color: #000;
-            border-radius: 40px;
-            border: 6px solid #1f2937;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border-radius: 42px;
+            border: 7px solid #1f2937;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
             overflow: hidden;
-            transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
-            opacity: 0.5;
+            transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+            opacity: 0.3;
             display: flex;
             align-items: center;
             justify-content: center;
-            transform: scale(0.8);
+            transform: scale(0.7) translateY(80px) translateZ(-200px);
+            position: relative;
         }
 
         .swiper-slide img {
@@ -125,40 +128,16 @@
             border-radius: 35px;
         }
 
-        /* الهاتف النشط (الوسط) - تنسيق 2-1-2 */
+        /* ===== تأثير الهواتف المكدسة (STACKED EFFECT) ===== */
+
+        /* الهاتف النشط (الأمام) */
         .swiper-slide-active {
             opacity: 1;
             border-color: #0d9488;
-            box-shadow: 0 30px 80px -10px rgba(13, 148, 136, 0.5);
-            z-index: 50;
-            transform: scale(1.1);
+            box-shadow: 0 40px 100px -10px rgba(13, 148, 136, 0.6);
+            z-index: 100;
+            transform: scale(1) translateY(0) translateZ(0);
             position: relative;
-        }
-        
-        /* الهواتف المجاورة - اليسار */
-        .swiper-slide-next {
-            opacity: 0.6;
-            transform: scale(0.9);
-            z-index: 40;
-        }
-
-        .swiper-slide-next-next {
-            opacity: 0.4;
-            transform: scale(0.75);
-            z-index: 30;
-        }
-
-        /* الهواتف المجاورة - اليمين */
-        .swiper-slide-prev {
-            opacity: 0.6;
-            transform: scale(0.9);
-            z-index: 40;
-        }
-
-        .swiper-slide-prev-prev {
-            opacity: 0.4;
-            transform: scale(0.75);
-            z-index: 30;
         }
         
         /* لمعة زجاجية على الهاتف النشط */
@@ -175,29 +154,91 @@
             border-radius: 35px;
         }
 
+        /* ===== الهواتف خلف الهاتف النشط - اليسار (RTL) ===== */
+        .swiper-slide-next {
+            opacity: 0.5;
+            border-color: #475569;
+            z-index: 90;
+            transform: scale(0.95) translateY(20px) translateX(-25px) translateZ(-100px);
+        }
+
+        .swiper-slide-next-next {
+            opacity: 0.35;
+            border-color: #64748b;
+            z-index: 80;
+            transform: scale(0.90) translateY(40px) translateX(-50px) translateZ(-150px);
+        }
+
+        /* ===== الهواتف خلف الهاتف النشط - اليمين (RTL) ===== */
+        .swiper-slide-prev {
+            opacity: 0.5;
+            border-color: #475569;
+            z-index: 90;
+            transform: scale(0.95) translateY(20px) translateX(25px) translateZ(-100px);
+        }
+
+        .swiper-slide-prev-prev {
+            opacity: 0.35;
+            border-color: #64748b;
+            z-index: 80;
+            transform: scale(0.90) translateY(40px) translateX(50px) translateZ(-150px);
+        }
+
         /* Responsive Slider */
         @media (max-width: 1200px) {
             .swiper-slide {
-                width: 230px;
-                height: 500px;
+                width: 250px;
+                height: 520px;
             }
         }
 
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
-            .slider-section { padding: 60px 20px; }
-            .swiper { padding-top: 30px; padding-bottom: 60px; }
+            .slider-section { padding: 80px 20px; }
+            .swiper { padding-top: 60px; padding-bottom: 80px; }
             
             .swiper-slide {
-                width: 190px;
-                height: 410px;
+                width: 210px;
+                height: 440px;
+            }
+
+            .swiper-slide-next {
+                transform: scale(0.92) translateY(15px) translateX(-15px) translateZ(-80px);
+            }
+
+            .swiper-slide-next-next {
+                transform: scale(0.85) translateY(30px) translateX(-30px) translateZ(-120px);
+            }
+
+            .swiper-slide-prev {
+                transform: scale(0.92) translateY(15px) translateX(15px) translateZ(-80px);
+            }
+
+            .swiper-slide-prev-prev {
+                transform: scale(0.85) translateY(30px) translateX(30px) translateZ(-120px);
             }
         }
 
         @media (max-width: 480px) {
             .swiper-slide {
-                width: 170px;
-                height: 370px;
+                width: 180px;
+                height: 380px;
+            }
+
+            .swiper-slide-next {
+                transform: scale(0.88) translateY(12px) translateX(-12px) translateZ(-60px);
+            }
+
+            .swiper-slide-next-next {
+                transform: scale(0.80) translateY(24px) translateX(-24px) translateZ(-90px);
+            }
+
+            .swiper-slide-prev {
+                transform: scale(0.88) translateY(12px) translateX(12px) translateZ(-60px);
+            }
+
+            .swiper-slide-prev-prev {
+                transform: scale(0.80) translateY(24px) translateX(24px) translateZ(-90px);
             }
         }
 
@@ -435,17 +476,17 @@
     <script>
         AOS.init({ duration: 1000, offset: 100, once: true });
 
-        // === إعدادات السلايدر المحسّن (نمط 2-1-2 مع ترتيب متسلسل) ===
+        // === إعدادات السلايدر (تأثير الهواتف المكدسة - STACKED EFFECT) ===
         var swiper = new Swiper(".mySwiper", {
-            effect: "slide",  // ✅ تم التغيير من coverflow إلى slide للحصول على ترتيب ثابت
+            effect: "slide",
             grabCursor: true,
             centeredSlides: true,
-            slidesPerView: 5,  // 5 شرائح في الشاشات الكبيرة
-            initialSlide: 2,   // البداية من المنتصف
-            speed: 900,        // سرعة الانتقال الانسيابية
-            spaceBetween: 25,  // المسافة بين الهواتف
+            slidesPerView: 5,
+            initialSlide: 2,
+            speed: 1000,
+            spaceBetween: 0,
             autoplay: {
-                delay: 5000,  // ✅ التبديل كل 5 ثواني
+                delay: 5000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
             },
@@ -453,15 +494,15 @@
             breakpoints: {
                 1200: {
                     slidesPerView: 5,
-                    spaceBetween: 20,
+                    spaceBetween: 0,
                 },
                 768: {
                     slidesPerView: 3,
-                    spaceBetween: 15,
+                    spaceBetween: 0,
                 },
                 480: {
                     slidesPerView: 2,
-                    spaceBetween: 10,
+                    spaceBetween: 0,
                     centeredSlides: true
                 }
             }
