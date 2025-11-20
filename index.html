@@ -77,47 +77,47 @@
         .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); }
         .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
 
-        /* --- Slider Section (تأثير الهواتف المكدسة) --- */
+        /* --- Slider Section (تنسيق 2-1-2) --- */
         .slider-section {
             position: relative;
             width: 100%;
             background: linear-gradient(180deg, #0d9488 0%, #0d9488 15%, #f8fafc 100%);
-            padding: 120px 20px;
+            padding: 100px 20px;
             margin-top: -2px;
             overflow: hidden;
         }
 
         .swiper {
             width: 100%;
-            padding-top: 80px;
-            padding-bottom: 100px;
+            padding: 60px 0;
             overflow: visible;
-            max-width: 1500px;
+            max-width: 100%;
             margin: 0 auto;
-            perspective: 1200px;
         }
 
         .swiper-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 100%;
         }
 
         .swiper-slide {
-            width: 280px;
-            height: 580px;
+            width: 240px !important;
+            height: 500px;
             background-color: #000;
-            border-radius: 42px;
-            border: 7px solid #1f2937;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            border-radius: 38px;
+            border: 6px solid #1f2937;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.35);
             overflow: hidden;
-            transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
-            opacity: 0.3;
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+            opacity: 0.45;
             display: flex;
             align-items: center;
             justify-content: center;
-            transform: scale(0.7) translateY(80px) translateZ(-200px);
-            position: relative;
+            transform: scale(0.78);
+            flex-shrink: 0;
+            margin: 0 8px;
         }
 
         .swiper-slide img {
@@ -125,22 +125,18 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 35px;
+            border-radius: 32px;
         }
 
-        /* ===== تأثير الهواتف المكدسة (STACKED EFFECT) ===== */
-
-        /* الهاتف النشط (الأمام) */
+        /* الهاتف الوسطي - الأمام والأكبر */
         .swiper-slide-active {
             opacity: 1;
             border-color: #0d9488;
-            box-shadow: 0 40px 100px -10px rgba(13, 148, 136, 0.6);
+            box-shadow: 0 35px 80px rgba(13, 148, 136, 0.55);
             z-index: 100;
-            transform: scale(1) translateY(0) translateZ(0);
-            position: relative;
+            transform: scale(1);
         }
         
-        /* لمعة زجاجية على الهاتف النشط */
         .swiper-slide-active::before {
             content: '';
             position: absolute;
@@ -151,94 +147,67 @@
             background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 60%);
             pointer-events: none;
             z-index: 100;
-            border-radius: 35px;
+            border-radius: 32px;
         }
 
-        /* ===== الهواتف خلف الهاتف النشط - اليسار (RTL) ===== */
+        /* الهاتف 1 بعد الوسطي (يسار في RTL) */
         .swiper-slide-next {
-            opacity: 0.5;
+            opacity: 0.65;
             border-color: #475569;
             z-index: 90;
-            transform: scale(0.95) translateY(20px) translateX(-25px) translateZ(-100px);
+            transform: scale(0.88);
         }
 
+        /* الهاتفين الأخيرين (خلف) */
         .swiper-slide-next-next {
-            opacity: 0.35;
+            opacity: 0.45;
             border-color: #64748b;
             z-index: 80;
-            transform: scale(0.90) translateY(40px) translateX(-50px) translateZ(-150px);
+            transform: scale(0.78);
         }
 
-        /* ===== الهواتف خلف الهاتف النشط - اليمين (RTL) ===== */
+        /* الهاتف 1 قبل الوسطي (يمين في RTL) */
         .swiper-slide-prev {
-            opacity: 0.5;
+            opacity: 0.65;
             border-color: #475569;
             z-index: 90;
-            transform: scale(0.95) translateY(20px) translateX(25px) translateZ(-100px);
+            transform: scale(0.88);
         }
 
+        /* الهاتفين الأخيرين (خلف) */
         .swiper-slide-prev-prev {
-            opacity: 0.35;
+            opacity: 0.45;
             border-color: #64748b;
             z-index: 80;
-            transform: scale(0.90) translateY(40px) translateX(50px) translateZ(-150px);
+            transform: scale(0.78);
         }
 
-        /* Responsive Slider */
+        /* Responsive */
         @media (max-width: 1200px) {
             .swiper-slide {
-                width: 250px;
-                height: 520px;
+                width: 210px !important;
+                height: 440px;
+                margin: 0 6px;
             }
         }
 
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
-            .slider-section { padding: 80px 20px; }
-            .swiper { padding-top: 60px; padding-bottom: 80px; }
+            .slider-section { padding: 70px 15px; }
+            .swiper { padding: 40px 0; }
             
             .swiper-slide {
-                width: 210px;
-                height: 440px;
-            }
-
-            .swiper-slide-next {
-                transform: scale(0.92) translateY(15px) translateX(-15px) translateZ(-80px);
-            }
-
-            .swiper-slide-next-next {
-                transform: scale(0.85) translateY(30px) translateX(-30px) translateZ(-120px);
-            }
-
-            .swiper-slide-prev {
-                transform: scale(0.92) translateY(15px) translateX(15px) translateZ(-80px);
-            }
-
-            .swiper-slide-prev-prev {
-                transform: scale(0.85) translateY(30px) translateX(30px) translateZ(-120px);
+                width: 170px !important;
+                height: 360px;
+                margin: 0 4px;
             }
         }
 
         @media (max-width: 480px) {
             .swiper-slide {
-                width: 180px;
-                height: 380px;
-            }
-
-            .swiper-slide-next {
-                transform: scale(0.88) translateY(12px) translateX(-12px) translateZ(-60px);
-            }
-
-            .swiper-slide-next-next {
-                transform: scale(0.80) translateY(24px) translateX(-24px) translateZ(-90px);
-            }
-
-            .swiper-slide-prev {
-                transform: scale(0.88) translateY(12px) translateX(12px) translateZ(-60px);
-            }
-
-            .swiper-slide-prev-prev {
-                transform: scale(0.80) translateY(24px) translateX(24px) translateZ(-90px);
+                width: 140px !important;
+                height: 300px;
+                margin: 0 3px;
             }
         }
 
@@ -476,15 +445,15 @@
     <script>
         AOS.init({ duration: 1000, offset: 100, once: true });
 
-        // === إعدادات السلايدر (تأثير الهواتف المكدسة - STACKED EFFECT) ===
+        // === إعدادات السلايدر (تنسيق 2-1-2 صحيح) ===
         var swiper = new Swiper(".mySwiper", {
             effect: "slide",
             grabCursor: true,
             centeredSlides: true,
             slidesPerView: 5,
             initialSlide: 2,
-            speed: 1000,
-            spaceBetween: 0,
+            speed: 900,
+            spaceBetween: 16,
             autoplay: {
                 delay: 5000,
                 disableOnInteraction: false,
@@ -494,16 +463,15 @@
             breakpoints: {
                 1200: {
                     slidesPerView: 5,
-                    spaceBetween: 0,
+                    spaceBetween: 16,
                 },
                 768: {
                     slidesPerView: 3,
-                    spaceBetween: 0,
+                    spaceBetween: 12,
                 },
                 480: {
                     slidesPerView: 2,
-                    spaceBetween: 0,
-                    centeredSlides: true
+                    spaceBetween: 8,
                 }
             }
         });
