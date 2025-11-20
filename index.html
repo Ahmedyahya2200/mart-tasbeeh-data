@@ -77,7 +77,7 @@
         .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); }
         .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
 
-        /* --- Slider Section (Fixed 2-1-2 Layout) --- */
+        /* --- Slider Section (تم التحديث: إصلاح القص والأبعاد) --- */
         .slider-section {
             position: relative;
             width: 100%;
@@ -89,51 +89,80 @@
 
         .swiper {
             width: 100%;
-            padding-top: 40px;
-            padding-bottom: 60px;
-            overflow: visible;
+            /* زيادة الهامش العلوي والسفلي للسماح للهاتف بالطفو دون قص */
+            padding-top: 60px;
+            padding-bottom: 100px;
+            overflow: visible; /* يسمح للظلال والعناصر المكبرة بالظهور */
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .swiper-slide {
-            background-position: center;
-            background-size: cover;
-            width: 260px; /* عرض مثالي لـ 5 هواتف */
+            /* أبعاد ثابتة ومحسنة */
+            width: 250px;
             height: 540px;
-            background-color: #000;
-            border-radius: 40px;
-            border: 6px solid #1f2937;
+            background-color: #000; /* إطار أسود */
+            border-radius: 35px;
+            border: 5px solid #1f2937;
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
             overflow: hidden;
-            /* الحركة */
             transition: transform 0.5s ease, opacity 0.5s ease;
-            opacity: 0.5; /* الهواتف الجانبية باهتة قليلاً */
+            opacity: 0.5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .swiper-slide img {
             display: block;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            border-radius: 32px;
+            /* fill يجبر الصورة على ملء الإطار كاملاً */
+            object-fit: fill; 
+            border-radius: 30px;
         }
-        
-        /* --- الهاتف النشط (الوسط) مع حركة طفو خفيفة --- */
+
+        /* الهاتف النشط (الوسط) */
         .swiper-slide-active {
             opacity: 1;
             border-color: #475569;
-            box-shadow: 0 40px 90px -10px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.6);
             z-index: 50;
-            transform: scale(1.1); /* تكبير */
-            /* إضافة لمعة */
+            transform: scale(1.15); /* تكبير للوسط */
             position: relative;
         }
         
-        /* لمعة زجاجية للهاتف النشط */
+        /* لمعة زجاجية خفيفة */
         .swiper-slide-active::before {
             content: '';
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+            background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
             pointer-events: none; z-index: 100;
+        }
+
+        /* Responsive Slider */
+        @media (max-width: 1200px) {
+            .swiper-slide {
+                width: 220px;
+                height: 480px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .swiper { padding-top: 40px; padding-bottom: 80px; }
+            
+            .swiper-slide {
+                width: 180px;
+                height: 380px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .swiper-slide {
+                width: 160px;
+                height: 340px;
+            }
         }
 
         /* Quote Section */
@@ -174,12 +203,12 @@
         }
         .avatar { width: 100px; height: 100px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 25px; }
 
-        /* --- Contact Form (Improved Style Like Privacy Page) --- */
-        #contact { padding: 80px 20px; background: #fff; } /* خلفية بيضاء نظيفة */
+        /* Contact Form */
+        #contact { padding: 80px 20px; background: #fff; }
         
         .contact-card {
             max-width: 700px; margin: 0 auto;
-            background: #f8fafc; /* صندوق رمادي فاتح */
+            background: #f8fafc;
             border-radius: 25px; padding: 50px 40px;
             border: 1px solid #e2e8f0;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
@@ -211,13 +240,6 @@
         footer { background: var(--secondary); color: #94a3b8; padding: 50px 20px; text-align: center; font-size: 0.95rem; }
         footer a { color: var(--white); text-decoration: none; margin: 0 10px; }
         .hidden { display: none !important; }
-        
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .swiper-slide { width: 200px; height: 420px; }
-            .quote-section { padding-top: 100px; }
-            .contact-card { padding: 30px 20px; }
-        }
     </style>
 </head>
 <body>
@@ -253,7 +275,6 @@
     <section class="slider-section" data-aos="fade-up" data-aos-delay="300">
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                
                 <div class="swiper-slide">
                     <img src="https://i.postimg.cc/C14c1y7q/Screenshot_20251119_204322.png" alt="Settings">
                 </div>
@@ -269,16 +290,6 @@
                 <div class="swiper-slide">
                     <img src="https://i.postimg.cc/hv1Rc3QB/Screenshot_20251119_203958.png" alt="Dark Mode">
                 </div>
-                <div class="swiper-slide">
-                    <img src="https://i.postimg.cc/C14c1y7q/Screenshot_20251119_204322.png" alt="Settings">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://i.postimg.cc/1XnVdw8S/Screenshot_20251119_204415.png" alt="Prayer">
-                </div>
-                 <div class="swiper-slide">
-                    <img src="https://i.postimg.cc/26N0SnJT/app-screen.jpg" alt="Main">
-                </div>
-
             </div>
         </div>
     </section>
@@ -388,28 +399,39 @@
     <script>
         AOS.init({ duration: 1000, offset: 100, once: true });
 
-        // === إعدادات السلايدر (2-1-2 هرمي ومتناسق) ===
+        // === إعدادات السلايدر (نمط 2-1-2 الثابت) ===
         var swiper = new Swiper(".mySwiper", {
             effect: "coverflow",
             grabCursor: true,
             centeredSlides: true,
-            slidesPerView: "auto",
+            slidesPerView: 5,  // 5 شرائح في الشاشات الكبيرة
+            initialSlide: 2,   // البداية من المنتصف
             speed: 800,
+            spaceBetween: 10,
             coverflowEffect: {
-                rotate: 0,      // مسطح تماماً
-                stretch: 0,     // مسافة صفرية للتلاصق
-                depth: 120,     // عمق كافٍ لإظهار الترتيب (120 مثالي)
-                modifier: 2.5,  // تعزيز التأثير
-                scale: 0.75,    // تصغير الجوانب (وسط بين 0.6 و 0.9)
-                slideShadows: false, // إلغاء الظلال الجانبية لنظافة أكثر
+                rotate: 0,
+                stretch: 0,
+                depth: 150,
+                modifier: 1.5,
+                scale: 0.7,     // تصغير الجوانب
+                slideShadows: false,
             },
             autoplay: {
-                delay: 2500,
+                delay: 3000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
             },
             loop: true,
-            initialSlide: 2
+            breakpoints: {
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 5,
+                },
+                480: {
+                    slidesPerView: 1.5,
+                    centeredSlides: true
+                }
+            }
         });
 
         // ============ Translations ============
