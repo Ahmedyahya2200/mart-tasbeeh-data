@@ -196,6 +196,15 @@
       "iconCodePoint": 61101,
       "hasSubcategories": false
     },
+    
+    {
+      "id": "treasures",
+      "name": "كنوز الحديث الشريف  ",
+      "description": "أدعية لطلب المغفرة والرحمة من الله",
+      "iconCodePoint": 61101,
+      "hasSubcategories": false
+    },
+    
     {
       "id": "tasbeeh_link",
       "name": "السبحة الإلكترونية",
