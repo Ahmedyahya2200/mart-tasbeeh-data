@@ -1,688 +1,136 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>السبحة الذكية | Smart Tasbeeh</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;500;700&family=Amiri:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4358/4358767.png" type="image/png">
+<script>
+    AOS.init({ duration: 1000, offset: 50, once: true });
 
-    <style>
-        :root {
-            /* الألوان الجديدة المستوحاة من التصميم الاحترافي */
-            --primary: #111827; /* لون داكن جداً (Charcoal) للفخامة */
-            --primary-light: #1f2937;
-            --accent: #0d9488; /* اللون التركوازي المميز للهوية */
-            --gold: #D4AF37; /* اللون الذهبي للوقف */
-            --bg-light: #FAFAFA; /* أبيض نقي */
-            --text-body: #4b5563;
-            --text-head: #111827;
-            --white: #ffffff;
-            --radius: 24px;
-        }
+    // ... (إبقاء كود الترجمات translations و toggleLanguage كما هو دون تغيير) ...
+    // ... تأكد من نسخ دالة updateText الموجودة سابقاً هنا ...
+
+    // دالة تحديث قائمة الملفات (تم التعديل لتدعم ملف واحد فقط)
+    function updateFileList() {
+        const input = document.getElementById('imageInput');
+        const output = document.getElementById('fileList');
         
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body {
-            font-family: 'Cairo', sans-serif; /* نفس خط التطبيق */
-            background-color: var(--bg-light);
-            color: var(--text-body);
-            line-height: 1.7;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-        body.en-mode { font-family: 'Inter', sans-serif; }
-
-        /* زر اللغة - تصميم زجاجي */
-        .lang-btn {
-            position: absolute; top: 30px; left: 30px; z-index: 1000;
-            background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2); color: white;
-            padding: 8px 20px; border-radius: 30px; cursor: pointer;
-            font-weight: bold; transition: 0.3s; display: flex; align-items: center; gap: 8px;
-            font-size: 0.9rem;
-        }
-        .lang-btn:hover { background: var(--gold); border-color: var(--gold); color: white; }
-        html[dir="ltr"] .lang-btn { left: auto; right: 30px; }
-
-        /* Header - بسيط ونظيف */
-        header {
-            background: radial-gradient(circle at center, #1f2937 0%, #111827 100%);
-            color: white;
-            padding: 140px 20px 60px;
-            text-align: center;
-            position: relative;
-            overflow: visible;
-        }
-
-        .hero-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; margin-bottom: 40px; }
-
-        h1 { font-size: 3.5rem; margin-bottom: 20px; font-weight: 900; color: #ffffff; letter-spacing: -1px; }
-        .subtitle { font-size: 1.25rem; color: #9ca3af; margin-bottom: 40px; font-weight: 400; max-width: 600px; margin-left: auto; margin-right: auto; }
-
-        /* شارة الوقف الذهبية */
-        .badge {
-            background: rgba(212, 175, 55, 0.15); 
-            color: var(--gold); 
-            padding: 8px 24px;
-            border-radius: 50px; font-size: 0.9rem; font-weight: bold;
-            border: 1px solid var(--gold); 
-            display: inline-block; margin-bottom: 25px;
-            letter-spacing: 0.5px;
-        }
-
-        .btn {
-            display: inline-flex; align-items: center; justify-content: center;
-            padding: 16px 40px; border-radius: 50px; text-decoration: none;
-            font-weight: 700; transition: all 0.3s ease; margin: 10px; font-size: 1rem;
-        }
-        .btn-primary { 
-            background: var(--gold); 
-            color: #000; 
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2); 
-        }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3); background: #e5bd3f; }
-        
-        .btn-outline { 
-            background: rgba(255,255,255,0.05); 
-            color: white; 
-            border: 1px solid rgba(255,255,255,0.2); 
-            backdrop-filter: blur(5px);
-        }
-        .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
-
-        /* Phones Section */
-        .phones-showcase {
-            position: relative;
-            width: 100%;
-            /* تدرج متناغم مع الهيدر */
-            background: linear-gradient(180deg, #111827 0%, #111827 20%, #FAFAFA 100%);
-            padding: 40px 20px 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .phone-card {
-            width: 220px; height: 460px;
-            background-color: #000;
-            border-radius: 40px;
-            border: 6px solid #2d2d2d;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-            position: relative;
-            transition: transform 0.3s ease;
-            animation: floating 6s ease-in-out infinite;
-        }
-
-        .phone-card img { width: 100%; height: 100%; object-fit: fill; border-radius: 32px; }
-
-        .phone-card.center {
-            width: 260px; height: 540px;
-            border-color: var(--gold); /* إطار ذهبي للهاتف الرئيسي */
-            box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.6);
-            z-index: 10;
-            animation-duration: 7s;
-        }
-
-        .phone-card:nth-child(1) { animation-delay: 0s; margin-top: 40px; opacity: 0.8; transform: scale(0.9); }
-        .phone-card:nth-child(2) { animation-delay: 1.5s; margin-top: 20px; }
-        .phone-card:nth-child(3) { animation-delay: 0.5s; margin-top: 0px; }
-        .phone-card:nth-child(4) { animation-delay: 2s; margin-top: 20px; }
-        .phone-card:nth-child(5) { animation-delay: 1s; margin-top: 40px; opacity: 0.8; transform: scale(0.9); }
-
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
-            100% { transform: translateY(0px); }
-        }
-
-        /* Quote Section */
-        .quote-section { 
-            position: relative;
-            padding: 120px 20px; 
-            text-align: center; color: var(--primary);
-            background: white;
-        }
-        .quran-text { 
-            font-family: 'Amiri', serif; 
-            font-size: 2.5rem; 
-            margin-bottom: 15px; 
-            color: var(--primary);
-            line-height: 1.6;
-        }
-        .quote-subtitle { color: var(--gold); font-weight: bold; font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase; }
-
-        /* Stats - Clean */
-        .stats { padding: 40px 20px 80px; background: #fff; }
-        .stats-grid { 
-            display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; 
-            max-width: 900px; margin: 0 auto;
-            padding: 40px;
-            border-radius: var(--radius);
-            background: #fafafa;
-            border: 1px solid #f0f0f0;
-        }
-        .stat-item { text-align: center; }
-        .stat-number { font-size: 3rem; font-weight: 900; color: var(--accent); display: block; line-height: 1; margin-bottom: 5px; }
-        .stat-label { color: var(--text-body); font-size: 0.9rem; font-weight: 600; }
-
-        /* Features - Cards Redesign */
-        .features { padding: 100px 20px; text-align: center; background: #fafafa; }
-        .section-title { font-size: 2.5rem; color: var(--text-head); font-weight: 800; margin-bottom: 15px; letter-spacing: -0.5px; }
-        .section-desc { color: var(--text-body); margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
-        
-        .card { 
-            background: var(--white); 
-            padding: 40px 30px; 
-            border-radius: var(--radius); 
-            border: 1px solid rgba(0,0,0,0.03);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
-            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
-            text-align: right; /* محاذاة لليمين للعربية */
-        }
-        html[dir="ltr"] .card { text-align: left; }
-
-        .card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01); border-color: var(--gold); }
-        
-        .icon-box { 
-            width: 60px; height: 60px; 
-            background: rgba(212, 175, 55, 0.1); /* Gold tint */
-            color: var(--gold); 
-            border-radius: 16px; 
-            display: flex; align-items: center; justify-content: center; 
-            font-size: 1.5rem; margin-bottom: 25px; 
-        }
-
-        .card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; color: var(--text-head); }
-        .card p { font-size: 0.95rem; color: var(--text-body); line-height: 1.6; }
-
-        /* Developer Section - Minimal */
-        .developer { padding: 100px 20px; background: var(--white); }
-        .gradient-box {
-            max-width: 700px; margin: 0 auto;
-            background: linear-gradient(135deg, #111827, #000);
-            color: white;
-            border-radius: 30px; padding: 60px 40px; 
-            text-align: center;
-            position: relative; overflow: hidden;
-        }
-        /* زخرفة خلفية خفيفة */
-        .gradient-box::before {
-            content: ''; position: absolute; top: -50px; left: -50px; width: 150px; height: 150px;
-            background: var(--gold); opacity: 0.2; filter: blur(50px); border-radius: 50%;
-        }
-        
-        .dev-name { font-size: 2rem; margin-bottom: 10px; color: white; }
-        .dev-desc { color: rgba(255,255,255,0.7); margin-bottom: 20px; font-size: 1.1rem; }
-
-        /* Contact Form */
-        #contact { padding: 100px 20px; background: #fafafa; }
-        .contact-card {
-            max-width: 600px; margin: 0 auto;
-            background: var(--white);
-            border-radius: var(--radius); padding: 50px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        input, textarea {
-            width: 100%; padding: 18px 24px;
-            border: 1px solid #e5e7eb; border-radius: 16px;
-            background: #f9fafb; font-family: inherit; font-size: 1rem; color: var(--primary);
-            transition: 0.3s; margin-bottom: 20px; outline: none;
-        }
-        input:focus, textarea:focus { border-color: var(--accent); background: white; box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.1); }
-        
-        .upload-area {
-            border: 2px dashed #d1d5db; padding: 30px; border-radius: 16px;
-            background: #f9fafb; cursor: pointer; transition: 0.3s; margin-bottom: 25px; 
-            text-align: center; color: #6b7280;
-        }
-        .upload-area:hover { border-color: var(--accent); color: var(--accent); background: #f0fdfa; }
-
-        #submitBtn {
-            background: var(--primary); color: white; width: 100%; border: none;
-            padding: 18px; border-radius: 16px; font-weight: bold; font-size: 1.1rem; cursor: pointer;
-            transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px;
-        }
-        #submitBtn:hover { background: #000; }
-
-        footer { background: var(--white); color: #6b7280; padding: 50px 20px; text-align: center; border-top: 1px solid #f3f4f6; }
-        footer a { color: var(--primary); text-decoration: none; font-weight: 600; margin: 0 12px; transition: 0.3s; }
-        footer a:hover { color: var(--accent); }
-        
-        .hidden { display: none !important; }
-
-        /* ================= اضافة استايل رسالة الدعاء (جديد) ================= */
-        .dua-toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(17, 24, 39, 0.95); /* لون داكن شفاف */
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            padding: 15px 30px;
-            border-radius: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-            z-index: 9999;
-            font-family: 'Cairo', sans-serif;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            animation: slideUpFade 0.5s ease forwards;
-            white-space: nowrap; /* لمنع نزول النص لسطرين */
-        }
-
-        @keyframes slideUpFade {
-            from { bottom: -50px; opacity: 0; }
-            to { bottom: 30px; opacity: 1; }
-        }
-
-        @keyframes fadeOutDown {
-            from { bottom: 30px; opacity: 1; }
-            to { bottom: -50px; opacity: 0; }
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .phone-card { width: 150px; height: 320px; }
-            .phone-card.center { width: 170px; height: 360px; }
-            h1 { font-size: 2.5rem; }
-        }
-        @media (max-width: 768px) {
-            .phones-showcase { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-left: 20px; -webkit-overflow-scrolling: touch; }
-            .phone-card { flex-shrink: 0; margin-top: 0 !important; transform: none !important; animation: none; }
-            .grid { grid-template-columns: 1fr; }
-            .contact-card { padding: 30px 20px; }
-            /* تعديل رسالة الدعاء للموبايل */
-            .dua-toast { width: 90%; justify-content: center; font-size: 0.9rem; white-space: normal; text-align: center; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="lang-btn" onclick="toggleLanguage()">
-        <i class="fas fa-globe"></i> <span id="langText">English</span>
-    </div>
-
-    <header>
-        <div class="hero-content" data-aos="fade-down" data-aos-duration="1000">
-            <div id="hero-ar">
-                <div class="badge">وقف خيري وصدقة جارية</div>
-                <h1>السبحة الذكية</h1>
-                <p class="subtitle">رفيقك الدائم في رحلة السكينة والاطمئنان، حيث يكون كل تسبيحة خطوة أقرب إلى الله.</p>
-            </div>
-            <div id="hero-en" class="hidden">
-                <div class="badge">Sadaqah Jariyah (Waqf)</div>
-                <h1>Smart Tasbeeh</h1>
-                <p class="subtitle">Your constant companion on a journey of serenity, where every Tasbeeh brings you closer to Allah.</p>
-            </div>
-            
-            <div data-aos="fade-up" data-aos-delay="200">
-                <a href="#" class="btn btn-primary">
-                    <i class="fab fa-google-play" style="margin-left: 10px;"></i> <span id="btn-download">تحميل التطبيق</span>
-                </a>
-                <a href="#contact" class="btn btn-outline">
-                    <span id="btn-contact">تواصل معنا</span>
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <section class="phones-showcase" data-aos="fade-up" data-aos-delay="300">
-        <div class="phone-card">
-            <img src="https://i.postimg.cc/C14c1y7q/Screenshot_20251119_204322.png" alt="Settings">
-        </div>
-        <div class="phone-card">
-            <img src="https://i.postimg.cc/1XnVdw8S/Screenshot_20251119_204415.png" alt="Prayer">
-        </div>
-        <div class="phone-card center">
-            <img src="https://i.postimg.cc/26N0SnJT/app-screen.jpg" alt="Main">
-        </div>
-        <div class="phone-card">
-            <img src="https://i.postimg.cc/ryCBd3sn/Screenshot_20251119_204224.png" alt="Counter">
-        </div>
-        <div class="phone-card">
-            <img src="https://i.postimg.cc/hv1Rc3QB/Screenshot_20251119_203958.png" alt="Dark Mode">
-        </div>
-    </section>
-
-    <section class="quote-section">
-        <div class="quote-content" data-aos="fade-up">
-            <div id="quote-ar">
-                <p class="quran-text">﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾</p>
-                <p class="quote-subtitle">صدق الله العظيم</p>
-            </div>
-            <div id="quote-en" class="hidden">
-                <p class="quran-text">"Verily, in the remembrance of Allah do hearts find rest"</p>
-                <p class="quote-subtitle">Holy Quran</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="stats">
-        <div class="stats-grid" data-aos="fade-up">
-            <div class="stat-item">
-                <span class="stat-number">+100</span>
-                <span class="stat-label" id="stat-users">مستخدم سعيد</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">0%</span>
-                <span class="stat-label" id="stat-ads">إعلانات</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">100%</span>
-                <span class="stat-label" id="stat-free">مجاني وقف لله</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="features">
-        <div data-aos="fade-up">
-            <h2 class="section-title" id="feat-title">رحلة الذكر</h2>
-            <p class="section-desc" id="feat-desc">صُمم ليجمع بين جمال الروح وبساطة الاستخدام، ليكون عوناً لك في خلوتك.</p>
-        </div>
-        <div class="grid">
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <div class="icon-box"><i class="fas fa-fingerprint"></i></div>
-                <h3 id="c1-title">رفيق التسبيح</h3>
-                <p id="c1-desc">عداد ذكي بتصميم انسيابي يشعرك بلذة الذكر ويسهل وردك اليومي.</p>
-            </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="200">
-                <div class="icon-box"><i class="fas fa-moon"></i></div>
-                <h3 id="c2-title">سكينة البصر</h3>
-                <p id="c2-desc">وضع ليلي حقيقي مريح للعين، لتتمتع بذكر الله في هدوء الليل دون إجهاد.</p>
-            </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="300">
-                <div class="icon-box"><i class="fas fa-mosque"></i></div>
-                <h3 id="c3-title">نداء الروح</h3>
-                <p id="c3-desc">دقة متناهية في مواقيت الصلاة، مع مكتبة أذكار وإذاعة للقرآن الكريم.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="developer">
-        <div class="gradient-box" data-aos="zoom-in">
-            <i class="fas fa-code" style="font-size: 2rem; color: var(--gold); margin-bottom: 20px;"></i>
-            <h2 class="dev-name" id="dev-name">صِيغَ بقلبٍ يرجو القبول</h2>
-            <p class="dev-desc" id="dev-desc">
-                خلف هذا التطبيق عبدٌ فقير إلى الله، اجتهد لخدمتكم. إن وجدتم خيراً فمن الله، وإن وجدتم تقصيراً فمن نفسي.
-            </p>
-            
-            <div class="btn btn-outline" onclick="showDuaNotification()" style="display: inline-flex; border-color: var(--gold); color: var(--gold); margin-top: 10px; cursor: pointer;">
-                <i class="fas fa-heart" style="margin-left: 8px;"></i> <span id="pray-text">أهدنا دعوة بظهر الغيب</span>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="contact-card" data-aos="fade-up">
-            <h2 class="section-title" style="margin-bottom: 10px; font-size: 2rem;" id="contact-title">تواصل معنا</h2>
-            <p style="color: var(--text-body); margin-bottom: 30px; text-align: center;" id="contact-desc">نسعد بملاحظاتكم لتطوير هذا الوقف.</p>
-            
-            <form id="telegramForm" onsubmit="sendToTelegram(event)">
-                <input type="text" id="name" placeholder="الاسم الكريم (اختياري)">
-                <textarea id="message" placeholder="اكتب رسالتك هنا..." required style="height: 150px; resize: none;"></textarea>
-
-                <label for="imageInput" class="upload-area">
-                    <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color: #d1d5db; margin-bottom: 10px;"></i>
-                    <div id="upload-text" style="font-weight: 600;">اضغط هنا لإرفاق صورة</div>
-                    <div id="fileList" style="font-size: 0.85rem; color: var(--accent); margin-top: 5px;"></div>
-                </label>
-                <input type="file" id="imageInput" accept="image/*" multiple style="display: none;" onchange="updateFileList()">
-
-                <button type="submit" id="submitBtn">
-                    <span id="send-text">إرسال الرسالة</span> <i class="fas fa-paper-plane"></i>
-                </button>
-                <p id="statusMessage" style="margin-top: 15px; display: none; font-weight: bold; text-align: center;"></p>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p id="footer-rights">&copy; 2025 السبحة الذكية. جميع الحقوق محفوظة.</p>
-        <div style="margin-top: 20px;">
-            <a href="privacy.html" id="footer-privacy">سياسة الخصوصية</a>
-            <span style="color: #e5e7eb;">|</span>
-            <a href="mailto:support.smarttasbeeh@gmail.com" id="footer-email">البريد الإلكتروني</a>
-        </div>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, offset: 50, once: true });
-
-        // ============ Updated Translations (Corporate & Spiritual) ============
-        let currentLang = 'ar';
-        const translations = {
-            en: {
-                downloadBtn: "Download App",
-                contactBtn: "Contact Us",
-                featTitle: "Journey of Remembrance",
-                featDesc: "Designed to blend spiritual beauty with simplicity.",
-                c1Title: "Tasbeeh Companion",
-                c1Desc: "A smart counter designed to help you focus on your daily Wird.",
-                c2Title: "Visual Serenity",
-                c2Desc: "A true night mode that is gentle on the eyes for late-night Dhikr.",
-                c3Title: "The Soul's Call",
-                c3Desc: "Accurate prayer times, Adhkar library, and Quran radio.",
-                devName: "Crafted with Devotion",
-                devDesc: "Behind this app is a humble servant of Allah. If you find good, it is from Allah.",
-                prayText: "Gift us a Dua",
-                contactTitle: "Connect With Us",
-                contactDesc: "We value your feedback to improve this Waqf.",
-                phName: "Name (Optional)",
-                phMsg: "Write your message...",
-                uploadText: "Click to attach image",
-                sendText: "Send Message",
-                footerRights: "&copy; 2025 Smart Tasbeeh. All Rights Reserved.",
-                footerPrivacy: "Privacy Policy",
-                footerEmail: "Email Support",
-                statUsers: "Happy Users",
-                statAds: "Ads",
-                statFree: "100% Waqf (Free)"
-            },
-            ar: {
-                downloadBtn: "تحميل التطبيق",
-                contactBtn: "تواصل معنا",
-                featTitle: "رحلة الذكر",
-                featDesc: "صُمم ليجمع بين جمال الروح وبساطة الاستخدام.",
-                c1Title: "رفيق التسبيح",
-                c1Desc: "عداد ذكي بتصميم انسيابي يشعرك بلذة الذكر.",
-                c2Title: "سكينة البصر",
-                c2Desc: "وضع ليلي حقيقي مريح للعين لذكر الله في هدوء.",
-                c3Title: "نداء الروح",
-                c3Desc: "دقة في المواقيت، مكتبة أذكار، وإذاعة للقرآن.",
-                devName: "صِيغَ بقلبٍ يرجو القبول",
-                devDesc: "خلف هذا التطبيق عبدٌ فقير إلى الله. إن وجدتم خيراً فمن الله.",
-                prayText: "أهدنا دعوة بظهر الغيب",
-                contactTitle: "تواصل معنا",
-                contactDesc: "نسعد بملاحظاتكم لتطوير هذا الوقف.",
-                phName: "الاسم الكريم (اختياري)",
-                phMsg: "اكتب رسالتك هنا...",
-                uploadText: "اضغط هنا لإرفاق صورة",
-                sendText: "إرسال الرسالة",
-                footerRights: "&copy; 2025 السبحة الذكية. جميع الحقوق محفوظة.",
-                footerPrivacy: "سياسة الخصوصية",
-                footerEmail: "البريد الإلكتروني",
-                statUsers: "مستخدم سعيد",
-                statAds: "إعلانات",
-                statFree: "مجاني وقف لله"
-            }
-        };
-
-        function toggleLanguage() {
-            const htmlTag = document.documentElement;
-            const body = document.body;
-            const langText = document.getElementById('langText');
-
-            if (currentLang === 'ar') {
-                currentLang = 'en';
-                htmlTag.setAttribute('dir', 'ltr');
-                htmlTag.setAttribute('lang', 'en');
-                body.classList.add('en-mode');
-                langText.innerText = 'العربية';
-                document.getElementById('hero-ar').classList.add('hidden');
-                document.getElementById('hero-en').classList.remove('hidden');
-                document.getElementById('quote-ar').classList.add('hidden');
-                document.getElementById('quote-en').classList.remove('hidden');
-                updateText('en');
+        if (input.files.length > 0) {
+            const file = input.files[0];
+            // تحقق سريع من الحجم للمستخدم (2MB)
+            if(file.size > 2 * 1024 * 1024) {
+                output.style.color = 'red';
+                output.innerText = currentLang === 'ar' ? "عذراً، حجم الصورة يجب أن يكون أقل من 2 ميجابايت" : "Error: Image size must be under 2MB";
+                input.value = ""; // تفريغ الإدخال
             } else {
-                currentLang = 'ar';
-                htmlTag.setAttribute('dir', 'rtl');
-                htmlTag.setAttribute('lang', 'ar');
-                body.classList.remove('en-mode');
-                langText.innerText = 'English';
-                document.getElementById('hero-en').classList.add('hidden');
-                document.getElementById('hero-ar').classList.remove('hidden');
-                document.getElementById('quote-en').classList.add('hidden');
-                document.getElementById('quote-ar').classList.remove('hidden');
-                updateText('ar');
+                output.style.color = 'var(--accent)';
+                output.innerText = currentLang === 'ar' ? `تم اختيار: ${file.name}` : `Selected: ${file.name}`;
             }
+        } else {
+            output.innerText = '';
         }
+    }
 
-        function updateText(lang) {
-            const t = translations[lang];
-            // Helper to safely update text
-            const setText = (id, text) => {
-                const el = document.getElementById(id);
-                if(el) el.innerText = text;
-            };
+    // دالة إشعار الدعاء (كما هي)
+    function showDuaNotification() {
+        if (document.querySelector('.dua-toast')) return;
+        const msg = currentLang === 'ar' 
+            ? "اللهم اغفر له وارحمه وبارك في عمله.. (جزاكم الله خيراً)" 
+            : "May Allah forgive him and bless his work.. (Jazak Allah Khair)";
+        const toast = document.createElement('div');
+        toast.className = 'dua-toast';
+        toast.innerHTML = `<i class="fas fa-hands-praying"></i> <span>${msg}</span>`;
+        document.body.appendChild(toast);
+        setTimeout(() => {
+            toast.style.animation = 'fadeOutDown 0.5s ease forwards';
+            setTimeout(() => toast.remove(), 500);
+        }, 4000);
+    }
+
+    // ============ الدالة المصححة بالكامل ============
+    async function sendToTelegram(e) {
+        e.preventDefault();
+        
+        const nameInput = document.getElementById('name');
+        const messageInput = document.getElementById('message');
+        const imageInput = document.getElementById('imageInput');
+        const btn = document.getElementById('submitBtn');
+        const status = document.getElementById('statusMessage');
+
+        // التحقق من المدخلات
+        const name = nameInput.value || (currentLang === 'ar' ? "فاعل خير" : "User");
+        const message = messageInput.value;
+
+        // تعطيل الزر لمنع التكرار
+        btn.style.opacity = "0.7"; 
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ...';
+        status.style.display = 'none';
+
+        try {
+            let photoBase64 = null;
             
-            setText('btn-download', t.downloadBtn);
-            setText('btn-contact', t.contactBtn);
-            setText('feat-title', t.featTitle);
-            setText('feat-desc', t.featDesc);
-            setText('c1-title', t.c1Title);
-            setText('c1-desc', t.c1Desc);
-            setText('c2-title', t.c2Title);
-            setText('c2-desc', t.c2Desc);
-            setText('c3-title', t.c3Title);
-            setText('c3-desc', t.c3Desc);
-            setText('dev-name', t.devName);
-            setText('dev-desc', t.devDesc);
-            setText('pray-text', t.prayText);
-            setText('contact-title', t.contactTitle);
-            setText('contact-desc', t.contactDesc);
-            document.getElementById('name').placeholder = t.phName;
-            document.getElementById('message').placeholder = t.phMsg;
-            setText('upload-text', t.uploadText);
-            setText('send-text', t.sendText);
-            document.getElementById('footer-rights').innerHTML = t.footerRights;
-            setText('footer-privacy', t.footerPrivacy);
-            setText('footer-email', t.footerEmail);
-            setText('stat-users', t.statUsers);
-            setText('stat-ads', t.statAds);
-            setText('stat-free', t.statFree);
-        }
-
-        function updateFileList() {
-            const input = document.getElementById('imageInput');
-            const output = document.getElementById('fileList');
-            if (input.files.length > 0) {
-                output.innerText = currentLang === 'ar' ? `تم اختيار ${input.files.length} صورة` : `${input.files.length} images selected`;
-            } else output.innerText = '';
-        }
-
-        async function sendToTelegram(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value || (currentLang === 'ar' ? "فاعل خير" : "User");
-            const message = document.getElementById('message').value;
-            const imageInput = document.getElementById('imageInput');
-            const btn = document.getElementById('submitBtn');
-            const status = document.getElementById('statusMessage');
-
-            btn.style.opacity = "0.7"; btn.disabled = true;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ...';
-            status.style.display = 'none';
-
-            try {
-                let photoBase64 = null;
-                if (imageInput.files.length > 0) {
-                    photoBase64 = await toBase64(imageInput.files[0]);
+            // معالجة الصورة مع التحقق من النوع والحجم
+            if (imageInput.files.length > 0) {
+                const file = imageInput.files[0];
+                const validTypes = ['image/jpeg', 'image/png', 'image/webp'];
+                
+                if (!validTypes.includes(file.type)) {
+                    throw new Error(currentLang === 'ar' ? "نوع الملف غير مدعوم. يرجى اختيار صورة." : "Unsupported file type.");
+                }
+                
+                if (file.size > 2 * 1024 * 1024) { // 2MB Limit
+                    throw new Error(currentLang === 'ar' ? "حجم الصورة كبير جداً." : "Image is too large (Max 2MB).");
                 }
 
-                // Note: Ensure your server endpoint handles this correctly
-                const response = await fetch('/api/send', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        name: name,
-                        message: message,
-                        photo: photoBase64 
-                    })
-                });
+                photoBase64 = await toBase64(file);
+            }
 
-                if (!response.ok) throw new Error('Server Error');
+            const response = await fetch('/api/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: name,
+                    message: message,
+                    photo: photoBase64 
+                })
+            });
 
-                status.style.display = 'block'; 
-                status.style.color = '#0d9488'; 
-                status.innerText = currentLang === 'ar' ? "✅ تم الإرسال بنجاح! شكراً لتواصلك." : "✅ Sent successfully!";
-                document.getElementById('telegramForm').reset();
-                document.getElementById('fileList').innerText = '';
+            // قراءة رد السيرفر
+            const result = await response.json();
 
-            } catch (error) {
-                console.error(error);
-                status.style.display = 'block'; 
-                status.style.color = '#dc2626';
-                status.innerText = currentLang === 'ar' ? "❌ حدث خطأ، يرجى المحاولة لاحقاً." : "❌ Error sending message.";
-            } finally {
-                setTimeout(() => { 
-                    btn.style.opacity = "1"; 
-                    btn.disabled = false; 
-                    btn.innerHTML = currentLang === 'ar' ? '<span id="send-text">إرسال الرسالة</span> <i class="fas fa-paper-plane"></i>' : '<span id="send-text">Send Message</span> <i class="fas fa-paper-plane"></i>';
-                    if(status.style.color === 'rgb(13, 148, 136)' || status.style.color === '#0d9488') {
-                        status.style.display = 'none';
-                    }
-                }, 3000);
+            if (!response.ok) {
+                throw new Error(result.error || 'Server Error');
+            }
+
+            // نجاح العملية
+            status.style.display = 'block'; 
+            status.style.color = '#0d9488'; 
+            status.innerText = currentLang === 'ar' ? "✅ تم الإرسال بنجاح! شكراً لتواصلك." : "✅ Sent successfully!";
+            
+            // تنظيف النموذج
+            document.getElementById('telegramForm').reset();
+            document.getElementById('fileList').innerText = '';
+
+        } catch (error) {
+            console.error("Submission Error:", error);
+            status.style.display = 'block'; 
+            status.style.color = '#dc2626';
+            // عرض رسالة الخطأ للمستخدم
+            status.innerText = error.message || (currentLang === 'ar' ? "❌ حدث خطأ، يرجى المحاولة لاحقاً." : "❌ Error sending message.");
+        } finally {
+            // إعادة تفعيل الزر بشكل سليم
+            btn.style.opacity = "1"; 
+            btn.disabled = false; 
+            btn.innerHTML = currentLang === 'ar' 
+                ? '<span id="send-text">إرسال الرسالة</span> <i class="fas fa-paper-plane"></i>' 
+                : '<span id="send-text">Send Message</span> <i class="fas fa-paper-plane"></i>';
+            
+            // إخفاء رسالة النجاح بعد فترة
+            if(status.style.color === 'rgb(13, 148, 136)' || status.style.color === '#0d9488') {
+                setTimeout(() => { status.style.display = 'none'; }, 5000);
             }
         }
+    }
 
-        const toBase64 = file => new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = () => resolve(reader.result);
-            reader.onerror = error => reject(error);
-        });
-
-        // ============ دالة إظهار الدعاء (جديدة) ============
-        function showDuaNotification() {
-            // 1. التحقق من التكرار
-            if (document.querySelector('.dua-toast')) return;
-
-            // 2. تجهيز النصوص
-            const msg = currentLang === 'ar' 
-                ? "اللهم اغفر له وارحمه وبارك في عمله.. (جزاكم الله خيراً)" 
-                : "May Allah forgive him and bless his work.. (Jazak Allah Khair)";
-
-            // 3. إنشاء العنصر
-            const toast = document.createElement('div');
-            toast.className = 'dua-toast';
-            toast.innerHTML = `<i class="fas fa-hands-praying" style="color: var(--gold);"></i> <span>${msg}</span>`;
-
-            // 4. الإضافة
-            document.body.appendChild(toast);
-
-            // 5. الحذف التلقائي
-            setTimeout(() => {
-                toast.style.animation = 'fadeOutDown 0.5s ease forwards';
-                setTimeout(() => {
-                    if(toast) toast.remove();
-                }, 500);
-            }, 4000);
-        }
-    </script>
-</body>
-</html>
+    const toBase64 = file => new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+    });
+</script>
