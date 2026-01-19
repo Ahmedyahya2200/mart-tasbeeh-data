@@ -1,0 +1,561 @@
+[
+  {
+    "id": 7,
+    "qdc_id": 7,
+    "name_ar": "مشاري العفاسي",
+    "name_en": "Mishari Al-Afasy",
+    "server_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Mishari.Al-Afasy.png",
+    "quality": "gapless",
+    "urlPadding": 3
+  },
+  {
+    "id": 3,
+    "qdc_id": 3,
+    "name_ar": "عبد الرحمن السديس",
+    "name_en": "Abdur-Rahman as-Sudais",
+    "server_url": "https://download.quranicaudio.com/qdc/abdurrahmaan_as_sudais/murattal/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Abdur-Rahman.as-Sudais.jpg",
+    "quality": "gapless",
+    "url_padding": 0
+  },
+  {
+    "id": 4,
+    "qdc_id": 4,
+    "name_ar": "أبو بكر الشاطري",
+    "name_en": "Abu Bakr Al-Shatri",
+    "server_url": "https://download.quranicaudio.com/qdc/abu_bakr_shatri/murattal/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Abu.Bakr.Al-Shatri.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 10,
+    "qdc_id": 10,
+    "name_ar": "سعود الشريم",
+    "name_en": "Saud Al-Shuraim",
+    "server_url": "https://download.quranicaudio.com/qdc/saud_ash-shuraym/murattal/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Saud.Al-Shuraim.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 13,
+    "qdc_id": 65,
+    "name_ar": "ماهر المعيقلي",
+    "name_en": "Maher Al Muaiqly",
+    "server_url": "https://download.quranicaudio.com/quran/maher_256/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Maher.Al.Muaiqly.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 14,
+    "qdc_id": 19,
+    "name_ar": "أحمد العجمي",
+    "name_en": "Ahmed Al-Ajmy",
+    "server_url": "https://download.quranicaudio.com/quran/ahmed_ibn_3ali_al-3ajamy/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Ahmed.Al-Ajmy.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 19,
+    "qdc_id": 7,
+    "name_ar": "إدريس أبكر",
+    "name_en": "Idrees Abkar",
+    "server_url": "https://download.quranicaudio.com/quran/idrees_abkar/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Idrees.Abkar.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 28,
+    "name_ar": "الدكالي (قالون)",
+    "name_en": "Al-Dukali (Qaloon)",
+    "server_url": "https://server7.mp3quran.net/dokali/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Al-Dukali.Qaloon.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 20,
+    "qdc_id": 170,
+    "name_ar": "خالد الجليل",
+    "name_en": "Khalid Al-Jaleel",
+    "server_url": "https://download.quranicaudio.com/qdc/khalid_jalil/murattal/mp3/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Khalid.Al-Jaleel.jpg",
+    "quality": "gapless"
+  },
+  {
+    "id": 18,
+    "qdc_id": 13,
+    "name_ar": "سعد الغامدي",
+    "name_en": "Saad Al-Ghamdi",
+    "server_url": "https://download.quranicaudio.com/quran/sa3d_al-ghaamidi/complete/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Saad.Al-Ghamdi.jpg",
+    "quality": "gapless"
+  },
+  {
+    "id": 25,
+    "qdc_id": 18,
+    "name_ar": "صلاح بو خاطر",
+    "name_en": "Salah Bukhatir",
+    "server_url": "https://server8.mp3quran.net/bukhatir/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Salah.Bukhatir.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 1,
+    "qdc_id": 1,
+    "name_ar": "عبد الباسط (مجود)",
+    "name_en": "AbdulBaset (Mujawwad)",
+    "server_url": "https://download.quranicaudio.com/quran/abdulbaset_mujawwad/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/AbdulBaset.jpeg",
+    "quality": "gapless"
+  },
+  {
+    "id": 2,
+    "qdc_id": 2,
+    "name_ar": "عبد الباسط (مرتل)",
+    "name_en": "AbdulBaset (Murattal)",
+    "server_url": "https://download.quranicaudio.com/quran/abdul_basit_murattal/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/AbdulBaset.jpeg",
+    "quality": "gapless"
+  },
+  {
+    "id": 22,
+    "qdc_id": 162,
+    "name_ar": "عبد الله عواد الجهني",
+    "name_en": "Abdullah Awwad Al-Juhany",
+    "server_url": "https://download.quranicaudio.com/quran/abdullaah_3awwaad_al-juhaynee/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Abdullah.Awwad.Al-Juhany.jpg",
+    "quality": "gapless"
+  },
+  {
+    "id": 23,
+    "qdc_id": 167,
+    "name_ar": "علي الحذيفي",
+    "name_en": "Ali Al-Huthaify",
+    "server_url": "https://download.quranicaudio.com/quran/huthayfi/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Ali.Al-Huthaify.jpg",
+    "quality": "gapless"
+  },
+  {
+    "id": 26,
+    "name_ar": "علي جابر",
+    "name_en": "Ali Jaber",
+    "server_url": "https://download.quranicaudio.com/quran/ali_jaber/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Ali.Jaber.jpg",
+    "quality": "gapless"
+  },
+  {
+    "id": 17,
+    "qdc_id": 14,
+    "name_ar": "فارس عباد",
+    "name_en": "Fares Abbad",
+    "server_url": "https://download.quranicaudio.com/quran/fares/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Fares.Abbad.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 24,
+    "qdc_id": 22,
+    "name_ar": "محمد أيوب",
+    "name_en": "Muhammad Ayyoub",
+    "server_url": "https://server8.mp3quran.net/ayyoub/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Muhammad.Ayyoub.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 21,
+    "qdc_id": 169,
+    "name_ar": "محمد جبريل",
+    "name_en": "Muhammad Jibreel",
+    "server_url": "https://server8.mp3quran.net/jibreel/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Muhammad.Jibreel.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 29,
+    "qdc_id": 8,
+    "name_ar": "المنشاوي (مجود)",
+    "name_en": "Al-Minshawi (Mujawwad)",
+    "server_url": "https://download.quranicaudio.com/quran/minshawi_mujawwad/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Al-Minshawi.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 9,
+    "qdc_id": 9,
+    "name_ar": "المنشاوي (مرتل)",
+    "name_en": "Al-Minshawi (Murattal)",
+    "server_url": "https://download.quranicaudio.com/quran/muhammad_siddeeq_al-minshaawee/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Al-Minshawi.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 11,
+    "qdc_id": 11,
+    "name_ar": "محمد الطبلاوي",
+    "name_en": "Mohamed Al-Tablawi",
+    "server_url": "https://server12.mp3quran.net/tblawi/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Mohamed.Al-Tablawi.jpg",
+    "quality": "gapless"
+  },
+  {
+    "id": 6,
+    "qdc_id": 6,
+    "name_ar": "محمود الحصري",
+    "name_en": "Mahmoud Al-Husary",
+    "server_url": "https://download.quranicaudio.com/qdc/khalil_al_husary/murattal/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Mahmoud.Al-Husary.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 12,
+    "qdc_id": 12,
+    "name_ar": "الحصري (معلم)",
+    "name_en": "Al-Husary (Muallim)",
+    "server_url": "https://download.quranicaudio.com/quran/husary_muallim/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Mahmoud.Al-Husary.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 70,
+    "qdc_id": 164,
+    "name_ar": "المنشاوي (معلم - أطفال)",
+    "name_en": "Al-Minshawi (Kids Repeat)",
+    "server_url": "https://download.quranicaudio.com/qdc/siddiq_minshawi/kids_repeat/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Al-Minshawi.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 56,
+    "qdc_id": 161,
+    "name_ar": "بندر بليلة",
+    "name_en": "Bandar Baleela",
+    "server_url": "https://download.quranicaudio.com/quran/bandar_baleela/complete/",
+    "quality": "gapless"
+  },
+  {
+    "id": 58,
+    "qdc_id": 166,
+    "name_ar": "خليفة الطنيجي",
+    "name_en": "Khalifah At-Taniji",
+    "server_url": "https://download.quranicaudio.com/qdc/khalifah_taniji/murattal/",
+    "quality": "gapless"
+  },
+  {
+    "id": 163,
+    "qdc_id": 163,
+    "name_ar": "عبد الله بصفر",
+    "name_en": "Abdullah Basfar",
+    "server_url": "https://download.quranicaudio.com/quran/abdullaah_basfar/",
+    "quality": "gapless"
+  },
+  {
+    "id": 142,
+    "qdc_id": 12,
+    "name_ar": "الحصري (معلم - أطفال)",
+    "name_en": "Al-Husary (Muallim - Kids)",
+    "server_url": "https://download.quranicaudio.com/quran/husary_muallim_kids_repeat/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Mahmoud.Al-Husary.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 27,
+    "qdc_id": 129,
+    "name_ar": "محمود البنا (مجود)",
+    "name_en": "Mahmoud Al-Banna (Mujawwad)",
+    "server_url": "https://server8.mp3quran.net/banna/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Mahmoud.Al-Banna.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 16,
+    "qdc_id": 104,
+    "name_ar": "ناصر القطامي",
+    "name_en": "Nasser Al-Qatami",
+    "server_url": "https://server6.mp3quran.net/qtm/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Nasser.Al-Qatami.jpg",
+    "quality": "gapless"
+  },
+  {
+    "id": 5,
+    "qdc_id": 5,
+    "name_ar": "هاني الرفاعي",
+    "name_en": "Hani Ar-Rifai",
+    "server_url": "https://download.quranicaudio.com/quran/rifai/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Hani.Ar-Rifai.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 15,
+    "qdc_id": 174,
+    "name_ar": "ياسر الدوسري",
+    "name_en": "Yasser Al-Dosari",
+    "server_url": "https://download.quranicaudio.com/quran/yasser_ad-dussary/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Yasser.Al-Dosari.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 1001,
+    "qdc_id": 7,
+    "name_ar": "بدر التركي",
+    "name_en": "Bader Al-Turki",
+    "server_url": "https://server10.mp3quran.net/bader/Rewayat-Hafs-A-n-Assem/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Bader.Al-Turki.jpg",
+    "quality": "gapless"
+  },
+  {
+    "id": 1002,
+    "qdc_id": 7,
+    "name_ar": "إسلام صبحي",
+    "name_en": "Islam Sobhi",
+    "server_url": "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Islam.Sobhi.jpg",
+    "quality": "gapless"
+  },
+  {
+    "id": 1003,
+    "qdc_id": 108,
+    "name_ar": "مصطفى إسماعيل",
+    "name_en": "Mustafa Ismail",
+    "server_url": "https://server8.mp3quran.net/mustafa/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Mustafa.Ismail.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 2001,
+    "name_ar": "هزاع البلوشي",
+    "name_en": "Hazza Al-Balushi",
+    "server_url": "https://server11.mp3quran.net/hazza/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Hazza.Al-Balushi.jpg",
+    "quality": "gapless",
+    "unavailable_surahs": [
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      16,
+      17,
+      21,
+      22,
+      23,
+      24,
+      26,
+      27,
+      28,
+      33,
+      43,
+      45,
+      46,
+      48,
+      58,
+      59,
+      60,
+      62,
+      64,
+      65,
+      66
+    ]
+  },
+  {
+    "id": 2002,
+    "name_ar": "وديع اليمني",
+    "name_en": "Wadih Al-Yamani",
+    "server_url": "https://server6.mp3quran.net/wdee3/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Wadih.Al-Yamani.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 2003,
+    "name_ar": "رعد الكردي",
+    "name_en": "Raad Al-Kurdi",
+    "server_url": "https://server6.mp3quran.net/kurdi/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Raad.Al-Kurdi.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 2004,
+    "name_ar": "أحمد النفيس",
+    "name_en": "Ahmed Al-Nufais",
+    "server_url": "https://server16.mp3quran.net/nufais/Rewayat-Hafs-A-n-Assem/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Ahmed.Al-Nufais.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 2005,
+    "name_ar": "منصور السالمي",
+    "name_en": "Mansour Al-Salimi",
+    "server_url": "https://server14.mp3quran.net/mansor/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Mansour.Al-Salimi.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 2006,
+    "qdc_id": 165,
+    "name_ar": "نورين محمد صديق",
+    "name_en": "Noreen Muhammad Siddiq",
+    "server_url": "https://download.quranicaudio.com/qdc/noreen_siddiq/murattal/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Noreen.Muhammad.Siddiq.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 2007,
+    "qdc_id": 109,
+    "name_ar": "عبدالرشيد صوفي",
+    "name_en": "Abdul Rashid Sufi",
+    "server_url": "https://download.quranicaudio.com/qdc/abdul_rashid_sufi/khalaf/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Abdul.Rashid.Sufi.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 2008,
+    "name_ar": "عبدالله المطرود",
+    "name_en": "Abdullah Al-Matrod",
+    "server_url": "https://server8.mp3quran.net/mtrud/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Abdullah.Al-Matrod.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 2010,
+    "name_ar": "محمد رفعت",
+    "name_en": "Mohamed Rifat",
+    "server_url": "https://download.quranicaudio.com/quran/muhammad_rif3at/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Mohamed.Rifat.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 2011,
+    "name_ar": "محمد عمران",
+    "name_en": "Mohamed Omran",
+    "server_url": "https://download.quranicaudio.com/quran/muhammad_imran/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Mohamed.Omran.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 2012,
+    "name_ar": "كامل يوسف البهتيمي",
+    "name_en": "Kamel Al-Bahtimi",
+    "server_url": "https://download.quranicaudio.com/quran/kamil_yusuf_al-bahtimi/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Kamel.Al-Bahtimi.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 2013,
+    "name_ar": "الشحات محمد أنور",
+    "name_en": "Al-Shahat Muhammad Anwar",
+    "server_url": "https://download.quranicaudio.com/quran/shahhat_muhammad_anwar/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Al-Shahat.Anwar.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 2014,
+    "name_ar": "شريف مصطفى",
+    "name_en": "Sherif Mostafa",
+    "server_url": "https://server14.mp3quran.net/sherif/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Sherif.Mostafa.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 2015,
+    "name_ar": "محمد اللحيدان",
+    "name_en": "Muhammed Al-Luhaidan",
+    "server_url": "https://server8.mp3quran.net/lhdan/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Muhammed.Al-Luhaidan.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 2016,
+    "name_ar": "عبدالرحمن العوسي",
+    "name_en": "Abdul Rahman Al-Ossi",
+    "server_url": "https://server6.mp3quran.net/aloosi/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Abdul.Rahman.Al-Ossi.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 2017,
+    "name_ar": "هيثم الدخين",
+    "name_en": "Haitham Al-Dukhin",
+    "server_url": "https://server16.mp3quran.net/h_dukhain/Rewayat-Hafs-A-n-Assem/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Haitham.Al-Dukhin.png",
+    "quality": "gapless"
+  },
+  {
+    "id": 2018,
+    "name_ar": "عبدالرحمن مسعد",
+    "name_en": "Abdul Rahman Mossad",
+    "server_url": "https://archive.org/download/TVQuran.com__Abdulrahman-Mossad/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Abdul.Rahman.Mossad.png",
+    "quality": "gapless",
+    "unavailable_surahs": [
+      52,
+      53,
+      54,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      74,
+      75,
+      76,
+      77,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114
+    ]
+  },
+  {
+    "id": 2017,
+    "qdc_id": 113,
+    "name_ar": "زياد باتيل",
+    "name_en": "Ziyad Patel",
+    "server_url": "https://download.quranicaudio.com/quran/ziyad_patel/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Ziyad.Patel.png",
+    "quality": "gapless"
+  }
+]

@@ -1,0 +1,43 @@
+[
+    {
+        "id": "adhkar_morning",
+        "title": "Morning Adhkar",
+        "original_title": "أذكار الصباح",
+        "artist": "Mishari Al-Afasy",
+        "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/Morning.Adhkar.mashary.mp3",
+        "imageUrl": "https://static.qurancdn.com/images/reciters/6/mishary-rashid-alafasy-profile.jpeg?v=1"
+    },
+    {
+        "id": "adhkar_evening",
+        "title": "Evening Adhkar",
+        "original_title": "أذكار المساء",
+        "artist": "Mishari Al-Afasy",
+        "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/Evening.Adhkar.mashary.mp3",
+        "imageUrl": "https://static.qurancdn.com/images/reciters/6/mishary-rashid-alafasy-profile.jpeg?v=1"
+    },
+    {
+        "id": "adhkar_sleep",
+        "title": "Sleep Adhkar",
+        "original_title": "أذكار النوم",
+        "artist": "Mishari Al-Afasy",
+        "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/Sleep.Adhkar.mashary.mp3",
+        "imageUrl": "https://static.qurancdn.com/images/reciters/6/mishary-rashid-alafasy-profile.jpeg?v=1"
+    },
+    {
+        "id": "Al_Roqia_Charia",
+        "title": "Al Roqia Charia",
+        "original_title": "الرقية الشرعية",
+        "artist": "Mishari Al-Afasy",
+        "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/Al.Roqia.Charia.mashary.mp3",
+        "imageUrl": "https://static.qurancdn.com/images/reciters/6/mishary-rashid-alafasy-profile.jpeg?v=1"
+    },
+    {
+        "id": "asma_allah_alhusna_hisham",
+        "title": "Asma Allah Al-Husna",
+        "original_title": "أسماء الله الحسنى",
+        "artist": "Hisham Abbas",
+        "artist_ar": "هشام عباس",
+        "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Hisham.Abbas.mp3",
+        "imageUrl": "https://i.pinimg.com/originals/ca/8b/8e/ca8b8efa346c25b4afb34d975a90adac.jpg"
+    }
+]

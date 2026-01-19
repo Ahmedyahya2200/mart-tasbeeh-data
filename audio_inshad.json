@@ -1,0 +1,617 @@
+[
+    {
+        "id": "folder_naqshbandi",
+        "title": "النقشبندي",
+        "imageUrl": "assets/images/naqshbandi.png",
+        "tracks": [
+            {
+                "id": "naqsh_1",
+                "title": "Mawlaya Inni Bibabik",
+                "original_title": "مولاي إني ببابك",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Mawlaya.Inni.Bibabik.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_2",
+                "title": "Qabdhat Allah",
+                "original_title": "قبضة الله",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Qabdhat.Allah.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_3",
+                "title": "Ya Rabb In Azumat Dhanubi",
+                "original_title": "يارب إن عظمت ذنوبي كثرة",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Ya.Rabb.In.Azumat.Dhanubi.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_4",
+                "title": "An-Nafsu Tashku",
+                "original_title": "النفس تشكو",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.An-Nafsu.Tashku.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_5",
+                "title": "Lughat Al-Kalam",
+                "original_title": "لغة الكلام",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Lughat.Al-Kalam.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_6",
+                "title": "Ya Rabb Karamaka 'Alayna",
+                "original_title": "يارب كرمك علينا",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Ya.Rabb.Karamaka.Alayna.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_7",
+                "title": "Ya Man Lahu Satrun",
+                "original_title": "يا من له ستر",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Ya.Man.Lahu.Satrun.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_8",
+                "title": "Al-Kawkab Al-Ardi",
+                "original_title": "الكوكب الأرضي",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Al-Kawkab.Al-Ardi.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_9",
+                "title": "Aghibu",
+                "original_title": "أغيب",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Aghibu.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_10",
+                "title": "Aya Yawman Hasiman (Badr)",
+                "original_title": "أيا يوماً حاسماً (بدر)",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Aya.Yawman.Hasiman.Badr.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_11",
+                "title": "Ayyuha As-Sahir",
+                "original_title": "أيها الساهر",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Ayyuha.As-Sahir.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_12",
+                "title": "Ayyuha An-Nas",
+                "original_title": "أيها الناس",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Ayyuha.An-Nas.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_13",
+                "title": "Ilayka Wajjahtu Wajhi",
+                "original_title": "إليك وجهت وجهي",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Ilayka.Wajjahtu.Wajhi.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_14",
+                "title": "Ashraqa Al-Kawnu",
+                "original_title": "أشرق الكون بالهدى",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Ashraqa.Al-Kawnu.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_15",
+                "title": "Al-Isra wal Mi'raj",
+                "original_title": "الإسراء والمعراج",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Al-Isra.wal.Miraj.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_16",
+                "title": "Al-Adhan",
+                "original_title": "الآذان",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Al-Adhan.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_17",
+                "title": "Al-Mu'jizat Samat",
+                "original_title": "المعجزات سمت",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Al-Mujizat.Samat.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_18",
+                "title": "Bibabika",
+                "original_title": "ببابك",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Bibabika.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_19",
+                "title": "Bayna Khawfin wa Dhilla",
+                "original_title": "بين خوف وذلة",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Bayna.Khawfin.wa.Dhilla.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_20",
+                "title": "Tabattaltu Mushtaqan",
+                "original_title": "تبتلت مشتاقاً",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Tabattaltu.Mushtaqan.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_21",
+                "title": "Talattafi Ya Rih",
+                "original_title": "تلطفي يا ريح",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Talattafi.Ya.Rih.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_22",
+                "title": "Khayrul Bariyyah",
+                "original_title": "خير البرية",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Khayrul.Bariyyah.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_23",
+                "title": "Sayyidi Ya Rasul Allah",
+                "original_title": "سيدي يا رسول الله",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Sayyidi.Ya.Rasul.Allah.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "naqsh_24",
+                "title": "Ya Sahibi",
+                "original_title": "يا صاحبي",
+                "artist": "Al-Naqshbandi",
+                "artist_ar": "النقشبندي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Ya.Sahibi.mp3",
+                "type": "inshad"
+            }
+        ]
+    },
+    {
+        "id": "folder_tobar",
+        "title": "نصر الدين طوبار",
+        "imageUrl": "assets/images/nasr_tobar.png",
+        "tracks": [
+            {
+                "id": "tobar_1",
+                "title": "Ya Malik Al-Mulk",
+                "original_title": "يا مالك الملك",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ya.Malik.Al-Mulk.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_2",
+                "title": "Hanini",
+                "original_title": "حنيني",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Hanini.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_3",
+                "title": "The Whale and the Spider",
+                "original_title": "الحوت والعنكبوت",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.The.Whale.and.the.Spider.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_4",
+                "title": "Ilahi Dumu'i",
+                "original_title": "الهي دموعي",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ilahi.Dumui.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_5",
+                "title": "Jell Al-Monadi",
+                "original_title": "جل المنادي",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Jell.Al-Monadi.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_6",
+                "title": "Subhanak Allahumma",
+                "original_title": "سبحانك اللهم",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Subhanak.Allahumma.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_7",
+                "title": "Ashraqa Al-Haqqu",
+                "original_title": "أشرق الحق",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ashraqa.Al-Haqqu.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_8",
+                "title": "Hina Yahdi As-Subhu",
+                "original_title": "حين يهدي الصبح",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Hina.Yahdi.As-Subhu.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_9",
+                "title": "Subhanaka Ya Ghaffar Adh-Dhanub",
+                "original_title": "سبحانك يا غفار الذنوب",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Subhanaka.Ya.Ghaffar.Adh-Dhanub.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_10",
+                "title": "Ashab Al-Fil",
+                "original_title": "أصحاب الفيل",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ashab.Al-Fil.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_11",
+                "title": "Best Recordings",
+                "original_title": "أجمل التسجيلات",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Best.Recordings.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_12",
+                "title": "Al-Amru Lak",
+                "original_title": "الأمر لك",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Al-Amru.Lak.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_13",
+                "title": "Ashraqa Al-Haqqu (2)",
+                "original_title": "أشرق الحق (2)",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ashraqa.Al-Haqqu.2.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_14",
+                "title": "Sal Al-Layla",
+                "original_title": "سل الليل",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Sal.Al-Layla.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_15",
+                "title": "Bika Astajir",
+                "original_title": "بك أستجير",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Bika.Astajir.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_16",
+                "title": "Inna Ash-Shukra Qad Wajab",
+                "original_title": "إن الشكر قد وجب",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Inna.Ash-Shukra.Qad.Wajab.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_17",
+                "title": "Ilayka Du'a'ana",
+                "original_title": "إليك دعاءنا",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ilayka.Duaana.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_18",
+                "title": "Ilayka Khushu'i",
+                "original_title": "إليك خشوعي",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ilayka.Khushui.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_19",
+                "title": "Al-Wahid Al-Ma'bud",
+                "original_title": "الواحد المعبود",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Al-Wahid.Al-Mabud.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_20",
+                "title": "Allahu Rabbu Al-Wujud",
+                "original_title": "الله رب الوجود",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Allahu.Rabbu.Al-Wujud.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_21",
+                "title": "Subhanaka Ya Man",
+                "original_title": "سبحانك يا من",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Subhanaka.Ya.Man.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_22",
+                "title": "Fi Had'at Al-Layl",
+                "original_title": "في هدئة الليل",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Fi.Hadat.Al-Layl.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_23",
+                "title": "Ya Bari' Al-Kawn",
+                "original_title": "يا بارئ الكون",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ya.Bari.Al-Kawn.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_24",
+                "title": "Ya Laylat Al-Qadr",
+                "original_title": "يا ليلة القدر",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ya.Laylat.Al-Qadr.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_25",
+                "title": "Ya Man Radita Lana",
+                "original_title": "يا من رضيت لنا",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ya.Man.Radita.Lana.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_26",
+                "title": "Ya Man Malakta Qulubana",
+                "original_title": "يا من ملكت قلوبنا",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ya.Man.Malakta.Qulubana.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_27",
+                "title": "Ya Munqidhi Fi Shiddati",
+                "original_title": "يا منقذي في شدتي",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ya.Munqidhi.Fi.Shiddati.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_28",
+                "title": "Ya Wadudan",
+                "original_title": "يا ودودا",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ya.Wadudan.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "tobar_29",
+                "title": "Ya Rabbi 'Ud-tu Ila Rihabik",
+                "original_title": "يارب عدت إلى رحابك",
+                "artist": "Nasr Tobar",
+                "artist_ar": "نصر الدين طوبار",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ya.Rabbi.Ud-tu.Ila.Rihabik.mp3",
+                "type": "inshad"
+            }
+        ]
+    },
+    {
+        "id": "folder_omran",
+        "title": "محمد عمران",
+        "imageUrl": "https://i1.sndcdn.com/artworks-m068bG0R7c8yyfDS-quGq8g-t500x500.jpg",
+        "tracks": [
+            {
+                "id": "omran_1",
+                "title": "Asma' Allah Al-Husna",
+                "original_title": "في الليل يا ربي (أسماء الله الحسنى)",
+                "artist": "Muhammad Omran",
+                "artist_ar": "محمد عمران",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Asma.Allah.Al-Husna.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "omran_2",
+                "title": "Hour of Ibtihalat",
+                "original_title": "ساعة من الإبتهالات",
+                "artist": "Muhammad Omran",
+                "artist_ar": "محمد عمران",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Hour.of.Ibtihalat.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "omran_3",
+                "title": "Ilahi In Yakun Dhanbi",
+                "original_title": "إلهي إن يكن ذنبي",
+                "artist": "Muhammad Omran",
+                "artist_ar": "محمد عمران",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Ilahi.In.Yakun.Dhanbi.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "omran_4",
+                "title": "Rare Ibtihal (Abdeen)",
+                "original_title": "إبتهال نادر (عابدين)",
+                "artist": "Muhammad Omran",
+                "artist_ar": "محمد عمران",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Rare.Ibtihal.Abdeen.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "omran_5",
+                "title": "Rare Ibtihal (Port Said)",
+                "original_title": "إبتهال نادر (بورسعيد)",
+                "artist": "Muhammad Omran",
+                "artist_ar": "محمد عمران",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Rare.Ibtihal.Port.Said.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "omran_6",
+                "title": "One of the Most Beautiful Ibtihalat",
+                "original_title": "من أجمل الإبتهالات",
+                "artist": "Muhammad Omran",
+                "artist_ar": "محمد عمران",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.One.of.the.Most.Beautiful.Ibtihalat.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "omran_7",
+                "title": "Subhana Man 'Anat Al-Wujuh",
+                "original_title": "سبحان من عنت الوجوه",
+                "artist": "Muhammad Omran",
+                "artist_ar": "محمد عمران",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Subhana.Man.Anat.Al-Wujuh.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "omran_8",
+                "title": "Fakam Lillahi Min Lutfin Khafiy",
+                "original_title": "فكم لله من لطف خفي",
+                "artist": "Muhammad Omran",
+                "artist_ar": "محمد عمران",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Fakam.Lillahi.Min.Lutfin.Khafiy.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "omran_9",
+                "title": "Ibtihal Al-Fajr",
+                "original_title": "إبتهال الفجر",
+                "artist": "Muhammad Omran",
+                "artist_ar": "محمد عمران",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Ibtihal.Al-Fajr.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "omran_10",
+                "title": "Ya Sayyid Al-Kawnayn",
+                "original_title": "يا سيد الكونين",
+                "artist": "Muhammad Omran",
+                "artist_ar": "محمد عمران",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Ya.Sayyid.Al-Kawnayn.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "omran_11",
+                "title": "Ya Ayyuha Al-Mukhtar",
+                "original_title": "يا أيها المختار",
+                "artist": "Muhammad Omran",
+                "artist_ar": "محمد عمران",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Ya.Ayyuha.Al-Mukhtar.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "omran_12",
+                "title": "An-Nuru Ashraqa",
+                "original_title": "النور أشرق",
+                "artist": "Muhammad Omran",
+                "artist_ar": "محمد عمران",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.An-Nuru.Ashraqa.mp3",
+                "type": "inshad"
+            },
+            {
+                "id": "omran_13",
+                "title": "La Lighayrika Ya Ilahi Akhsha'u",
+                "original_title": "لا لغيرك يا إلهي أخشع",
+                "artist": "Muhammad Omran",
+                "artist_ar": "محمد عمران",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.La.Lighayrika.Ya.Ilahi.Akhshau.mp3",
+                "type": "inshad"
+            }
+        ]
+    }
+]

@@ -1,0 +1,264 @@
+[
+    {
+        "id": "stories_adults",
+        "title": "قصص الأنبياء (نبيل العوضي)",
+        "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/9a/09/05/9a090565-552c-37d1-7317-220ff46aba54/198391840364.jpg/1200x1200bf-60.jpg",
+        "tracks": [
+            {
+                "id": "prophet_01",
+                "title": "Story of Adam (AS)",
+                "original_title": "قصة آدم عليه السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/01-.The.Story.of.Adam.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_02",
+                "title": "Story of Idris (AS)",
+                "original_title": "قصة إدريس عليه السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/02-.The.Story.of.Idris.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_03",
+                "title": "Story of Nuh (AS)",
+                "original_title": "قصة نوح عليه السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/03-.The.Story.of.Nuh.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_04",
+                "title": "Story of Hud (AS)",
+                "original_title": "قصة هود عليه السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/04-.The.Story.of.Hud.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_05",
+                "title": "Story of Saleh (AS)",
+                "original_title": "قصة صالح عليه السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/05-.The.Story.of.Saleh.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_06",
+                "title": "Story of Ibrahim (AS)",
+                "original_title": "قصة إبراهيم عليه السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/06-.The.Story.of.Ibrahim.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_07",
+                "title": "Story of Lut (AS)",
+                "original_title": "قصة لوط عليه السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/07-.The.Story.of.Lut.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_08",
+                "title": "Story of Yusuf (AS)",
+                "original_title": "قصة يوسف عليه السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/08-.The.Story.of.Yusuf.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_09",
+                "title": "Story of Ayyub (AS)",
+                "original_title": "قصة أيوب عليه السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/09-.The.Story.of.Ayyub.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_10",
+                "title": "Story of Yunus (AS)",
+                "original_title": "قصة يونس عليه السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/10-.The.Story.of.Yunus.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_11",
+                "title": "Story of Shuaib (AS)",
+                "original_title": "قصة شعيب عليه السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/11-.The.Story.of.Shuaib.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_12",
+                "title": "Story of Musa and Harun (AS)",
+                "original_title": "قصة موسى وهارون عليهما السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/12-.The.Story.of.Musa.and.Harun.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_13",
+                "title": "Story of Al-Khidr (AS)",
+                "original_title": "قصة الخضر عليه السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/13-.The.Story.of.Al-Khidr.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_14",
+                "title": "Story of Yusha bin Nun (AS)",
+                "original_title": "قصة يوشع بن نون عليه السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/14-.The.Story.of.Yusha.bin.Nun.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_15",
+                "title": "Story of Dawud (AS)",
+                "original_title": "قصة داوود عليه السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/15-.The.Story.of.Dawud.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_16",
+                "title": "Story of Sulaiman (AS)",
+                "original_title": "قصة سليمان عليه السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/16-.The.Story.of.Sulaiman.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_17",
+                "title": "Story of Uzair (AS)",
+                "original_title": "قصة العزير عليه السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/17-.The.Story.of.Uzair.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_18",
+                "title": "Story of Zakariya and Yahya (AS)",
+                "original_title": "قصة زكريا ويحيى عليهما السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/18-.The.Story.of.Zakariya.and.Yahya.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_19",
+                "title": "Story of Maryam (AS)",
+                "original_title": "قصة مريم بنت عمران عليها السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/19-.The.Story.of.Maryam.bint.Imran.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_20",
+                "title": "Story of Isa (AS)",
+                "original_title": "قصة عيسى عليه السلام",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/20-.The.Story.of.Isa.AS.mp3",
+                "type": "story"
+            },
+            {
+                "id": "prophet_21",
+                "title": "Story of Muhammad (SAW)",
+                "original_title": "قصة محمد صلى الله عليه وسلم",
+                "artist": "نبيل العوضي",
+                "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.0/21-.The.Story.of.Muhammad.SAW.mp3",
+                "type": "story"
+            }
+        ]
+    },
+    {
+        "id": "stories_kids",
+        "title": "قصص الأنبياء للأطفال",
+        "imageUrl": "https://via.placeholder.com/300/FFB74D/FFFFFF?text=Kids+Stories",
+        "tracks": [
+            {
+                "id": "kids_01",
+                "title": "Creation & Adam (AS)",
+                "original_title": "بداية الخلق وآدم عليه السلام",
+                "artist": "قصص مبسطة",
+                "audioUrl": "https://archive.org/download/ProphetStoriesForKids/01_Adam.mp3",
+                "type": "story"
+            },
+            {
+                "id": "kids_02",
+                "title": "Nuh & The Ark",
+                "original_title": "قصة نوح وسفينة النجاة",
+                "artist": "قصص مبسطة",
+                "audioUrl": "https://archive.org/download/ProphetStoriesForKids/02_Nuh.mp3",
+                "type": "story"
+            },
+            {
+                "id": "kids_03",
+                "title": "Ibrahim & The Fire",
+                "original_title": "قصة إبراهيم والنار الباردة",
+                "artist": "قصص مبسطة",
+                "audioUrl": "https://archive.org/download/ProphetStoriesForKids/03_Ibrahim.mp3",
+                "type": "story"
+            },
+            {
+                "id": "kids_04",
+                "title": "Yusuf & The Shirt",
+                "original_title": "قصة يوسف والقميص",
+                "artist": "قصص مبسطة",
+                "audioUrl": "https://archive.org/download/ProphetStoriesForKids/04_Yusuf.mp3",
+                "type": "story"
+            },
+            {
+                "id": "kids_05",
+                "title": "Musa & The Staff",
+                "original_title": "قصة موسى والعصا",
+                "artist": "قصص مبسطة",
+                "audioUrl": "https://archive.org/download/ProphetStoriesForKids/05_Musa.mp3",
+                "type": "story"
+            },
+            {
+                "id": "kids_06",
+                "title": "Dawud & Goliath",
+                "original_title": "قصة داود وجالوت",
+                "artist": "قصص مبسطة",
+                "audioUrl": "https://archive.org/download/ProphetStoriesForKids/06_Dawud.mp3",
+                "type": "story"
+            },
+            {
+                "id": "kids_07",
+                "title": "Sulaiman & The Ant",
+                "original_title": "قصة سليمان والنملة",
+                "artist": "قصص مبسطة",
+                "audioUrl": "https://archive.org/download/ProphetStoriesForKids/07_Sulaiman.mp3",
+                "type": "story"
+            },
+            {
+                "id": "kids_08",
+                "title": "Yunus & The Whale",
+                "original_title": "قصة يونس والحوت",
+                "artist": "قصص مبسطة",
+                "audioUrl": "https://archive.org/download/ProphetStoriesForKids/08_Yunus.mp3",
+                "type": "story"
+            },
+            {
+                "id": "kids_09",
+                "title": "Isa & The Table",
+                "original_title": "قصة عيسى والمائدة",
+                "artist": "قصص مبسطة",
+                "audioUrl": "https://archive.org/download/ProphetStoriesForKids/09_Isa.mp3",
+                "type": "story"
+            },
+            {
+                "id": "kids_10",
+                "title": "Story of Muhammad (SAW)",
+                "original_title": "قصة محمد صلى الله عليه وسلم",
+                "artist": "قصص مبسطة",
+                "audioUrl": "https://archive.org/download/ProphetStoriesForKids/10_Muhammad.mp3",
+                "type": "story"
+            }
+        ]
+    }
+]
