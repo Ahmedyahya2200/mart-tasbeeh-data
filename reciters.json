@@ -230,6 +230,7 @@
     "name_ar": "بندر بليلة",
     "name_en": "Bandar Baleela",
     "server_url": "https://download.quranicaudio.com/quran/bandar_baleela/complete/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Bandar.Baleela.webp",
     "quality": "gapless"
   },
   {
@@ -238,6 +239,7 @@
     "name_ar": "خليفة الطنيجي",
     "name_en": "Khalifah At-Taniji",
     "server_url": "https://download.quranicaudio.com/qdc/khalifah_taniji/murattal/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Khalifah.At-Taniji.jpeg",
     "quality": "gapless"
   },
   {
@@ -246,6 +248,7 @@
     "name_ar": "عبد الله بصفر",
     "name_en": "Abdullah Basfar",
     "server_url": "https://download.quranicaudio.com/quran/abdullaah_basfar/",
+    "image_url": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.2/Abdullah.Basfar.webp",
     "quality": "gapless"
   },
   {
