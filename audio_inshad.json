@@ -2,7 +2,7 @@
     {
         "id": "folder_naqshbandi",
         "title": "النقشبندي",
-        "imageUrl": "assets/images/naqshbandi.png",
+        "imageUrl": "https://raw.githubusercontent.com/Ahmedyahya2200/mart-tasbeeh-data/main/images/naqshbandi.png",
         "tracks": [
             {
                 "id": "naqsh_1",
@@ -11,7 +11,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Mawlaya.Inni.Bibabik.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 280
             },
             {
                 "id": "naqsh_2",
@@ -20,7 +21,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Qabdhat.Allah.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 251
             },
             {
                 "id": "naqsh_3",
@@ -29,7 +31,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Ya.Rabb.In.Azumat.Dhanubi.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 187
             },
             {
                 "id": "naqsh_4",
@@ -38,7 +41,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.An-Nafsu.Tashku.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 77
             },
             {
                 "id": "naqsh_5",
@@ -47,7 +51,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Lughat.Al-Kalam.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 50
             },
             {
                 "id": "naqsh_6",
@@ -56,7 +61,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Ya.Rabb.Karamaka.Alayna.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 21
             },
             {
                 "id": "naqsh_7",
@@ -65,7 +71,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Ya.Man.Lahu.Satrun.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 29
             },
             {
                 "id": "naqsh_8",
@@ -74,7 +81,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Al-Kawkab.Al-Ardi.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 24
             },
             {
                 "id": "naqsh_9",
@@ -83,7 +91,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Aghibu.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 194
             },
             {
                 "id": "naqsh_10",
@@ -92,7 +101,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Aya.Yawman.Hasiman.Badr.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 1085
             },
             {
                 "id": "naqsh_11",
@@ -101,7 +111,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Ayyuha.As-Sahir.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 430
             },
             {
                 "id": "naqsh_12",
@@ -110,7 +121,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Ayyuha.An-Nas.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 231
             },
             {
                 "id": "naqsh_13",
@@ -119,7 +131,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Ilayka.Wajjahtu.Wajhi.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 168
             },
             {
                 "id": "naqsh_14",
@@ -128,7 +141,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Ashraqa.Al-Kawnu.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 2733
             },
             {
                 "id": "naqsh_15",
@@ -137,7 +151,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Al-Isra.wal.Miraj.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 2515
             },
             {
                 "id": "naqsh_16",
@@ -146,7 +161,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Al-Adhan.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 157
             },
             {
                 "id": "naqsh_17",
@@ -155,7 +171,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Al-Mujizat.Samat.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 212
             },
             {
                 "id": "naqsh_18",
@@ -164,7 +181,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Bibabika.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 232
             },
             {
                 "id": "naqsh_19",
@@ -173,7 +191,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Bayna.Khawfin.wa.Dhilla.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 239
             },
             {
                 "id": "naqsh_20",
@@ -182,7 +201,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Tabattaltu.Mushtaqan.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 232
             },
             {
                 "id": "naqsh_21",
@@ -191,7 +211,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Talattafi.Ya.Rih.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 211
             },
             {
                 "id": "naqsh_22",
@@ -200,7 +221,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Khayrul.Bariyyah.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 2449
             },
             {
                 "id": "naqsh_23",
@@ -209,7 +231,8 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Sayyidi.Ya.Rasul.Allah.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 674
             },
             {
                 "id": "naqsh_24",
@@ -218,14 +241,15 @@
                 "artist": "Al-Naqshbandi",
                 "artist_ar": "النقشبندي",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Al-Naqshbandi.Ya.Sahibi.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 317
             }
         ]
     },
     {
         "id": "folder_tobar",
         "title": "نصر الدين طوبار",
-        "imageUrl": "assets/images/nasr_tobar.png",
+        "imageUrl": "https://raw.githubusercontent.com/Ahmedyahya2200/mart-tasbeeh-data/main/images/nasr_tobar.png",
         "tracks": [
             {
                 "id": "tobar_1",
@@ -234,7 +258,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ya.Malik.Al-Mulk.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 282
             },
             {
                 "id": "tobar_2",
@@ -243,7 +268,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Hanini.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 89
             },
             {
                 "id": "tobar_3",
@@ -252,7 +278,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.The.Whale.and.the.Spider.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 3418
             },
             {
                 "id": "tobar_4",
@@ -261,7 +288,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ilahi.Dumui.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 114
             },
             {
                 "id": "tobar_5",
@@ -270,7 +298,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Jell.Al-Monadi.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 196
             },
             {
                 "id": "tobar_6",
@@ -279,7 +308,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Subhanak.Allahumma.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 118
             },
             {
                 "id": "tobar_7",
@@ -288,7 +318,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ashraqa.Al-Haqqu.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 241
             },
             {
                 "id": "tobar_8",
@@ -297,7 +328,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Hina.Yahdi.As-Subhu.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 246
             },
             {
                 "id": "tobar_9",
@@ -306,7 +338,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Subhanaka.Ya.Ghaffar.Adh-Dhanub.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 110
             },
             {
                 "id": "tobar_10",
@@ -315,7 +348,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ashab.Al-Fil.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 122
             },
             {
                 "id": "tobar_11",
@@ -324,7 +358,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Best.Recordings.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 3247
             },
             {
                 "id": "tobar_12",
@@ -333,7 +368,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Al-Amru.Lak.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 1830
             },
             {
                 "id": "tobar_13",
@@ -342,7 +378,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ashraqa.Al-Haqqu.2.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 1651
             },
             {
                 "id": "tobar_14",
@@ -351,7 +388,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Sal.Al-Layla.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 937
             },
             {
                 "id": "tobar_15",
@@ -360,7 +398,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Bika.Astajir.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 3494
             },
             {
                 "id": "tobar_16",
@@ -369,7 +408,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Inna.Ash-Shukra.Qad.Wajab.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 1484
             },
             {
                 "id": "tobar_17",
@@ -378,7 +418,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ilayka.Duaana.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 3781
             },
             {
                 "id": "tobar_18",
@@ -387,7 +428,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ilayka.Khushui.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 299
             },
             {
                 "id": "tobar_19",
@@ -396,7 +438,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Al-Wahid.Al-Mabud.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 66
             },
             {
                 "id": "tobar_20",
@@ -405,7 +448,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Allahu.Rabbu.Al-Wujud.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 3025
             },
             {
                 "id": "tobar_21",
@@ -414,7 +458,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Subhanaka.Ya.Man.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 247
             },
             {
                 "id": "tobar_22",
@@ -423,7 +468,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Fi.Hadat.Al-Layl.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 543
             },
             {
                 "id": "tobar_23",
@@ -432,7 +478,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ya.Bari.Al-Kawn.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 538
             },
             {
                 "id": "tobar_24",
@@ -441,7 +488,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ya.Laylat.Al-Qadr.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 3177
             },
             {
                 "id": "tobar_25",
@@ -450,7 +498,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ya.Man.Radita.Lana.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 584
             },
             {
                 "id": "tobar_26",
@@ -459,7 +508,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ya.Man.Malakta.Qulubana.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 67
             },
             {
                 "id": "tobar_27",
@@ -468,7 +518,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ya.Munqidhi.Fi.Shiddati.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 159
             },
             {
                 "id": "tobar_28",
@@ -477,7 +528,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ya.Wadudan.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 328
             },
             {
                 "id": "tobar_29",
@@ -486,7 +538,8 @@
                 "artist": "Nasr Tobar",
                 "artist_ar": "نصر الدين طوبار",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Nasr.Tobar.Ya.Rabbi.Ud-tu.Ila.Rihabik.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 3555
             }
         ]
     },
@@ -502,7 +555,8 @@
                 "artist": "Muhammad Omran",
                 "artist_ar": "محمد عمران",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Asma.Allah.Al-Husna.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 33
             },
             {
                 "id": "omran_2",
@@ -511,7 +565,8 @@
                 "artist": "Muhammad Omran",
                 "artist_ar": "محمد عمران",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Hour.of.Ibtihalat.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 30
             },
             {
                 "id": "omran_3",
@@ -520,7 +575,8 @@
                 "artist": "Muhammad Omran",
                 "artist_ar": "محمد عمران",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Ilahi.In.Yakun.Dhanbi.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 239
             },
             {
                 "id": "omran_4",
@@ -529,7 +585,8 @@
                 "artist": "Muhammad Omran",
                 "artist_ar": "محمد عمران",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Rare.Ibtihal.Abdeen.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 505
             },
             {
                 "id": "omran_5",
@@ -538,7 +595,8 @@
                 "artist": "Muhammad Omran",
                 "artist_ar": "محمد عمران",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Rare.Ibtihal.Port.Said.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 19
             },
             {
                 "id": "omran_6",
@@ -547,7 +605,8 @@
                 "artist": "Muhammad Omran",
                 "artist_ar": "محمد عمران",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.One.of.the.Most.Beautiful.Ibtihalat.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 14
             },
             {
                 "id": "omran_7",
@@ -556,7 +615,8 @@
                 "artist": "Muhammad Omran",
                 "artist_ar": "محمد عمران",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Subhana.Man.Anat.Al-Wujuh.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 33
             },
             {
                 "id": "omran_8",
@@ -565,7 +625,8 @@
                 "artist": "Muhammad Omran",
                 "artist_ar": "محمد عمران",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Fakam.Lillahi.Min.Lutfin.Khafiy.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 29
             },
             {
                 "id": "omran_9",
@@ -574,7 +635,8 @@
                 "artist": "Muhammad Omran",
                 "artist_ar": "محمد عمران",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Ibtihal.Al-Fajr.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 13
             },
             {
                 "id": "omran_10",
@@ -583,7 +645,8 @@
                 "artist": "Muhammad Omran",
                 "artist_ar": "محمد عمران",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Ya.Sayyid.Al-Kawnayn.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 40
             },
             {
                 "id": "omran_11",
@@ -592,7 +655,8 @@
                 "artist": "Muhammad Omran",
                 "artist_ar": "محمد عمران",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.Ya.Ayyuha.Al-Mukhtar.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 71
             },
             {
                 "id": "omran_12",
@@ -601,7 +665,8 @@
                 "artist": "Muhammad Omran",
                 "artist_ar": "محمد عمران",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.An-Nuru.Ashraqa.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 446
             },
             {
                 "id": "omran_13",
@@ -610,7 +675,8 @@
                 "artist": "Muhammad Omran",
                 "artist_ar": "محمد عمران",
                 "audioUrl": "https://github.com/Ahmedyahya2200/mart-tasbeeh-data/releases/download/v1.1.0/Muhammad.Omran.La.Lighayrika.Ya.Ilahi.Akhshau.mp3",
-                "type": "inshad"
+                "type": "inshad",
+                "duration": 294
             }
         ]
     }
